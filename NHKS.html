@@ -11,10 +11,16 @@
 <!-- Sheet //-->
 <div class="sheet-wrapper sheet-NHKS">
 	<div class="sheet-menu">
-		<span>Wechsel zwischen Charakter & Rollen</span>
+		<button type="action" name="act_actor"><span data-i18n="actor"></span></button>
+    	<button type="action" name="act_role"><span data-i18n="role"></span></button>
 	</div>
 	<div class="sheet-content">
-		<span>Hier kommt der eigentliche Sheet</span>
+		<div class="sheet-actor">
+			<span>Schauspieler</span>
+		</div>
+		<div class="sheet-role">
+			<span>Rolle</span>
+		</div>		
 	</div>
 	<div class="sheet-footer">
 		Created by Gorthian | Supported by Hitdice | Copyright by ???
@@ -30,6 +36,17 @@
 	/* Globale Variablen -- Ende */
 	
 	/* Event-Listener -- Start */
+	
+	/* Tab-Wechsel */
+	const buttonlist = ["actor","role"];
+    buttonlist.forEach(button => {
+        on(`clicked:${button}`, function() {
+            setAttrs({
+                sheetTab: button
+            });
+        });
+    });
+
 	/* Event-Listener -- Ende */						
 		
 	/* Funktionen -- Start */
