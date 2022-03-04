@@ -102,7 +102,7 @@ div.sheet-actor-misc {
 div.sheet-actor-attributes-content {
 	display					: grid;
 	grid-template-columns	: repeat(2, 50%);
-	grid-template-areas		: 	"attributes-left		attributes-right"
+	grid-template-areas		: 	"attributes-left attributes-right"
 }
 
 div.sheet-actor-attributes-left {
@@ -113,6 +113,62 @@ div.sheet-actor-attributes-left {
 div.sheet-actor-attributes-right {
 	display					: grid;
 	grid-area				: attributes-right;
+	grid-template-columns	: repeat(2, 50%);
+	grid-template-areas		: 	"attr-hitpoints		attr-melee-attack"
+								"attr-chipoints		attr-melee-defense"
+								"attr-famepoints	attr-ranged-attack"
+								"attr-awardpoints	attr-melee-damage"
+								"attr-initiative	attr-ranged-damage"
+}
+
+div.sheet-actor-attr-hitpoints {
+	display					: inline;
+	grid-area				: attr-hitpoints;
+}
+
+div.sheet-actor-attr-chipoints {
+	display					: inline;
+	grid-area				: attr-chipoints;
+}
+
+div.sheet-actor-attr-famepoints {
+	display					: inline;
+	grid-area				: attr-famepoints;
+}
+
+div.sheet-actor-attr-awardpoints {
+	display					: inline;
+	grid-area				: attr-awardpoints;
+}
+
+div.sheet-actor-attr-initiative {
+	display					: inline;
+	grid-area				: attr-initiative;
+}
+
+div.sheet-actor-attr-melee-attack {
+	display					: inline;
+	grid-area				: attr-melee-attack;
+}
+
+div.sheet-actor-attr-melee-defense {
+	display					: inline;
+	grid-area				: attr-melee-defense;
+}
+
+div.sheet-actor-attr-melee-damage {
+	display					: inline;
+	grid-area				: attr-melee-damage;
+}
+
+div.sheet-actor-attr-ranged-attack {
+	display					: inline;
+	grid-area				: attr-ranged-attack;
+}
+
+div.sheet-actor-attr-ranged-damage {
+	display					: inline;
+	grid-area				: attr-ranged-damage;
 }
 
 div.sheet-actor-attributes-values {
