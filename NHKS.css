@@ -13,7 +13,7 @@
 /*             GRUNDLAGEN                          */
 /***************************************************/
 
-.sheet-wrapper {
+div.sheet-wrapper {
 	--sheet-bg			: #F5F5DC;
 	--sheet-text-color	: #000000;
 	--sheet-font-family	: "Arial", sans-serif;
@@ -31,7 +31,7 @@ div {
 /*             GRIDS                               */
 /***************************************************/
 
-.sheet-NHKS {		
+div.sheet-NHKS {		
 	background-color		: var(--sheet-bg);
 	color					: var(--sheet-text-color);
 	display 				: grid;
@@ -55,4 +55,24 @@ div.sheet-footer {
 	grid-area				: footer;
 }
 
+/***************************************************/
+/*             MENU & TABS                         */
+/***************************************************/
+div.sheet-wrapper {
+	--display-actor		: block;
+	--display-role 		: none;
+}
+
+/* show the selected tab */
+.sheet-tabstoggle[value="actor"] ~ div.sheet-wrapper {
+	--display-actor		: block;
+	--display-role 		: none;
+}
+.sheet-tabstoggle[value="role"] ~ div.sheet-wrapper {
+	--display-actor		: none;
+	--display-role 		: block;
+}
+
+div.sheet-actor{display:var(--display-actor)}
+div.sheet-role{display:var(--display-role)}
 /*********************************/
