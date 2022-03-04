@@ -7,5 +7,13 @@
   "movies" : "FILME",
   "martialarts" : "MARTIAL ARTS",
   "awards" : "AWARDS",
-  "misc" : "SONSTIGES"
+  "misc" : "SONSTIGES",
+  "name" : "Name",
+  "gender" : "Geschlecht",
+  "age" : "Alter",
+  "weight" : "Gewicht",
+  "size" : "Größe",
+  "nationality" : "Nationalität",
+  "stature" : "Statur",
+  "description" : "Beschreibung"
 }

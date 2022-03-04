@@ -9,7 +9,7 @@
 //-->
 
 <!-- Sheet //-->
-<input type="hidden" class="sheet-tabstoggle" name="attr_sheetTab"  value="character"  />
+<input type="hidden" class="sheet-tabstoggle" name="attr_sheetTab"  value="actor"  />
 <div class="sheet-wrapper sheet-NHKS">
 	<div class="sheet-menu">
 		<button type="action" name="act_actor"><span data-i18n="actor"></span></button>
@@ -17,10 +17,23 @@
 	</div>
 	<div class="sheet-content">
 		<div class="sheet-actor">
-			<span>Schauspieler</span>
 			<div class="sheet-actor-sheet">
 				<div class="sheet-actor-attributes">
 					<h1><span data-i18n="attributes-and-descriptions"></span></h1>
+					<div class="sheet-actor-attributes-content">
+						<div class="sheet-actor-attributes-left">
+							<span class="sheet-input-line"><span class="sheet-label" data-i18n="name"></span><input type="text" name="attr_character_name" /></span>
+							<span class="sheet-input-line"><span class="sheet-label" data-i18n="gender"></span><input type="text" name="attr_actor_gender" /></span>
+							<span class="sheet-input-line"><span class="sheet-label" data-i18n="age"></span><input type="text" name="attr_actor_age" /></span>
+							<span class="sheet-input-line"><span class="sheet-label" data-i18n="weight"></span><input type="text" name="attr_actor_weight" /></span>
+							<span class="sheet-input-line"><span class="sheet-label" data-i18n="size"></span><input type="text" name="attr_actor_weight" /></span>
+							<span class="sheet-input-line"><span class="sheet-label" data-i18n="nationality"></span><input type="text" name="attr_actor_nationality" /></span>
+							<p><span class="sheet-label" data-i18n="stature"></span><textarea name="attr_actor_stature" value=""></textarea></p>
+							<p><span class="sheet-label" data-i18n="description"></span><textarea name="attr_actor_description" value=""></textarea></p>
+						</div>
+						<div class="sheet-actor-attributes-right">
+						</div>
+					</div>
 				</div>
 				<div class="sheet-actor-skills">
 					<h1><span data-i18n="skills"></span></h1>

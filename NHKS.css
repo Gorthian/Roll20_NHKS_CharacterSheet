@@ -99,6 +99,22 @@ div.sheet-actor-misc {
 	grid-area				: misc;
 }
 
+div.sheet-actor-attributes-content {
+	display					: grid;
+	grid-template-columns	: repeat(2, 50%);
+	grid-template-areas		: 	"attributes-left		attributes-right"
+}
+
+div.sheet-actor-attributes-left {
+	display					: grid;
+	grid-area				: attributes-left;
+}
+
+div.sheet-actor-attributes-right {
+	display					: grid;
+	grid-area				: attributes-right;
+}
+
 /***************************************************/
 /*             MENU & TABS                         */
 /***************************************************/
@@ -123,4 +139,47 @@ div.sheet-role{display:var(--display-role)}
 div.sheet-menu button {
 	width		: 30% ;
 }
+
+/***************************************************/
+/*             DIVERSES                            */
+/***************************************************/
+div.sheet-actor-sheet div {
+	margin				: 5px;
+}
+
+div.sheet-actor-sheet h1 {
+	width				: 100%;
+	height				: auto;
+	background-color	: black;
+	color				: white;
+	font-size			: 1.5em;
+	font-weight			: bold;
+}	
+
+div.sheet-actor-sheet input {
+	border-style		: none none solid none;
+}
+
+div.sheet-actor-sheet textarea {
+	height				: 30px;
+}
+
+.sheet-label {
+	font-weight	: bold;
+}
+
+.sheet-input-line {
+	display		: inline-flex;
+	width		: 95%;
+}
+
+.sheet-input-line .sheet-label {
+	display		: inline-block;
+}
+
+.sheet-input-line input {
+	flex-grow	: 1;
+	width		: auto;
+}
+
 /*********************************/
