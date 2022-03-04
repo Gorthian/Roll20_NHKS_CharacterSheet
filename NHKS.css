@@ -57,6 +57,48 @@ div.sheet-footer {
 	background-color		: lightgrey;
 }
 
+div.sheet-actor-sheet {
+	display					: grid;
+	grid-template-areas		: 	"attributes		attributes	skills"
+								"advantages		movies		skills"
+								"martialarts	awards		misc"
+}
+
+div.sheet-actor-attributes {
+	display					: grid;
+	grid-area				: attributes;
+}
+
+div.sheet-actor-skills {
+	display					: grid;
+	grid-area				: skills;
+}
+
+div.sheet-actor-advantages {
+	display					: grid;
+	grid-area				: advantages;
+}
+
+div.sheet-actor-movies {
+	display					: grid;
+	grid-area				: movies;
+}
+
+div.sheet-actor-martialarts {
+	display					: grid;
+	grid-area				: martialarts;
+}
+
+div.sheet-actor-awards {
+	display					: grid;
+	grid-area				: awards;
+}
+
+div.sheet-actor-misc {
+	display					: grid;
+	grid-area				: misc;
+}
+
 /***************************************************/
 /*             MENU & TABS                         */
 /***************************************************/

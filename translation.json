@@ -1,4 +1,11 @@
 {
   "actor" : "Schauspieler",
-  "role" : "Rolle"  
+  "role" : "Rolle",
+  "attributes-and-descriptions" : "ATTRIBUTE & BESCHREIBUNG",
+  "skills" : "FERTIGKEITEN",
+  "advantages-and-disadvantages" : "VORTEILE & NACHTEILE",
+  "movies" : "FILME",
+  "martialarts" : "MARTIAL ARTS",
+  "awards" : "AWARDS",
+  "misc" : "SONSTIGES"
 }
