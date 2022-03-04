@@ -124,32 +124,26 @@ div.sheet-actor-attributes-values {
 }
 
 div.sheet-actor-attr-kno {
-	display					: grid;
 	grid-area				: attr-kno;
 }
 
 div.sheet-actor-attr-str {
-	display					: grid;
 	grid-area				: attr-str;
 }
 
 div.sheet-actor-attr-col {
-	display					: grid;
 	grid-area				: attr-col;
 }
 
 div.sheet-actor-attr-sta {
-	display					: grid;
 	grid-area				: attr-sta;
 }
 
 div.sheet-actor-attr-chi {
-	display					: grid;
 	grid-area				: attr-chi;
 }
 
 div.sheet-actor-attr-dex {
-	display					: grid;
 	grid-area				: attr-dex;
 }
 
@@ -206,6 +200,14 @@ div.sheet-actor-sheet textarea {
 	font-weight	: bold;
 }
 
+.sheet-label .sheet-attr-short {
+	font-size	: 1.2em;
+}
+
+.sheet-label .sheet-attr-full {
+	font-size	: 0.5em;
+}
+
 .sheet-input-line {
 	display		: inline-flex;
 	width		: 95%;
@@ -215,9 +217,13 @@ div.sheet-actor-sheet textarea {
 	display		: inline-block;
 }
 
-.sheet-input-line input {
+.sheet-actor-attributes-values .sheet-input-line input {
 	flex-grow	: 1;
 	width		: auto;
+	height		: 100%;
+	text-align	: center;
+	font-weight	: bold;
+	font-size	: 1.5em;
 }
 
 /*********************************/
