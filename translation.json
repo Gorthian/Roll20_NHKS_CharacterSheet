@@ -15,5 +15,17 @@
   "size" : "Größe",
   "nationality" : "Nationalität",
   "stature" : "Statur",
-  "description" : "Beschreibung"
+  "description" : "Beschreibung",
+  "knowledge-short" : "WIS",
+  "knowledge" : "Wissen",
+  "strength-short" : "STK",
+  "strength" : "Stärke",
+  "coolness-short" : "COL",
+  "coolness" : "Coolness",
+  "stamina-short" : "AUS",
+  "stamina" : "Ausdauer",
+  "chi-short" : "CHI",
+  "chi" : "Chi",
+  "dexterity-short" : "GES",
+  "dexterity" : "Geschick"
 }

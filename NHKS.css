@@ -115,6 +115,44 @@ div.sheet-actor-attributes-right {
 	grid-area				: attributes-right;
 }
 
+div.sheet-actor-attributes-values {
+	display					: grid;
+	grid-template-columns	: repeat(2, 50%);
+	grid-template-areas		: 	"attr-kno	attr-str"
+								"attr-col	attr-sta"
+								"attr-chi	attr-dex"
+}
+
+div.sheet-actor-attr-kno {
+	display					: grid;
+	grid-area				: attr-kno;
+}
+
+div.sheet-actor-attr-str {
+	display					: grid;
+	grid-area				: attr-str;
+}
+
+div.sheet-actor-attr-col {
+	display					: grid;
+	grid-area				: attr-col;
+}
+
+div.sheet-actor-attr-sta {
+	display					: grid;
+	grid-area				: attr-sta;
+}
+
+div.sheet-actor-attr-chi {
+	display					: grid;
+	grid-area				: attr-chi;
+}
+
+div.sheet-actor-attr-dex {
+	display					: grid;
+	grid-area				: attr-dex;
+}
+
 /***************************************************/
 /*             MENU & TABS                         */
 /***************************************************/
