@@ -256,12 +256,32 @@ div.sheet-actor-sheet textarea {
 	font-weight	: bold;
 }
 
-.sheet-label .sheet-attr-short {
+.sheet-input-line .sheet-attr-short {
+	font-weight	: bold;
 	font-size	: 1.2em;
 }
 
-.sheet-label .sheet-attr-full {
+.sheet-input-line .sheet-attr-full {
+	font-weight	: bold;
 	font-size	: 0.5em;
+}
+
+.sheet-actor-attributes-right .sheet-input-line {
+	text-align	: center;
+}
+
+.sheet-actor-attributes-right .sheet-input-line .sheet-attr-name {
+	font-weight	: bold;
+	font-size	: 1.0em;
+}
+
+.sheet-actor-attributes-right .sheet-input-line .sheet-attr-desc {
+	font-weight	: bold;
+	font-size	: 0.7em;
+}
+
+.sheet-actor-attributes-right .sheet-input-line input {
+	width	: 95%;
 }
 
 .sheet-input-line {
@@ -273,9 +293,8 @@ div.sheet-actor-sheet textarea {
 	display		: inline-block;
 }
 
-.sheet-actor-attributes-values .sheet-input-line input {
+.sheet-input-line input.sheet-attribute-value {
 	flex-grow	: 1;
-	width		: auto;
 	height		: 100%;
 	text-align	: center;
 	font-weight	: bold;
