@@ -1,0 +1,58 @@
+/*
+	EDITED by 			Gorthian
+	Version				0.1
+	Letzte Änderung		2022-03-04
+	
+	GitHub				https://github.com/Gorthian/Roll20_NHKS_CharacterSheet
+	Wiki				https://github.com/Gorthian/Roll20_NHKS_CharacterSheet/wiki
+	Bugs & Issues		https://github.com/Gorthian/Roll20_NHKS_CharacterSheet/issues
+*/
+
+
+/***************************************************/
+/*             GRUNDLAGEN                          */
+/***************************************************/
+
+.sheet-wrapper {
+	--sheet-bg			: #F5F5DC;
+	--sheet-text-color	: #000000;
+	--sheet-font-family	: "Arial", sans-serif;
+}
+
+p .sheet-nowrap {
+	white-space			: nowrap;
+}
+
+div {
+	font-family			: var(--sheet-font-family);	
+}
+
+/***************************************************/
+/*             GRIDS                               */
+/***************************************************/
+
+.sheet-NHKS {		
+	background-color		: var(--sheet-bg);
+	color					: var(--sheet-text-color);
+	display 				: grid;
+	grid-template-areas		: 	"menu"
+								"content"
+								"footer"
+}
+
+div.sheet-menu {
+	display					: grid;
+	grid-area				: menu;
+}
+
+div.sheet-content {
+	display					: grid;
+	grid-area				: content;
+}
+
+div.sheet-footer {
+	display					: grid;
+	grid-area				: footer;
+}
+
+/*********************************/
