@@ -166,8 +166,6 @@
 	/* Globale Variablen -- Start */
 	/* Globale Variablen -- Ende */
 	
-	/* Event-Listener -- Start */
-	
 	/* Tab-Wechsel */
 	const buttonlist = ["actor","role"];
     buttonlist.forEach(button => {
@@ -177,9 +175,132 @@
             });
         });
     });
-
-	/* Event-Listener -- Ende */						
+	
+	/* Event-Listener -- Start */
+	on("sheet:opened", function () {
+		recalcValues();
+	});
+	
+	on("change:stamina", function () {
+		recalcHitpoints();
+	});
+	
+	on("change:strength", function () {
+		recalcMeleeAttack();
+		recalcMeleeDefense();
+	});
+	
+	on("change:dexterity", function () {
+		recalcMeleeDefense();
+		recalcRangedAttack();
+	});
+	
+	on("change:chi", function () {
+		recalcMeleeAttack();
+		recalcChipoints();
+		recalcMeleeDefense();
+		recalcRangedAttack();
+	});
+	
+	on("change:coolness", function () {
+		recalcInitiative();
+	});
+	
+	/* Event-Listener -- Ende */
+	
 		
 	/* Funktionen -- Start */
+	function recalcValues() {
+		console.log("recalcValues");
+		recalcHitpoints();
+		recalcChipoints();
+		recalcMeleeAttack();
+		recalcMeleeDefense();
+		recalcRangedAttack();
+		recalcInitiative();
+	}
+	
+	function recalcInitiative() {
+		console.log("recalcInitiative");
+		getAttrs(["coolness"], function (values){
+			let iCoolness = parseInt(values["coolness"]||0);
+			let iInitiative = iCoolness;
+			let aAttributes = {};
+			
+			aAttributes["initiative"] = iInitiative;
+			
+			setAttrs(aAttributes);		
+		});
+	}
+	
+	function recalcHitpoints() {
+		console.log("recalcHitpoints");
+		getAttrs(["stamina"], function (values){
+			let iStamina = parseInt(values["stamina"]||0);
+			let iHitpoints = (iStamina + 4) * 10;
+			let aAttributes = {};
+			
+			aAttributes["hitpoints"] = iHitpoints;
+			
+			setAttrs(aAttributes);		
+		});
+	}
+	
+	function recalcChipoints() {
+		console.log("recalcChipoints");
+		getAttrs(["chi"], function (values){
+			let iChi = parseInt(values["chi"]||0);
+			let iChipoints = iChi * 10;
+			let aAttributes = {};
+			
+			aAttributes["chipoints"] = iChipoints;
+			
+			setAttrs(aAttributes);		
+		});
+	}
+	
+	function recalcMeleeAttack() {
+		console.log("recalcMeleeAttack");
+		getAttrs(["chi","strength"], function (values){
+			let iChi = parseInt(values["chi"]||0);
+			let iStrength = parseInt(values["strength"]||0);
+			let iMeleeAttack = Math.round((iStrength * 2 + iChi) / 3);
+			let aAttributes = {};
+			
+			aAttributes["melee_attack"] = iMeleeAttack;
+			
+			setAttrs(aAttributes);		
+		});
+	}
+	
+	function recalcMeleeDefense() {
+		console.log("recalcMeleeDefense");
+		getAttrs(["chi","strength","dexterity"], function (values){
+			let iChi = parseInt(values["chi"]||0);
+			let iStrength = parseInt(values["strength"]||0);
+			let iDexterity = parseInt(values["dexterity"]||0);
+			let iMeleeDefense = Math.round((iStrength + iDexterity + iChi) / 3);
+			let aAttributes = {};
+			
+			aAttributes["melee_defense"] = iMeleeDefense;
+			
+			setAttrs(aAttributes);		
+		});
+	}
+	
+	function recalcRangedAttack() {
+		console.log("recalcRangedAttack");
+		getAttrs(["chi","dexterity"], function (values){
+			let iChi = parseInt(values["chi"]||0);
+			let iDexterity = parseInt(values["dexterity"]||0);
+			let iRangedAttack = Math.round((iDexterity * 2 + iChi) / 3);
+			let aAttributes = {};
+			
+			aAttributes["ranged_attack"] = iRangedAttack;
+			
+			setAttrs(aAttributes);		
+		});
+	}
+	
 	/* Funktionen -- Ende */
 </script>
