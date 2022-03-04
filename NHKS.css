@@ -14,7 +14,7 @@
 /***************************************************/
 
 div.sheet-wrapper {
-	--sheet-bg			: #F5F5DC;
+	--sheet-bg			: #ffffff;
 	--sheet-text-color	: #000000;
 	--sheet-font-family	: "Arial", sans-serif;
 }
@@ -41,7 +41,7 @@ div.sheet-NHKS {
 }
 
 div.sheet-menu {
-	display					: grid;
+	display					: inline;
 	grid-area				: menu;
 }
 
@@ -53,6 +53,8 @@ div.sheet-content {
 div.sheet-footer {
 	display					: grid;
 	grid-area				: footer;
+
+	background-color		: lightgrey;
 }
 
 /***************************************************/
@@ -75,4 +77,8 @@ div.sheet-wrapper {
 
 div.sheet-actor{display:var(--display-actor)}
 div.sheet-role{display:var(--display-role)}
+
+div.sheet-menu button {
+	width		: 30% ;
+}
 /*********************************/
