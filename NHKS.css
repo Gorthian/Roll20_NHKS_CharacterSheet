@@ -59,6 +59,7 @@ div.sheet-footer {
 
 div.sheet-actor-sheet {
 	display					: grid;
+	grid-template-columns	: 35% 35% 30%;
 	grid-template-areas		: 	"attributes		attributes	skills"
 								"advantages		movies		skills"
 								"martialarts	awards		misc"
@@ -250,6 +251,7 @@ div.sheet-actor-sheet input {
 
 div.sheet-actor-sheet textarea {
 	height				: 30px;
+	width				: 90%;
 }
 
 .sheet-label {
