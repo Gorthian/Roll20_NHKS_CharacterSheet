@@ -247,6 +247,7 @@ div.sheet-actor-sheet h1 {
 div.sheet-actor-sheet input {
 	background			: transparent;
 	border-style		: none none solid none;
+	color				: #000000;
 }
 
 div.sheet-actor-sheet textarea {
