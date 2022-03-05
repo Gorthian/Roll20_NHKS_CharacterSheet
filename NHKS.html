@@ -79,12 +79,12 @@
 							<div class="sheet-actor-attr-hitpoints sheet-input-line">
 								<span class="sheet-attr-name" data-i18n="hitpoints"></span><br/>
 								<span class="sheet-attr-desc" data-i18n="hitpoints-desc"></span><br/>								
-								<input type="number" name="attr_hitpoints" />
+								<input type="number" name="attr_hitpoints_current" /> / <input type="number" name="attr_hitpoints_max" class="sheet-no-arrows" READONLY />
 							</div>
 							<div class="sheet-actor-attr-chipoints sheet-input-line">
 								<span class="sheet-attr-name" data-i18n="chipoints"></span><br/>
 								<span class="sheet-attr-desc" data-i18n="chipoints-desc"></span><br/>							
-								<input type="number" name="attr_chipoints" />
+								<input type="number" name="attr_chipoints_current" /> / <input type="number" name="attr_chipoints_max" class="sheet-no-arrows" READONLY />
 							</div>
 							<div class="sheet-actor-attr-famepoints sheet-input-line">
 								<span class="sheet-attr-name" data-i18n="famepoints"></span><br/>
@@ -99,32 +99,32 @@
 							<div class="sheet-actor-attr-initiative sheet-input-line">
 								<span class="sheet-attr-name" data-i18n="initiative"></span><br/>
 								<span class="sheet-attr-desc" data-i18n="initiative-desc"></span><br/>						
-								<input type="number" name="attr_initiative" />
+								<input type="number" name="attr_initiative" class="sheet-no-arrows" READONLY />
 							</div>
 							<div class="sheet-actor-attr-melee-attack sheet-input-line">
 								<span class="sheet-attr-name" data-i18n="melee-attack"></span><br/>
 								<span class="sheet-attr-desc" data-i18n="melee-attack-desc"></span><br/>						
-								<input type="number" name="attr_melee_attack" />
+								<input type="number" name="attr_melee_attack" class="sheet-no-arrows" READONLY />
 							</div>
 							<div class="sheet-actor-attr-melee-defense sheet-input-line">
 								<span class="sheet-attr-name" data-i18n="melee-defense"></span><br/>
 								<span class="sheet-attr-desc" data-i18n="melee-defense-desc"></span><br/>							
-								<input type="number" name="attr_melee_defense" />
+								<input type="number" name="attr_melee_defense" class="sheet-no-arrows" READONLY />
 							</div>							
 							<div class="sheet-actor-attr-melee-damage sheet-input-line">
 								<span class="sheet-attr-name" data-i18n="melee-damage"></span><br/>
 								<span class="sheet-attr-desc" data-i18n="melee-damage-desc"></span><br/>						
-								<input type="number" name="attr_melee_damage" />
+								<input type="number" name="attr_melee_damage" class="sheet-no-arrows" READONLY />
 							</div>
 							<div class="sheet-actor-attr-ranged-attack sheet-input-line">
 								<span class="sheet-attr-name" data-i18n="ranged-attack"></span><br/>
 								<span class="sheet-attr-desc" data-i18n="ranged-attack-desc"></span><br/>							
-								<input type="number" name="attr_ranged_attack" />
+								<input type="number" name="attr_ranged_attack" class="sheet-no-arrows" READONLY />
 							</div>							
 							<div class="sheet-actor-attr-ranged-damage sheet-input-line">
 								<span class="sheet-attr-name" data-i18n="ranged-damage"></span><br/>
 								<span class="sheet-attr-desc" data-i18n="ranged-damage-desc"></span><br/>							
-								<input type="number" name="attr_ranged_damage" />
+								<input type="number" name="attr_ranged_damage" class="sheet-no-arrows" READONLY />
 							</div>
 						</div>						
 					</div>
@@ -240,7 +240,7 @@
 			let iHitpoints = (iStamina + 4) * 10;
 			let aAttributes = {};
 			
-			aAttributes["hitpoints"] = iHitpoints;
+			aAttributes["hitpoints_max"] = iHitpoints;
 			
 			setAttrs(aAttributes);		
 		});
@@ -253,7 +253,7 @@
 			let iChipoints = iChi * 10;
 			let aAttributes = {};
 			
-			aAttributes["chipoints"] = iChipoints;
+			aAttributes["chipoints_max"] = iChipoints;
 			
 			setAttrs(aAttributes);		
 		});
