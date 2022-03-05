@@ -300,6 +300,10 @@ div.sheet-actor-sheet textarea {
 	font-size	: 1.5em;
 }
 
+.sheet-actor-skills select {
+	width		: 80px;
+}
+
 /* Chrome, Safari, Edge, Opera */
 input.sheet-no-arrows::-webkit-outer-spin-button,
 input.sheet-no-arrows::-webkit-inner-spin-button {

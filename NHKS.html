@@ -131,24 +131,39 @@
 				</div>
 				<div class="sheet-actor-skills">
 					<h1><span data-i18n="skills"></span></h1>
-					<table>
-						<tr>
-							<td>
-								<span data-i18n="acrobatic"></span>
-							</td>
-							<td>
-								<span>+4</span>
-							</td>
-							<td>
-								<select name="attr_skill_attribute_acrobatic">
-									<option value="strength" selected="selected" data-i18n="strength-short"></option>
-								</select>
-							</td>
-							<td>
-								<span class="sheet-skill-sum" name="attr_skill_sum_acrobatic"></span>
-							</td>
-						</tr>
-					</table>
+					<div class="row">	
+						<div class="col">
+							<span data-i18n="acrobatic"></span>
+						</div>
+						<div class="col">
+							<span>+4</span>
+						</div>
+						<div class="col">
+							<select name="attr_skill_attribute_acrobatic">
+								<option value="dexterity" data-i18n="dexterity-short"></option>
+							</select>
+						</div>
+						<div class="col">
+							<span class="sheet-skill-sum" name="attr_skill_sum_acrobatic"></span>
+						</div>
+					</div>
+					<div class="row">	
+						<div class="col">
+							<span data-i18n="athletic"></span>
+						</div>
+						<div class="col">
+							<span>+3</span>
+						</div>
+						<div class="col">
+							<select name="attr_skill_attribute_athletic">
+								<option value="strength" data-i18n="strength-short"></option>
+								<option value="stamina" data-i18n="stamina-short"></option>
+							</select>
+						</div>
+						<div class="col">
+							<span class="sheet-skill-sum" name="attr_skill_sum_athletic"></span>
+						</div>
+					</div>
 				</div>
 				<div class="sheet-actor-advantages">
 					<h1><span data-i18n="advantages-and-disadvantages"></span></h1>
@@ -201,17 +216,19 @@
 	
 	on("change:stamina", function () {
 		recalcHitpoints();
+		recalcSkill("athletic");
 	});
 	
 	on("change:strength", function () {
 		recalcMeleeAttack();
 		recalcMeleeDefense();
-		recalcSkillAcrobatic();
+		recalcSkill("athletic");		
 	});
 	
 	on("change:dexterity", function () {
 		recalcMeleeDefense();
 		recalcRangedAttack();
+		recalcSkill("acrobatic");
 	});
 	
 	on("change:chi", function () {
@@ -225,10 +242,12 @@
 		recalcInitiative();
 	});
 
-	on("change:skill_attribute_acrobatic", function () {
-		recalcSkillAcrobatic();
-	});
-	
+	const skilllist = ["acrobatic","athletic"];
+    skilllist.forEach(skill => {
+        on(`change:skill_attribute_${skill}`, function() {
+            recalcSkill(skill);
+        });
+    });	
 	/* Event-Listener -- Ende */
 	
 		
@@ -241,7 +260,8 @@
 		recalcMeleeDefense();
 		recalcRangedAttack();
 		recalcInitiative();
-		recalcSkillAcrobatic();
+		recalcSkill("acrobatic");
+		recalcSkill("athletic");
 	}
 	
 	function recalcInitiative() {
@@ -326,35 +346,34 @@
 		});
 	}
 
-	function recalcSkillAcrobatic() {
-		console.log("recalcSkillAcrobatic");
-		getAttrs(["skill_attribute_acrobatic"], function (values){
-			let sAttribute = values["skill_attribute_acrobatic"];
+	function recalcSkill(sSkill) {
+		console.log("recalcSkill " + sSkill );
+		getAttrs(["skill_attribute_" +sSkill], function (values){
+			let sAttribute = values["skill_attribute_" + sSkill];
+			console.log("-- useAttribute " + sAttribute );
 
-			recalcSkill("acrobatic",sAttribute);			
-		});
-	}
-
-	function recalcSkill(sSkill,sAttribute) {
-		console.log("recalcSkill " + sSkill + " " + sAttribute);
-		getAttrs([sAttribute], function (values){
-			let iAttribute = parseInt(values[sAttribute]);
-			let iSkillModifier = 0;
-			let aAttributes = {};
-
-			switch(sSkill) {
-				case "acrobatic":
-					iSkillModifier = 4;
-				  	break;
-				case "y":
-				  // code block
-				  break;
-				default:
-					iSkillModifier = 0;
-			}
-
-			aAttributes["skill_sum_" + sSkill] = iAttribute + iSkillModifier;
-			setAttrs(aAttributes);				
+			getAttrs([sAttribute], function (values){
+				let iAttribute = parseInt(values[sAttribute]);
+				let iSkillModifier = 0;
+				let aAttributes = {};
+	
+				switch(sSkill) {
+					case "acrobatic":
+						iSkillModifier = 4;
+						  break;
+					case "athletic":
+						 iSkillModifier = 3;
+						break;
+					case "y":
+					  // code block
+					  break;
+					default:
+						iSkillModifier = 0;
+				}
+	
+				aAttributes["skill_sum_" + sSkill] = iAttribute + iSkillModifier;
+				setAttrs(aAttributes);				
+			});
 		});
 	}
 	
