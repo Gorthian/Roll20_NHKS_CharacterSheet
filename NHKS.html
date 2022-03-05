@@ -131,6 +131,24 @@
 				</div>
 				<div class="sheet-actor-skills">
 					<h1><span data-i18n="skills"></span></h1>
+					<table>
+						<tr>
+							<td>
+								<span data-i18n="acrobatic"></span>
+							</td>
+							<td>
+								<span>+4</span>
+							</td>
+							<td>
+								<select name="attr_skill_attribute_acrobatic">
+									<option value="strength" selected="selected" data-i18n="strength-short"></option>
+								</select>
+							</td>
+							<td>
+								<span class="sheet-skill-sum" name="attr_skill_sum_acrobatic"></span>
+							</td>
+						</tr>
+					</table>
 				</div>
 				<div class="sheet-actor-advantages">
 					<h1><span data-i18n="advantages-and-disadvantages"></span></h1>
@@ -188,6 +206,7 @@
 	on("change:strength", function () {
 		recalcMeleeAttack();
 		recalcMeleeDefense();
+		recalcSkillAcrobatic();
 	});
 	
 	on("change:dexterity", function () {
@@ -205,6 +224,10 @@
 	on("change:coolness", function () {
 		recalcInitiative();
 	});
+
+	on("change:skill_attribute_acrobatic", function () {
+		recalcSkillAcrobatic();
+	});
 	
 	/* Event-Listener -- Ende */
 	
@@ -218,6 +241,7 @@
 		recalcMeleeDefense();
 		recalcRangedAttack();
 		recalcInitiative();
+		recalcSkillAcrobatic();
 	}
 	
 	function recalcInitiative() {
@@ -299,6 +323,38 @@
 			aAttributes["ranged_attack"] = iRangedAttack;
 			
 			setAttrs(aAttributes);		
+		});
+	}
+
+	function recalcSkillAcrobatic() {
+		console.log("recalcSkillAcrobatic");
+		getAttrs(["skill_attribute_acrobatic"], function (values){
+			let sAttribute = values["skill_attribute_acrobatic"];
+
+			recalcSkill("acrobatic",sAttribute);			
+		});
+	}
+
+	function recalcSkill(sSkill,sAttribute) {
+		console.log("recalcSkill " + sSkill + " " + sAttribute);
+		getAttrs([sAttribute], function (values){
+			let iAttribute = parseInt(values[sAttribute]);
+			let iSkillModifier = 0;
+			let aAttributes = {};
+
+			switch(sSkill) {
+				case "acrobatic":
+					iSkillModifier = 4;
+				  	break;
+				case "y":
+				  // code block
+				  break;
+				default:
+					iSkillModifier = 0;
+			}
+
+			aAttributes["skill_sum_" + sSkill] = iAttribute + iSkillModifier;
+			setAttrs(aAttributes);				
 		});
 	}
 	

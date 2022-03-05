@@ -47,5 +47,6 @@
   "ranged-attack" : "FERN. ANGRIFF",
   "ranged-attack-desc" : "(Geschick x 2 + Chi) / 3",  
   "ranged-damage" : "FERN. SCHADEN",
-  "ranged-damage-desc" : "Fernkampf-Schadensbonus"
+  "ranged-damage-desc" : "Fernkampf-Schadensbonus",
+  "acrobatic" : "AKROBATIK"
 }
