@@ -431,10 +431,13 @@
 					case "steer":
 						iSkillModifier = 2;
 						break;
+					case "persuade":
+						iSkillModifier = 2;
+						break;
 					default:
 						iSkillModifier = 0;
 				}
-	
+				console.log("-- " + sSkill + " Modifier for " + sAttribute + " : " + iSkillModifier );
 				aAttributes["skill_sum_" + sSkill] = iAttribute + iSkillModifier;
 				setAttrs(aAttributes);				
 			});
