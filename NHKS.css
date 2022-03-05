@@ -53,8 +53,6 @@ div.sheet-content {
 div.sheet-footer {
 	display					: grid;
 	grid-area				: footer;
-
-	background-color		: lightgrey;
 }
 
 div.sheet-actor-sheet {
@@ -247,6 +245,7 @@ div.sheet-actor-sheet h1 {
 }	
 
 div.sheet-actor-sheet input {
+	background			: transparent;
 	border-style		: none none solid none;
 }
 
@@ -302,6 +301,31 @@ div.sheet-actor-sheet textarea {
 	text-align	: center;
 	font-weight	: bold;
 	font-size	: 1.5em;
+}
+
+/***************************************************/
+/*             Hintergrundbilder                   */
+/***************************************************/
+
+div.sheet-actor-attributes-left {
+	background-image	: url("https://github.com/Gorthian/Roll20_NHKS_CharacterSheet/blob/main/images/standard/Schauspielerbogen_1_25_freigestellt.png?raw=true");
+	background-position	: top left;
+	background-size		: contain;
+	background-repeat	: no-repeat;
+}
+
+div.sheet-actor {
+	background-image	: url("https://github.com/Gorthian/Roll20_NHKS_CharacterSheet/blob/main/images/standard/Schauspielerbogen_2_75_freigestellt.png?raw=true");
+	background-position	: top right;
+	background-size		: 70%;
+	background-repeat	: no-repeat;
+}
+
+div.sheet-content {
+	background-image	: url("https://github.com/Gorthian/Roll20_NHKS_CharacterSheet/blob/main/images/standard/Schauspielerbogen_3_50_freigestellt.png?raw=true");
+	background-position	: bottom;
+	background-size		: contain;
+	background-repeat	: no-repeat;
 }
 
 /*********************************/
