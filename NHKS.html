@@ -147,7 +147,7 @@
 							<span class="sheet-skill-sum" name="attr_skill_sum_acrobatic"></span>
 						</div>
 					</div>
-					<div class="row">	
+					<div class="row">
 						<div class="col">
 							<span data-i18n="athletic"></span>
 						</div>
@@ -162,6 +162,56 @@
 						</div>
 						<div class="col">
 							<span class="sheet-skill-sum" name="attr_skill_sum_athletic"></span>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col">
+							<span data-i18n="dodge"></span>
+						</div>
+						<div class="col">
+							<span>+5</span>
+						</div>
+						<div class="col">
+							<select name="attr_skill_attribute_dodge">
+								<option value="dexterity" data-i18n="dexterity-short"></option>
+							</select>
+						</div>
+						<div class="col">
+							<span class="sheet-skill-sum" name="attr_skill_sum_dodge"></span>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col">
+							<span data-i18n="steer"></span>
+						</div>
+						<div class="col">
+							<span>+2</span>
+						</div>
+						<div class="col">
+							<select name="attr_skill_attribute_steer">
+								<option value="knowledge" data-i18n="knowledge-short"></option>
+								<option value="dexterity" data-i18n="dexterity-short"></option>
+							</select>
+						</div>
+						<div class="col">
+							<span class="sheet-skill-sum" name="attr_skill_sum_steer"></span>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col">
+							<span data-i18n="intimidate-persuade"></span>
+						</div>
+						<div class="col">
+							<span>+2</span>
+						</div>
+						<div class="col">
+							<select name="attr_skill_attribute_persuade">
+								<option value="coolness" data-i18n="coolness-short"></option>
+								<option value="strength" data-i18n="strength-short"></option>
+							</select>
+						</div>
+						<div class="col">
+							<span class="sheet-skill-sum" name="attr_skill_sum_persuade"></span>
 						</div>
 					</div>
 				</div>
@@ -222,13 +272,20 @@
 	on("change:strength", function () {
 		recalcMeleeAttack();
 		recalcMeleeDefense();
-		recalcSkill("athletic");		
+		recalcSkill("athletic");
+		recalcSkill("persuade");	
 	});
 	
 	on("change:dexterity", function () {
 		recalcMeleeDefense();
 		recalcRangedAttack();
 		recalcSkill("acrobatic");
+		recalcSkill("dodge");
+		recalcSkill("steer");
+	});
+
+	on("change:knowledge", function () {
+		recalcSkill("steer");
 	});
 	
 	on("change:chi", function () {
@@ -240,9 +297,10 @@
 	
 	on("change:coolness", function () {
 		recalcInitiative();
+		recalcSkill("persuade");
 	});
 
-	const skilllist = ["acrobatic","athletic"];
+	const skilllist = ["acrobatic","athletic","dodge","steer","persuade"];
     skilllist.forEach(skill => {
         on(`change:skill_attribute_${skill}`, function() {
             recalcSkill(skill);
@@ -262,6 +320,9 @@
 		recalcInitiative();
 		recalcSkill("acrobatic");
 		recalcSkill("athletic");
+		recalcSkill("dodge");
+		recalcSkill("steer");
+		recalcSkill("persuade");
 	}
 	
 	function recalcInitiative() {
@@ -364,9 +425,12 @@
 					case "athletic":
 						 iSkillModifier = 3;
 						break;
-					case "y":
-					  // code block
-					  break;
+					case "dodge":
+						iSkillModifier = 5;
+					  	break;
+					case "steer":
+						iSkillModifier = 2;
+						break;
 					default:
 						iSkillModifier = 0;
 				}

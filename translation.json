@@ -49,5 +49,8 @@
   "ranged-damage" : "FERN. SCHADEN",
   "ranged-damage-desc" : "Fernkampf-Schadensbonus",
   "acrobatic" : "AKROBATIK",
-  "athletic" : "ATHLETIK"
+  "athletic" : "ATHLETIK",
+  "dodge" : "AUSWEICHEN",
+  "steer" : "BOOTE LENKEN",
+  "intimidate-persuade" : "EINSCHÜCHTERN <br/>& ÜBERREDEN"
 }
