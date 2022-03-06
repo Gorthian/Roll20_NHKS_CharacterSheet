@@ -134,17 +134,14 @@
 					<div class="row">	
 						<div class="col">
 							<span data-i18n="acrobatic"></span>
-						</div>
+						</div>						
 						<div class="col">
-							<span>+4</span>
-						</div>
-						<div class="col">
-							<select name="attr_skill_attribute_acrobatic">
+							<select name="attr_skill_acrobatic_attribute">
 								<option value="dexterity" data-i18n="dexterity-short"></option>
 							</select>
 						</div>
 						<div class="col">
-							<span class="sheet-skill-sum" name="attr_skill_sum_acrobatic"></span>
+							<input type="number" name="attr_skill_acrobatic" />
 						</div>
 					</div>
 					<div class="row">
@@ -152,66 +149,264 @@
 							<span data-i18n="athletic"></span>
 						</div>
 						<div class="col">
-							<span>+3</span>
-						</div>
-						<div class="col">
-							<select name="attr_skill_attribute_athletic">
+							<select name="attr_skill_athletic_attribute">
 								<option value="strength" data-i18n="strength-short"></option>
 								<option value="stamina" data-i18n="stamina-short"></option>
 							</select>
 						</div>
 						<div class="col">
-							<span class="sheet-skill-sum" name="attr_skill_sum_athletic"></span>
+							<input type="number" name="attr_skill_athletic" />
 						</div>
 					</div>
 					<div class="row">
 						<div class="col">
 							<span data-i18n="dodge"></span>
-						</div>
+						</div>						
 						<div class="col">
-							<span>+5</span>
-						</div>
-						<div class="col">
-							<select name="attr_skill_attribute_dodge">
+							<select name="attr_skill_dodge_attribute">
 								<option value="dexterity" data-i18n="dexterity-short"></option>
 							</select>
 						</div>
 						<div class="col">
-							<span class="sheet-skill-sum" name="attr_skill_sum_dodge"></span>
+							<input type="number" name="attr_skill_dodge" />
 						</div>
 					</div>
 					<div class="row">
 						<div class="col">
-							<span data-i18n="steer"></span>
-						</div>
+							<span data-i18n="boats"></span>
+						</div>						
 						<div class="col">
-							<span>+2</span>
-						</div>
-						<div class="col">
-							<select name="attr_skill_attribute_steer">
+							<select name="attr_skill_boats_attribute">
 								<option value="knowledge" data-i18n="knowledge-short"></option>
 								<option value="dexterity" data-i18n="dexterity-short"></option>
 							</select>
 						</div>
 						<div class="col">
-							<span class="sheet-skill-sum" name="attr_skill_sum_steer"></span>
+							<input type="number" name="attr_skill_boats"></span>
 						</div>
 					</div>
 					<div class="row">
 						<div class="col">
-							<span data-i18n="intimidate-persuade"></span>
+							<span data-i18n="persuade"></span>
 						</div>
 						<div class="col">
-							<span>+2</span>
-						</div>
-						<div class="col">
-							<select name="attr_skill_attribute_persuade">
+							<select name="attr_skill_persuade_attribute">
 								<option value="coolness" data-i18n="coolness-short"></option>
 								<option value="strength" data-i18n="strength-short"></option>
 							</select>
 						</div>
 						<div class="col">
-							<span class="sheet-skill-sum" name="attr_skill_sum_persuade"></span>
+							<input type="number" name="attr_skill_persuade"></span>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col">
+							<span data-i18n="computers"></span>
+						</div>
+						<div class="col">
+							<select name="attr_skill_computers_attribute">
+								<option value="knowledge" data-i18n="knowledge-short"></option>
+							</select>
+						</div>
+						<div class="col">
+							<input type="number" name="attr_skill_computers"></span>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col">
+							<span data-i18n="firstaid"></span>
+						</div>
+						<div class="col">
+							<select name="attr_skill_firstaid_attribute">
+								<option value="knowledge" data-i18n="knowledge-short"></option>
+							</select>
+						</div>
+						<div class="col">
+							<input type="number" name="attr_skill_firstaid"></span>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col">
+							<span data-i18n="extremesport"></span>
+						</div>
+						<div class="col">
+							<select name="attr_skill_extremesport_attribute">
+								<option value="strength" data-i18n="strength-short"></option>
+								<option value="stamina" data-i18n="stamina-short"></option>
+								<option value="dexterity" data-i18n="dexterity-short"></option>
+							</select>
+						</div>
+						<div class="col">
+							<input type="number" name="attr_skill_extremesport"></span>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col">
+							<span data-i18n="slideofhand"></span>
+						</div>
+						<div class="col">
+							<select name="attr_skill_slideofhand_attribute">
+								<option value="dexterity" data-i18n="dexterity-short"></option>
+							</select>
+						</div>
+						<div class="col">
+							<input type="number" name="attr_skill_slideofhand"></span>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col">
+							<span data-i18n="aircrafts"></span>
+						</div>
+						<div class="col">
+							<select name="attr_skill_aircrafts_attribute">
+								<option value="knowledge" data-i18n="knowledge-short"></option>
+								<option value="dexterity" data-i18n="dexterity-short"></option>
+							</select>
+						</div>
+						<div class="col">
+							<input type="number" name="attr_skill_aircrafts"></span>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col">
+							<span data-i18n="vehicles"></span>
+						</div>
+						<div class="col">
+							<select name="attr_skill_vehicles_attribute">
+								<option value="knowledge" data-i18n="knowledge-short"></option>
+								<option value="dexterity" data-i18n="dexterity-short"></option>
+							</select>
+						</div>
+						<div class="col">
+							<input type="number" name="attr_skill_vehicles"></span>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col">
+							<span data-i18n="improvisation"></span>
+						</div>
+						<div class="col">
+							<select name="attr_skill_improvisation_attribute">
+								<option value="knowledge" data-i18n="knowledge-short"></option>
+								<option value="strength" data-i18n="strength-short"></option>
+								<option value="coolness" data-i18n="coolness-short"></option>
+								<option value="stamina" data-i18n="stamina-short"></option>
+								<option value="chi" data-i18n="chi-short"></option>
+								<option value="dexterity" data-i18n="dexterity-short"></option>
+							</select>
+						</div>
+						<div class="col">
+							<input type="number" name="attr_skill_improvisation"></span>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col">
+							<span data-i18n="climbing"></span>
+						</div>
+						<div class="col">
+							<select name="attr_skill_climbing_attribute">								
+								<option value="strength" data-i18n="strength-short"></option>								
+								<option value="stamina" data-i18n="stamina-short"></option>								
+								<option value="dexterity" data-i18n="dexterity-short"></option>
+							</select>
+						</div>
+						<div class="col">
+							<input type="number" name="attr_skill_climbing"></span>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col">
+							<span data-i18n="contacts"></span>
+						</div>
+						<div class="col">
+							<select name="attr_skill_contacts_attribute">
+								<option value="knowledge" data-i18n="knowledge-short"></option>
+								<option value="coolness" data-i18n="coolness-short"></option>
+							</select>
+						</div>
+						<div class="col">
+							<input type="number" name="attr_skill_contacts"></span>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col">
+							<span data-i18n="mechanic"></span>
+						</div>
+						<div class="col">
+							<select name="attr_skill_mechanic_attribute">
+								<option value="knowledge" data-i18n="knowledge-short"></option>
+							</select>
+						</div>
+						<div class="col">
+							<input type="number" name="attr_skill_mechanic"></span>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col">
+							<span data-i18n="stealth"></span>
+						</div>
+						<div class="col">
+							<select name="attr_skill_stealth_attribute">								
+								<option value="dexterity" data-i18n="dexterity-short"></option>
+							</select>
+						</div>
+						<div class="col">
+							<input type="number" name="attr_skill_stealth"></span>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col">
+							<span data-i18n="perception"></span>
+						</div>
+						<div class="col">
+							<select name="attr_skill_perception_attribute">
+								<option value="chi" data-i18n="chi-short"></option>
+							</select>
+						</div>
+						<div class="col">
+							<input type="number" name="attr_skill_perception"></span>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col">
+							<span data-i18n="languages"></span>
+						</div>
+						<div class="col">
+							<select name="attr_skill_languages_attribute">
+								<option value="knowledge" data-i18n="knowledge-short"></option>
+								<option value="coolness" data-i18n="coolness-short"></option>
+							</select>
+						</div>
+						<div class="col">
+							<input type="number" name="attr_skill_languages"></span>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col">
+							<span data-i18n="searching"></span>
+						</div>
+						<div class="col">
+							<select name="attr_skill_searching_attribute">
+								<option value="knowledge" data-i18n="knowledge-short"></option>
+								<option value="chi" data-i18n="chi-short"></option>
+							</select>
+						</div>
+						<div class="col">
+							<input type="number" name="attr_skill_searching"></span>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col">
+							<span data-i18n="hiding"></span>
+						</div>
+						<div class="col">
+							<select name="attr_skill_hiding_attribute">
+								<option value="knowledge" data-i18n="knowledge-short"></option>								
+								<option value="dexterity" data-i18n="dexterity-short"></option>
+							</select>
+						</div>
+						<div class="col">
+							<input type="number" name="attr_skill_hiding"></span>
 						</div>
 					</div>
 				</div>
@@ -249,16 +444,18 @@
 	/* Globale Variablen -- Start */
 	const iMinAttributeValue = 5;
 	const iMaxAttributeValue = 10;
+	const iMinSkillValue = 0;
+	const iMaxSkillValue = 0;
 	const aActorAttributes = ["strength","stamina","dexterity","knowledge","coolness","chi"];
-	const aActorSkills = ["acrobatic","athletic","dodge","steer","persuade"];
+	const aActorSkills = ["acrobatic","athletic","dodge","boats","persuade","computers","firstaid","extremesport","slideofhand","aircrafts","vehicles","improvisation","climbing","contacts","mechanic","stealth","perception","languages","searching","hiding"];
 	/* Globale Variablen -- Ende */
 	
 	/* Tab-Wechsel */
-	const buttonlist = ["actor","role"];
-    buttonlist.forEach(button => {
-        on(`clicked:${button}`, function() {
+	const aButtonlist = ["actor","role"];
+    aButtonlist.forEach(sButton => {
+        on(`clicked:${sButton}`, function() {
             setAttrs({
-                sheetTab: button
+                sheetTab: sButton
             });
         });
     });
@@ -274,24 +471,18 @@
 			console.log("[CHANGE] " + sAttribute);
             changedAttribute(sAttribute);
         });
-    });
-	
-	/* Änderungen an Fertigkeiten */
-	aActorSkills.forEach(sSkill => {
-        on(`change:skill_attribute_${sSkill}`, function() {
-			console.log("[CHANGE] " + sSkill);
-            recalcSkill(sSkill);
-        });
     });	
-	/* Event-Listener -- Ende */
-	
+	/* Event-Listener -- Ende */	
 		
 	/* Funktionen -- Start */
 	function recalcValues() {
-		console.log("recalcValues");
+		console.log("[recalcValues]");
 		aActorAttributes.forEach(sAttribute => {
 			changedAttribute(sAttribute);
-		});		
+		});
+		aActorSkills.forEach(sSkill => {
+			changedSkill(sSkill);
+		});
 	}
 	
 	function changedAttribute(sAttribute) {
@@ -314,26 +505,19 @@
 				case "strength":
 					recalcMeleeAttack();
 					recalcMeleeDefense();
-					recalcSkill("athletic");
-					recalcSkill("persuade");	
 					break;
 				case "stamina":
 					recalcHitpoints();
-					recalcSkill("athletic");
 					break;
 				case "dexterity":
 					recalcMeleeDefense();
 					recalcRangedAttack();
-					recalcSkill("acrobatic");
-					recalcSkill("dodge");
-					recalcSkill("steer");
 					break;
 				case "knowledge":
-					recalcSkill("steer");
+					//nothing
 					break;
 				case "coolness":
 					recalcInitiative();
-					recalcSkill("persuade");
 					break;
 				case "chi":
 					recalcMeleeAttack();
@@ -346,8 +530,26 @@
 		});
 	}
 	
+	function changedSkill(sSkill) {
+		console.log("[changedSkill] " + sSkill);
+		
+		getAttrs(["skill_" + sSkill], function (values){
+			let iSkill = parseInt(values["skill_" + sSkill]||iMinSkillValue);
+			let aAttributes = {};
+			
+			// Auf Min/Max prüfen
+			if (iSkill < iMinSkillValue ) {
+				iSkill = iMinSkillValue;
+			} else if (iSkill > iMaxSkillValue ) {
+				iSkill = iMaxSkillValue;
+			}
+			aAttributes["skill_" + sSkill] = iSkill;
+			setAttrs(aAttributes);			
+		});
+	}
+	
 	function recalcInitiative() {
-		console.log("recalcInitiative");
+		console.log("[recalcInitiative]");
 		getAttrs(["coolness"], function (values){
 			let iCoolness = parseInt(values["coolness"]||0);
 			let iInitiative = iCoolness;
@@ -360,7 +562,7 @@
 	}
 	
 	function recalcHitpoints() {
-		console.log("recalcHitpoints");
+		console.log("[recalcHitpoints]");
 		getAttrs(["stamina"], function (values){
 			let iStamina = parseInt(values["stamina"]||0);
 			let iHitpoints = (iStamina + 4) * 10;
@@ -373,7 +575,7 @@
 	}
 	
 	function recalcChipoints() {
-		console.log("recalcChipoints");
+		console.log("[recalcChipoints]");
 		getAttrs(["chi"], function (values){
 			let iChi = parseInt(values["chi"]||0);
 			let iChipoints = iChi * 10;
@@ -386,7 +588,7 @@
 	}
 	
 	function recalcMeleeAttack() {
-		console.log("recalcMeleeAttack");
+		console.log("[recalcMeleeAttack]");
 		getAttrs(["chi","strength"], function (values){
 			let iChi = parseInt(values["chi"]||0);
 			let iStrength = parseInt(values["strength"]||0);
@@ -400,7 +602,7 @@
 	}
 	
 	function recalcMeleeDefense() {
-		console.log("recalcMeleeDefense");
+		console.log("[recalcMeleeDefense]");
 		getAttrs(["chi","strength","dexterity"], function (values){
 			let iChi = parseInt(values["chi"]||0);
 			let iStrength = parseInt(values["strength"]||0);
@@ -415,7 +617,7 @@
 	}
 	
 	function recalcRangedAttack() {
-		console.log("recalcRangedAttack");
+		console.log("[recalcRangedAttack]");
 		getAttrs(["chi","dexterity"], function (values){
 			let iChi = parseInt(values["chi"]||0);
 			let iDexterity = parseInt(values["dexterity"]||0);
@@ -426,44 +628,6 @@
 			
 			setAttrs(aAttributes);		
 		});
-	}
-
-	function recalcSkill(sSkill) {
-		console.log("recalcSkill " + sSkill );
-		getAttrs(["skill_attribute_" +sSkill], function (values){
-			let sAttribute = values["skill_attribute_" + sSkill];
-			console.log("-- useAttribute " + sAttribute );
-
-			getAttrs([sAttribute], function (values){
-				let iAttribute = parseInt(values[sAttribute]);
-				let iSkillModifier = 0;
-				let aAttributes = {};
-	
-				switch(sSkill) {
-					case "acrobatic":
-						iSkillModifier = 4;
-						  break;
-					case "athletic":
-						 iSkillModifier = 3;
-						break;
-					case "dodge":
-						iSkillModifier = 5;
-					  	break;
-					case "steer":
-						iSkillModifier = 2;
-						break;
-					case "persuade":
-						iSkillModifier = 2;
-						break;
-					default:
-						iSkillModifier = 0;
-				}
-				console.log("-- " + sSkill + " Modifier for " + sAttribute + " : " + iSkillModifier );
-				aAttributes["skill_sum_" + sSkill] = iAttribute + iSkillModifier;
-				setAttrs(aAttributes);				
-			});
-		});
-	}
-	
+	}	
 	/* Funktionen -- Ende */
 </script>
