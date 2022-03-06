@@ -1,7 +1,7 @@
 <!--
 	EDITED by 			Gorthian
 	Version				0.1
-	Letzte Änderung		2022-03-05
+	Letzte Änderung		2022-03-06
 	
 	GitHub				https://github.com/Gorthian/Roll20_NHKS_CharacterSheet
 	Wiki				https://github.com/Gorthian/Roll20_NHKS_CharacterSheet/wiki
@@ -247,6 +247,10 @@
 <script type="text/worker">
 	
 	/* Globale Variablen -- Start */
+	const iMinAttributeValue = 5;
+	const iMaxAttributeValue = 10;
+	const aActorAttributes = ["strength","stamina","dexterity","knowledge","coolness","chi"];
+	const aActorSkills = ["acrobatic","athletic","dodge","steer","persuade"];
 	/* Globale Variablen -- Ende */
 	
 	/* Tab-Wechsel */
@@ -264,46 +268,19 @@
 		recalcValues();
 	});
 	
-	on("change:stamina", function () {
-		recalcHitpoints();
-		recalcSkill("athletic");
-	});
+	/* Änderungen an Attributen */
+	aActorAttributes.forEach(sAttribute => {
+        on(`change:${sAttribute}`, function() {
+			console.log("[CHANGE] " + sAttribute);
+            changedAttribute(sAttribute);
+        });
+    });
 	
-	on("change:strength", function () {
-		recalcMeleeAttack();
-		recalcMeleeDefense();
-		recalcSkill("athletic");
-		recalcSkill("persuade");	
-	});
-	
-	on("change:dexterity", function () {
-		recalcMeleeDefense();
-		recalcRangedAttack();
-		recalcSkill("acrobatic");
-		recalcSkill("dodge");
-		recalcSkill("steer");
-	});
-
-	on("change:knowledge", function () {
-		recalcSkill("steer");
-	});
-	
-	on("change:chi", function () {
-		recalcMeleeAttack();
-		recalcChipoints();
-		recalcMeleeDefense();
-		recalcRangedAttack();
-	});
-	
-	on("change:coolness", function () {
-		recalcInitiative();
-		recalcSkill("persuade");
-	});
-
-	const skilllist = ["acrobatic","athletic","dodge","steer","persuade"];
-    skilllist.forEach(skill => {
-        on(`change:skill_attribute_${skill}`, function() {
-            recalcSkill(skill);
+	/* Änderungen an Fertigkeiten */
+	aActorSkills.forEach(sSkill => {
+        on(`change:skill_attribute_${sSkill}`, function() {
+			console.log("[CHANGE] " + sSkill);
+            recalcSkill(sSkill);
         });
     });	
 	/* Event-Listener -- Ende */
@@ -312,17 +289,61 @@
 	/* Funktionen -- Start */
 	function recalcValues() {
 		console.log("recalcValues");
-		recalcHitpoints();
-		recalcChipoints();
-		recalcMeleeAttack();
-		recalcMeleeDefense();
-		recalcRangedAttack();
-		recalcInitiative();
-		recalcSkill("acrobatic");
-		recalcSkill("athletic");
-		recalcSkill("dodge");
-		recalcSkill("steer");
-		recalcSkill("persuade");
+		aActorAttributes.forEach(sAttribute => {
+			changedAttribute(sAttribute);
+		});		
+	}
+	
+	function changedAttribute(sAttribute) {
+		console.log("[changedAttribute] " + sAttribute);
+		
+		getAttrs([sAttribute], function (values){
+			let iAttribute = parseInt(values[sAttribute]||iMinAttributeValue);
+			let aAttributes = {};
+			
+			// Auf Min/Max prüfen
+			if (iAttribute < iMinAttributeValue ) {
+				iAttribute = iMinAttributeValue;
+			} else if (iAttribute > iMaxAttributeValue ) {
+				iAttribute = iMaxAttributeValue;
+			}
+			aAttributes[sAttribute] = iAttribute;
+			setAttrs(aAttributes);
+			
+			switch (sAttribute) {
+				case "strength":
+					recalcMeleeAttack();
+					recalcMeleeDefense();
+					recalcSkill("athletic");
+					recalcSkill("persuade");	
+					break;
+				case "stamina":
+					recalcHitpoints();
+					recalcSkill("athletic");
+					break;
+				case "dexterity":
+					recalcMeleeDefense();
+					recalcRangedAttack();
+					recalcSkill("acrobatic");
+					recalcSkill("dodge");
+					recalcSkill("steer");
+					break;
+				case "knowledge":
+					recalcSkill("steer");
+					break;
+				case "coolness":
+					recalcInitiative();
+					recalcSkill("persuade");
+					break;
+				case "chi":
+					recalcMeleeAttack();
+					recalcChipoints();
+					recalcMeleeDefense();
+					recalcRangedAttack();
+					break;
+				default:
+			}			
+		});
 	}
 	
 	function recalcInitiative() {
