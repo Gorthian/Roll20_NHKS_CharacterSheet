@@ -310,18 +310,6 @@ div.sheet-actor-skills * {
 	font-size	: 0.95em;
 }
 
-div.sheet-actor-skills div.sheet-row div.sheet-col:nth-child(1) {
-	width		: 30%;
-}
-
-div.sheet-actor-skills div.sheet-row div.sheet-col:nth-child(2) {
-	width		: 25%;
-}
-
-div.sheet-actor-skills div.sheet-row div.sheet-col:nth-child(3) {
-	width		: 20%;
-}
-
 /* Chrome, Safari, Edge, Opera */
 input.sheet-no-arrows::-webkit-outer-spin-button,
 input.sheet-no-arrows::-webkit-inner-spin-button {
