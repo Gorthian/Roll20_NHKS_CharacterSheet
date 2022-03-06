@@ -67,5 +67,14 @@
   "perception" : "Sinnesschärfe",
   "languages" : "Sprachen",
   "searching" : "Suchen",
-  "hiding" : "Verbergen"
+  "hiding" : "Verbergen",
+  "melee-small" : "Kleine Nahkampfwaffen",
+  "melee-medium" : "Mittelgroße Nahkampfwaffen",
+  "melee-big" : "Große Nahkampfwaffen",
+  "pistols" : "Pistolen & Maschinenpistolen",
+  "rifles" : "Gewehre",
+  "heavy-weapons" : "Schwere Waffen",
+  "melee-misc" : "Diverse Nahkampfwaffen",
+  "ranged-misc" : "Diverse Fernkmapfwaffen",
+  "unarmed" : "Waffenloser Kampf"
 }
