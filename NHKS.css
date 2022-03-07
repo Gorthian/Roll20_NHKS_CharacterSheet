@@ -1,7 +1,7 @@
 /*
 	EDITED by 			Gorthian
 	Version				0.1
-	Letzte Änderung		2022-03-06
+	Letzte Änderung		2022-03-07
 	
 	GitHub				https://github.com/Gorthian/Roll20_NHKS_CharacterSheet
 	Wiki				https://github.com/Gorthian/Roll20_NHKS_CharacterSheet/wiki
@@ -233,7 +233,7 @@ div.sheet-radio-set {
 /*             Movie Awards                        */
 /***************************************************/
 
-div.sheet-radio-set input.sheet-radiobox {
+div.sheet-actor-movies div.sheet-radio-set input.sheet-radiobox {
 	order					: 1;
 	border					: 1px solid gold;
 	border-radius			: 50%;
@@ -245,20 +245,52 @@ div.sheet-radio-set input.sheet-radiobox {
 	z-index					: 1;
 }
 
-div.sheet-radio-set input.sheet-radiobox:checked {
+div.sheet-actor-movies div.sheet-radio-set input.sheet-radiobox:checked {
 	opacity					: 0;
 	z-index					: 0;
 	position				: absolute;
 }
 
-div.sheet-radio-set input.sheet-radiobox:checked ~ .sheet-radiobox {
+div.sheet-actor-movies div.sheet-radio-set input.sheet-radiobox:checked ~ .sheet-radiobox {
 	order					: 3;
 	background-color		: transparent;
 }
 
-div.sheet-radio-set input.sheet-radiobox.sheet-reset {
+div.sheet-actor-movies div.sheet-radio-set input.sheet-radiobox.sheet-reset {
 	order					: 2;
 	background-color		: gold;
+}
+
+/***************************************************/
+/*             Martial Arts                        */
+/***************************************************/
+
+div.sheet-actor-martialarts div.sheet-radio-set input.sheet-radiobox {
+	order					: 1;
+	border					: 1px solid black;
+	border-radius			: 50%;
+	background				: grey;
+	height					: 2rem;
+	width					: 2rem;
+	-webkit-appearance		: none;
+	cursor					: pointer;
+	z-index					: 1;
+}
+
+div.sheet-actor-martialarts div.sheet-radio-set input.sheet-radiobox:checked {
+	opacity					: 0;
+	z-index					: 0;
+	position				: absolute;
+}
+
+div.sheet-actor-martialarts div.sheet-radio-set input.sheet-radiobox:checked ~ .sheet-radiobox {
+	order					: 3;
+	background-color		: transparent;
+}
+
+div.sheet-actor-martialarts div.sheet-radio-set input.sheet-radiobox.sheet-reset {
+	order					: 2;
+	background-color		: grey;
 }
 
 /***************************************************/

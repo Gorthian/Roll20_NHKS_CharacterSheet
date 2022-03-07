@@ -1,7 +1,7 @@
 <!--
 	EDITED by 			Gorthian
 	Version				0.1
-	Letzte Änderung		2022-03-06
+	Letzte Änderung		2022-03-07
 	
 	GitHub				https://github.com/Gorthian/Roll20_NHKS_CharacterSheet
 	Wiki				https://github.com/Gorthian/Roll20_NHKS_CharacterSheet/wiki
@@ -22,7 +22,7 @@
 					<h1><span data-i18n="attributes-and-descriptions"></span></h1>
 					<div class="sheet-actor-attributes-content">
 						<div class="sheet-actor-attributes-left">
-							<span class="sheet-input-line"><span class="sheet-label" data-i18n="name"></span><input type="text" name="attr_character-name" /></span>
+							<span class="sheet-input-line"><span class="sheet-label" data-i18n="name"></span><input type="text" name="attr_character_name" /></span>
 							<span class="sheet-input-line"><span class="sheet-label" data-i18n="gender"></span><input type="text" name="attr_actor-gender" /></span>
 							<span class="sheet-input-line"><span class="sheet-label" data-i18n="age"></span><input type="text" name="attr_actor-age" /></span>
 							<span class="sheet-input-line"><span class="sheet-label" data-i18n="weight"></span><input type="text" name="attr_actor-weight" /></span>
@@ -514,6 +514,20 @@
 				</div>
 				<div class="sheet-actor-martialarts">
 					<h1><span data-i18n="martialarts"></span></h1>
+					<fieldset class="repeating_actor-martialarts">
+					<div class="sheet-actor-martialarts">
+						<input type="text" name="attr_actor-martialarts-name" value="">
+						<div class="sheet-radio-set">
+							<input checked="checked" class="sheet-radiobox sheet-reset" type="radio" name="attr_actor-martialarts-level" value="0">
+							<input class="sheet-radiobox" type="radio" name="attr_actor-martialarts-level" value="1">
+							<input class="sheet-radiobox" type="radio" name="attr_actor-martialarts-level" value="2">
+							<input class="sheet-radiobox" type="radio" name="attr_actor-martialarts-level" value="3">
+							<input class="sheet-radiobox" type="radio" name="attr_actor-martialarts-level" value="4">
+							<input class="sheet-radiobox" type="radio" name="attr_actor-martialarts-level" value="5">
+						</div>	
+						<textarea name="attr_actor-martialarts-description" value=""></textarea>						
+					</div>
+					</fieldset>
 				</div>
 				<div class="sheet-actor-awards">
 					<h1><span data-i18n="awards"></span></h1>
