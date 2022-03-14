@@ -76,5 +76,12 @@
   "heavy-weapons" : "Schwere Waffen",
   "melee-misc" : "Diverse Nahkampfwaffen",
   "ranged-misc" : "Diverse Fernkmapfwaffen",
-  "unarmed" : "Waffenloser Kampf"
+  "unarmed" : "Waffenloser Kampf",
+  "role-name" : "Filmrolle",
+  "movieplot" : "Filmplot",
+  "role-description" : "Aussehen",
+  "role-inventory" : "Ausrüstung",
+  "role-weapons" : "Waffen",
+  "role-skills" : "Rollenfertigkeiten",
+  "role-advantages" : "Vorteile"  
 }
