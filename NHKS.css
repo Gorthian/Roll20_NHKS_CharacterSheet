@@ -199,6 +199,43 @@ div.sheet-actor-attr-dex {
 	grid-area				: attr-dex;
 }
 
+div.sheet-role-sheet {
+	display					: grid;
+	grid-template-columns	: repeat(2, 50%);
+	grid-template-areas		: 	"role-misc 	role-stats"
+								"role-skills	role-advantages"
+}
+
+div.sheet-role-stats {
+	display					: grid;
+	grid-area				: role-stats;
+	grid-template-columns	: repeat(2, 50%);
+	grid-template-areas		: 	"role-image		role-image"
+								"role-hitpoints 	role-chipoints"
+}
+
+div.sheet-role-skills {
+	grid-area				: role-skills;
+}
+
+div.sheet-role-advantages {
+	grid-area				: role-advantages;
+}
+
+div.sheet-role-image {
+	grid-area				: role-image;
+	text-align				: center;
+}
+
+div.sheet-role-hitpoints {
+	grid-area				: role-hitpoints;
+	text-align				: center;
+}
+
+div.sheet-role-chipoints {
+	grid-area				: role-chipoints;
+	text-align				: center;
+}
 /***************************************************/
 /*             MENU & TABS                         */
 /***************************************************/
@@ -310,7 +347,7 @@ div.sheet-actor-sheet h1 {
 	font-weight			: bold;
 }	
 
-div.sheet-actor-sheet input {
+div.sheet-actor-sheet input, div.sheet-role-sheet input {
 	background			: transparent;
 	border-style		: none none solid none;
 	color				: #000000;
@@ -318,6 +355,11 @@ div.sheet-actor-sheet input {
 
 div.sheet-actor-sheet textarea {
 	height				: 30px;
+	width				: 90%;
+}
+
+div.sheet-role-sheet textarea {
+	height				: 60px;
 	width				: 90%;
 }
 

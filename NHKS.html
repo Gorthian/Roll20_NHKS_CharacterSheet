@@ -540,18 +540,38 @@
 			</div>			
 		</div>
 		<div class="sheet-role">
-			<p><span data-i18n="role-name"></span><input type="text" name="attr_role-name" value=""></p>
-			<p><span data-i18n="movieplot"></span><textarea name="attr_movieplot" value=""></textarea></p>
-			<p><span data-i18n="role-description"></span><textarea name="attr_role-description" value=""></textarea></p>
-			<p><span data-i18n="role-inventory"></span><textarea name="attr_role-inventory" value=""></textarea></p>
-			<p><span data-i18n="role-weapons"></span>Coming soon</p>
-			<div class="sheet-role-skills">
-				<p><span data-i18n="role-skills"></span>Coming soon</p>
+			<div class="sheet-role-sheet">
+				<div class="sheet-role-misc">
+					<p><span data-i18n="role-name"></span><input type="text" name="attr_role-name" value=""></p>
+					<p><span data-i18n="movieplot"></span><textarea name="attr_movieplot" value=""></textarea></p>
+					<p><span data-i18n="role-description"></span><textarea name="attr_role-description" value=""></textarea></p>
+					<p><span data-i18n="role-inventory"></span><textarea name="attr_role-inventory" value=""></textarea></p>
+					<p><span data-i18n="role-weapons"></span>Coming soon</p>
+				</div>
+				<div class="sheet-role-stats">
+					<div class="sheet-role-image">
+						<img src="https://github.com/Gorthian/Roll20_NHKS_CharacterSheet/blob/main/images/standard/Schauspielerbogen_1_100_freigestellt.png?raw=true" />
+					</div>
+					<div class="sheet-role-hitpoints">
+						<span class="sheet-attr-name" data-i18n="hitpoints"></span><br/>
+						<span class="sheet-attr-desc" data-i18n="hitpoints-desc"></span><br/>								
+						<input type="number" name="attr_hitpoints_current" /> / <input type="number" name="attr_hitpoints_max" class="sheet-no-arrows" READONLY />
+					</div>
+					<p>&nbsp;</p>
+					<div class="sheet-role-chipoints">
+						<span class="sheet-attr-name" data-i18n="chipoints"></span><br/>
+						<span class="sheet-attr-desc" data-i18n="chipoints-desc"></span><br/>							
+						<input type="number" name="attr_chipoints_current" /> / <input type="number" name="attr_chipoints_max" class="sheet-no-arrows" READONLY />
+					</div>					
+				</div>
+				<div class="sheet-role-skills">
+					<p><span data-i18n="role-skills"></span>Coming soon</p>
+				</div>
+				<div class="sheet-role-advantages">
+					<p><span data-i18n="role-advantages"></span>Coming soon</p>
+				</div>
 			</div>
-			<div class="sheet-role-advantages">
-				<p><span data-i18n="role-skills"></span>Coming soon</p>
-			</div>
-		</div>		
+		</div>			
 	</div>
 	<div class="sheet-footer">
 		Created by Gorthian | Supported by Hitdice | Copyright by Black Mask Verlag
