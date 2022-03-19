@@ -1,7 +1,7 @@
 /*
 	EDITED by 			Gorthian
 	Version				0.1
-	Letzte Änderung		2022-03-14
+	Letzte Änderung		2022-03-19
 	
 	GitHub				https://github.com/Gorthian/Roll20_NHKS_CharacterSheet
 	Wiki				https://github.com/Gorthian/Roll20_NHKS_CharacterSheet/wiki
@@ -328,6 +328,41 @@ div.sheet-actor-martialarts div.sheet-radio-set input.sheet-radiobox:checked ~ .
 div.sheet-actor-martialarts div.sheet-radio-set input.sheet-radiobox.sheet-reset {
 	order					: 2;
 	background-color		: grey;
+}
+
+/***************************************************/
+/*             Waffen                              */
+/***************************************************/
+
+div.sheet-role-weapon-table div.sheet-weapon-description {
+	float					: left;
+	text-align				: left;
+	width					: auto;
+}
+
+div.sheet-role-weapon-table div.sheet-weapon-description:first-child {
+	width					: 80%;
+}
+
+div.sheet-role-weapon-table div.sheet-weapon-attribute {
+	float					: left;
+	width					: 1.6em;
+	text-align				: center;
+}
+
+div.sheet-clear-float {
+	clear					: both;
+}
+
+div.sheet-weapon-attribute span:nth-child(2){
+	display					: none;
+}
+
+div.sheet-weapon-attribute span:nth-child(1):hover ~span {
+	display					: inline;
+	position				: absolute;
+	border					: 1px solid grey;
+	background-color		: lightgrey;
 }
 
 /***************************************************/
