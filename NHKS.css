@@ -334,14 +334,17 @@ div.sheet-actor-martialarts div.sheet-radio-set input.sheet-radiobox.sheet-reset
 /*             Waffen                              */
 /***************************************************/
 
+div.sheet-weapon-box {
+	border					: 1px solid black;
+	border-radius			: 5px;
+	background-color		: lightblue;
+	margin					: 5px;
+}
+
 div.sheet-role-weapon-table div.sheet-weapon-description {
 	float					: left;
 	text-align				: left;
 	width					: auto;
-}
-
-div.sheet-role-weapon-table div.sheet-weapon-description:first-child {
-	width					: 80%;
 }
 
 div.sheet-role-weapon-table div.sheet-weapon-attribute {
@@ -358,7 +361,7 @@ div.sheet-weapon-attribute span:nth-child(2){
 	display					: none;
 }
 
-div.sheet-weapon-attribute span:nth-child(1):hover ~span {
+div.sheet-weapon-attribute *:nth-child(1):hover ~span {
 	display					: inline;
 	position				: absolute;
 	border					: 1px solid grey;
