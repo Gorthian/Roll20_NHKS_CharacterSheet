@@ -187,7 +187,7 @@
 								<button type="action" name="act_skill-persuade"><span data-i18n="persuade"></span></button>
 							</td>
 							<td>
-								<select name="attr_skill_persuade_attribute">
+								<select name="attr_skill-persuade-attribute">
 									<option value="coolness" data-i18n="coolness-short" selected="selected"></option>
 									<option value="strength" data-i18n="strength-short"></option>
 								</select>
@@ -658,7 +658,7 @@
 					console.log("[SKILL] Skill Value: " + iSkillValue);
 					console.log("[SKILL] Attribute Value: " + iAttributeValue);
 					
-					let sRollQuery = "&{template:default} {{name="+sName+"}} {{"+sSkill+" ("+sAttribute+")="+iSkillValue+" ("+iAttributeValue+")}} {{Erfolge= [[1d20cs1cs2cf19cf20<[["+iSum+"]]]]}}";
+					let sRollQuery = "&{template:default} {{name="+sName+"}} {{"+getTranslationByKey(sSkill)+" ("+getTranslationByKey(sAttribute)+")="+iSkillValue+" ("+iAttributeValue+")}} {{"+getTranslationByKey("successes")+"= [[1d20cs1cs2cf19cf20<[["+iSum+"]]]]}}";
 					
 					startRoll(sRollQuery, (results) => {finishRoll(results.rollId)});
 				});

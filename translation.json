@@ -119,5 +119,6 @@
   "role-weapon-2hand-short" : "ZH",
   "role-weapon-twin" : "Zwillingswaffen",
   "role-weapon-twin-short" : "Z",
-  "role-weapon-damage" : "Schaden"
+  "role-weapon-damage" : "Schaden",
+  "successes" : "Erfolge"
 }

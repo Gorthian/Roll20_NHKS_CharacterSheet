@@ -1,7 +1,7 @@
 /*
 	EDITED by 			Gorthian
 	Version				0.1
-	Letzte Änderung		2022-03-19
+	Letzte Änderung		2022-04-04
 	
 	GitHub				https://github.com/Gorthian/Roll20_NHKS_CharacterSheet
 	Wiki				https://github.com/Gorthian/Roll20_NHKS_CharacterSheet/wiki
@@ -472,8 +472,21 @@ input[type=number].sheet-no-arrows {
 }
 
 /***************************************************/
+/*             Buttons                             */
+/***************************************************/
+
+/***************************************************/
 /*             Hintergrundbilder                   */
 /***************************************************/
+
+div.sheet-actor-skills button[type="action"] {
+	background-color	: Transparent;
+    background-repeat	: no-repeat;
+    border				: none;
+    cursor				: pointer;
+    overflow			: hidden;    
+	text-align			: left;
+}
 
 div.sheet-actor-attributes-left {
 	background-image	: url("https://github.com/Gorthian/Roll20_NHKS_CharacterSheet/blob/main/images/standard/Schauspielerbogen_1_25_freigestellt.png?raw=true");
