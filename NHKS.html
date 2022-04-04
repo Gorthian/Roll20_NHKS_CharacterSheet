@@ -658,7 +658,7 @@
 					console.log("[SKILL] Skill Value: " + iSkillValue);
 					console.log("[SKILL] Attribute Value: " + iAttributeValue);
 					
-					let sRollQuery = "&{template:default} {{name="+sName+"}} {{"+getTranslationByKey(sSkill)+" ("+getTranslationByKey(sAttribute)+")="+iSkillValue+" ("+iAttributeValue+")}} {{"+getTranslationByKey("successes")+"= [[1d20cs1cs2cf19cf20<[["+iSum+"]]]]}}";
+					let sRollQuery = "&{template:default} {{name="+sName+"}} {{"+getTranslationByKey(sSkill)+" ("+getTranslationByKey(sAttribute)+")="+iSkillValue+" ("+iAttributeValue+")}} {{"+getTranslationByKey("target-value")+"="+iSum+"}} {{"+getTranslationByKey("successes")+"= [[1d20cs1cs2cf19cf20<[["+iSum+"]]]]}}";
 					
 					startRoll(sRollQuery, (results) => {finishRoll(results.rollId)});
 				});

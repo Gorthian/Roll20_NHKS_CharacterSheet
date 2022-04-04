@@ -120,5 +120,6 @@
   "role-weapon-twin" : "Zwillingswaffen",
   "role-weapon-twin-short" : "Z",
   "role-weapon-damage" : "Schaden",
-  "successes" : "Erfolge"
+  "successes" : "Erfolge",
+  "target-value" : "Zielwert"
 }
