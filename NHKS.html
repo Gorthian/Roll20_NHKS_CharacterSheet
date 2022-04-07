@@ -1,7 +1,7 @@
 <!--
 	EDITED by 			Gorthian
 	Version				0.1
-	Letzte Änderung		2022-04-04
+	Letzte Änderung		2022-04-07
 	
 	GitHub				https://github.com/Gorthian/Roll20_NHKS_CharacterSheet
 	Wiki				https://github.com/Gorthian/Roll20_NHKS_CharacterSheet/wiki
@@ -33,43 +33,55 @@
 							<div class="sheet-actor-attributes-values">
 								<div class="sheet-actor-attr-kno sheet-input-line">
 									<span class="sheet-label">
-										<span class="sheet-attr-short" data-i18n="knowledge-short"></span><br/>
-										<span class="sheet-attr-full" data-i18n="knowledge"></span>
+										<button type="action" name="act_attribute-knowledge">
+											<span class="sheet-attr-short" data-i18n="knowledge-short"></span><br/>
+											<span class="sheet-attr-full" data-i18n="knowledge"></span>
+										</button>
 									</span>
 									<input class="sheet-attribute-value" type="number" name="attr_knowledge" />
 								</div>
 								<div class="sheet-actor-attr-str sheet-input-line">
 									<span class="sheet-label">
-										<span class="sheet-attr-short" data-i18n="strength-short"></span><br/>
-										<span class="sheet-attr-full" data-i18n="strength"></span>
-									</span>
+										<button type="action" name="act_attribute-strength">
+											<span class="sheet-attr-short" data-i18n="strength-short"></span><br/>
+											<span class="sheet-attr-full" data-i18n="strength"></span>
+										</button>
+									</span>									
 									<input class="sheet-attribute-value" type="number" name="attr_strength" />
 								</div>
 								<div class="sheet-actor-attr-col sheet-input-line">
 									<span class="sheet-label">
-										<span class="sheet-attr-short" data-i18n="coolness-short"></span><br/>
-										<span class="sheet-attr-full" data-i18n="coolness"></span>
+										<button type="action" name="act_attribute-coolness">
+											<span class="sheet-attr-short" data-i18n="coolness-short"></span><br/>
+											<span class="sheet-attr-full" data-i18n="coolness"></span>
+										</button>
 									</span>
 									<input class="sheet-attribute-value" type="number" name="attr_coolness" />
 								</div>
 								<div class="sheet-actor-attr-sta sheet-input-line">
 									<span class="sheet-label">
-										<span class="sheet-attr-short" data-i18n="stamina-short"></span><br/>
-										<span class="sheet-attr-full" data-i18n="stamina"></span>
+										<button type="action" name="act_attribute-stamina">
+											<span class="sheet-attr-short" data-i18n="stamina-short"></span><br/>
+											<span class="sheet-attr-full" data-i18n="stamina"></span>
+										</button>
 									</span>
 									<input class="sheet-attribute-value" type="number" name="attr_stamina" />
 								</div>
 								<div class="sheet-actor-attr-chi sheet-input-line">
 									<span class="sheet-label">
-										<span class="sheet-attr-short" data-i18n="chi-short"></span><br/>
-										<span class="sheet-attr-full" data-i18n="chi"></span>
+										<button type="action" name="act_attribute-chi">
+											<span class="sheet-attr-short" data-i18n="chi-short"></span><br/>
+											<span class="sheet-attr-full" data-i18n="chi"></span>
+										</button>
 									</span>
 									<input class="sheet-attribute-value" type="number" name="attr_chi" />
 								</div>
 								<div class="sheet-actor-attr-dex sheet-input-line">
 									<span class="sheet-label">
-										<span class="sheet-attr-short" data-i18n="dexterity-short"></span><br/>
-										<span class="sheet-attr-full" data-i18n="dexterity"></span>
+										<button type="action" name="act_attribute-dexterity">
+											<span class="sheet-attr-short" data-i18n="dexterity-short"></span><br/>
+											<span class="sheet-attr-full" data-i18n="dexterity"></span>
+										</button>
 									</span>
 									<input class="sheet-attribute-value" type="number" name="attr_dexterity" />
 								</div>
@@ -611,6 +623,31 @@
 	</div>	
 </div>
 
+<!-- Roll Templates /-->
+<rolltemplate class="sheet-rolltemplate-skill">
+    <div class="sheet-template-container">
+        <h1>{{name}}</h1>
+        <div class="sheet-results">
+            <b>{{skill}} ({{attribute}})</b> : {{skillValue}} ({{attributeValue}})
+            <br /><b><span data-i18n="target-value"></span></b> : {{target}}
+			<br /><b><span data-i18n="roll"></span></b> : {{roll1}}
+			<br /><b>{{computed::roll1}}</b>
+        </div>
+    </div>
+</rolltemplate>
+
+<rolltemplate class="sheet-rolltemplate-attribute">
+    <div class="sheet-template-container">
+        <h1>{{name}}</h1>
+        <div class="sheet-results">
+            <b>{{attribute}}</b> : ({{attributeValue}})
+            <br /><b><span data-i18n="target-value"></span></b> : {{target}}
+			<br /><b><span data-i18n="roll"></span></b> : {{roll1}}
+			<br /><b>{{computed::roll1}}</b>
+        </div>
+    </div>
+</rolltemplate>
+
 <!-- SheetWorker //-->
 <script type="text/worker">
 	
@@ -647,21 +684,49 @@
 				let sAttribute = values["skill-"+sSkill+"-attribute"];
 				let iSkillValue = parseInt(values["skill-"+sSkill]);
 				
-				console.log("[SKILL] Character: " + sName);
-				console.log("[SKILL] Skill: " + sSkill);
-				console.log("[SKILL] Attribute: " + sAttribute);
-				
 				getAttrs([sAttribute], function(values2) {
 					let iAttributeValue = parseInt(values2[sAttribute]);
-					let iSum = iSkillValue + iAttributeValue;
+					let iSum = iSkillValue + iAttributeValue;				
 					
-					console.log("[SKILL] Skill Value: " + iSkillValue);
-					console.log("[SKILL] Attribute Value: " + iAttributeValue);
+					let sRollQuery = "&{template:skill} {{name="+sName+"}} {{skill="+getTranslationByKey(sSkill)+"}} {{attribute="+getTranslationByKey(sAttribute)+"}} {{skillValue="+iSkillValue+"}} {{attributeValue="+iAttributeValue+"}} {{target="+iSum+"}} {{roll1=[[1d20cs<2cf>19]]}}";
 					
-					let sRollQuery = "&{template:default} {{name="+sName+"}} {{"+getTranslationByKey(sSkill)+" ("+getTranslationByKey(sAttribute)+")="+iSkillValue+" ("+iAttributeValue+")}} {{"+getTranslationByKey("target-value")+"="+iSum+"}} {{"+getTranslationByKey("successes")+"= [[1d20cs1cs2cf19cf20<[["+iSum+"]]]]}}";
-					
-					startRoll(sRollQuery, (results) => {finishRoll(results.rollId)});
+					startRoll(sRollQuery, (results) => {
+						let iRoll = parseInt(results.results.roll1.result);
+						let sResult = "";
+						
+						if (iRoll < iSum) {
+							sResult = getTranslationByKey("success");
+						} else {
+							sResult = getTranslationByKey("failure");
+						}						
+						finishRoll(results.rollId,{roll1: sResult});
+					});
 				});
+			});
+		});
+	});
+	
+	/* Attributssproben */
+	aActorAttributes.forEach(sAttribute => {
+		on(`clicked:attribute-${sAttribute}`, function() {			
+			getAttrs(["character_name",sAttribute], function (values){
+				let sName = values["character_name"];
+				let iAttributeValue = parseInt(values[sAttribute]);
+				let iSum = iAttributeValue + 4;
+				
+				let sRollQuery = "&{template:attribute} {{name="+sName+"}} {{attribute="+getTranslationByKey(sAttribute)+"}} {{attributeValue="+iAttributeValue+"}} {{target="+iSum+"}} {{roll1=[[1d20cs<2cf>19]]}}";
+					
+				startRoll(sRollQuery, (results) => {
+					let iRoll = parseInt(results.results.roll1.result);
+					let sResult = "";
+					
+					if (iRoll < iSum) {
+						sResult = getTranslationByKey("success");
+					} else {
+						sResult = getTranslationByKey("failure");
+					}						
+					finishRoll(results.rollId,{roll1: sResult});
+				});			
 			});
 		});
 	});
