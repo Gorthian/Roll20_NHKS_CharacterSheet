@@ -626,25 +626,21 @@
 <!-- Roll Templates /-->
 <rolltemplate class="sheet-rolltemplate-skill">
     <div class="sheet-template-container">
-        <h1>{{name}}</h1>
-        <div class="sheet-results">
-            <b>{{skill}} ({{attribute}})</b> : {{skillValue}} ({{attributeValue}})
-            <br /><b><span data-i18n="target-value"></span></b> : {{target}}
-			<br /><b><span data-i18n="roll"></span></b> : {{roll1}}
-			<br /><b>{{computed::roll1}}</b>
-        </div>
+        <div class="sheet-template-header">{{name}}</div>
+        <div class="sheet-template-row"><span>{{skill}} ({{attribute}})</span>{{skillValue}} ({{attributeValue}})</div>
+        <div class="sheet-template-row"><span><span data-i18n="target-value"></span></span>{{target}}</div>
+		<div class="sheet-template-row"><span><span data-i18n="roll"></span></span>{{roll1}}</div>
+		<div class="sheet-template-row"><span>{{computed::roll1}}</span></div>
     </div>
 </rolltemplate>
 
 <rolltemplate class="sheet-rolltemplate-attribute">
     <div class="sheet-template-container">
-        <h1>{{name}}</h1>
-        <div class="sheet-results">
-            <b>{{attribute}}</b> : ({{attributeValue}})
-            <br /><b><span data-i18n="target-value"></span></b> : {{target}}
-			<br /><b><span data-i18n="roll"></span></b> : {{roll1}}
-			<br /><b>{{computed::roll1}}</b>
-        </div>
+        <div class="sheet-template-header">{{name}}</div>
+        <div class="sheet-template-row"><span>{{attribute}}</span>{{attributeValue}}</div>
+        <div class="sheet-template-row"><span><span data-i18n="target-value"></span></span>{{target}}</div>
+		<div class="sheet-template-row"><span><span data-i18n="roll"></span></span>{{roll1}}</div>
+		<div class="sheet-template-row"><span>{{computed::roll1}}</span></div>            
     </div>
 </rolltemplate>
 
