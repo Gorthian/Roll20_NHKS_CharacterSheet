@@ -1,7 +1,7 @@
 <!--
 	EDITED by 			Gorthian
 	Version				0.1
-	Letzte Änderung		2022-04-07
+	Letzte Änderung		2022-04-09
 	
 	GitHub				https://github.com/Gorthian/Roll20_NHKS_CharacterSheet
 	Wiki				https://github.com/Gorthian/Roll20_NHKS_CharacterSheet/wiki
@@ -627,20 +627,38 @@
 <rolltemplate class="sheet-rolltemplate-skill">
     <div class="sheet-template-container">
         <div class="sheet-template-header">{{name}}</div>
-        <div class="sheet-template-row"><span>{{skill}} ({{attribute}})</span>{{skillValue}} ({{attributeValue}})</div>
-        <div class="sheet-template-row"><span><span data-i18n="target-value"></span></span>{{target}}</div>
-		<div class="sheet-template-row"><span><span data-i18n="roll"></span></span>{{roll1}}</div>
-		<div class="sheet-template-row"><span>{{computed::roll1}}</span></div>
+        <div class="sheet-template-row">
+			<div class="sheet-template-key">{{skill}} ({{attribute}})</div>
+			<div class="sheet-template-value">{{skillValue}} ({{attributeValue}})</div>
+		</div>
+		<div class="sheet-template-row">
+			<div class="sheet-template-key"><span data-i18n="target-value"></span></div>
+			<div class="sheet-template-value">{{target}}</div>
+		</div>
+		<div class="sheet-template-row">
+			<div class="sheet-template-key"><span data-i18n="roll"></span></div>
+			<div class="sheet-template-value">{{roll1}}</div>
+		</div>
+		<div class="sheet-template-result">{{computed::roll1}}</div>
     </div>
 </rolltemplate>
 
 <rolltemplate class="sheet-rolltemplate-attribute">
     <div class="sheet-template-container">
         <div class="sheet-template-header">{{name}}</div>
-        <div class="sheet-template-row"><span>{{attribute}}</span>{{attributeValue}}</div>
-        <div class="sheet-template-row"><span><span data-i18n="target-value"></span></span>{{target}}</div>
-		<div class="sheet-template-row"><span><span data-i18n="roll"></span></span>{{roll1}}</div>
-		<div class="sheet-template-row"><span>{{computed::roll1}}</span></div>            
+		<div class="sheet-template-row">
+			<div class="sheet-template-key">{{attribute}}</div>
+			<div class="sheet-template-value">{{attributeValue}}</div>
+		</div>
+		<div class="sheet-template-row">
+			<div class="sheet-template-key"><span data-i18n="target-value"></span></div>
+			<div class="sheet-template-value">{{target}}</div>
+		</div>
+		<div class="sheet-template-row">
+			<div class="sheet-template-key"><span data-i18n="roll"></span></div>
+			<div class="sheet-template-value">{{roll1}}</div>
+		</div>		
+		<div class="sheet-template-result">{{computed::roll1}}</div>		
     </div>
 </rolltemplate>
 
