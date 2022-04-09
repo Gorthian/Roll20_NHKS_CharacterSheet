@@ -121,7 +121,9 @@
   "role-weapon-twin-short" : "Z",
   "role-weapon-damage" : "Schaden",
   "success" : "Erfolg",
+  "critical-success" : "Kritischer Erfolg",
   "failure" : "Fehlschlag",
+  "critical-failure" : "Kritischer Fehlschlag",
   "roll" : "Wurf",
   "target-value" : "Zielwert"
 }

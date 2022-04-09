@@ -526,7 +526,8 @@ div.sheet-content {
 }
 
 .sheet-rolltemplate-skill .sheet-template-result, .sheet-rolltemplate-attribute .sheet-template-result {
-	text-align			: center;	
+	padding				: 3px;
+	text-align			: center;
 	font-weight			: bold;
 }
 

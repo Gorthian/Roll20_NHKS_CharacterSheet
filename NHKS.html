@@ -665,7 +665,7 @@
 <!-- SheetWorker //-->
 <script type="text/worker">
 	
-	/* Globale Variablen -- Start */
+	/* Globale Konstanten -- Start */
 	const iMinAttributeValue = 5;
 	const iMaxAttributeValue = 10;
 	const iMinSkillValue = 0;
@@ -673,8 +673,10 @@
 	const aActorAttributes = ["strength","stamina","dexterity","knowledge","coolness","chi"];
 	const aActorSkills = ["acrobatic","athletic","dodge","boats","persuade","computers","firstaid","extremesport","slideofhand","aircrafts","vehicles","improvisation","climbing","contacts","mechanic","stealth","perception","languages","searching","hiding"];
 	const aActorWeaponSkills = ["melee-small","melee-medium","melee-big","pistols","rifles","heavy-weapons","melee-misc","ranged-misc","unarmed"];
-	/* Globale Variablen -- Ende */
-	
+	const iBaseCriticalSuccess = 2;
+	const iBaseCriticalFailure = 19;
+	/* Globale Konstanten -- Ende */
+
 	/* Tab-Wechsel */
 	const aButtonlist = ["actor","role"];
     aButtonlist.forEach(sButton => {
@@ -697,22 +699,28 @@
 				let sName = values["character_name"];
 				let sAttribute = values["skill-"+sSkill+"-attribute"];
 				let iSkillValue = parseInt(values["skill-"+sSkill]);
+				let iCriticalSuccess = iBaseCriticalSuccess;
+				let iCriticalFailure = iBaseCriticalFailure;
 				
 				getAttrs([sAttribute], function(values2) {
 					let iAttributeValue = parseInt(values2[sAttribute]);
 					let iSum = iSkillValue + iAttributeValue;				
 					
-					let sRollQuery = "&{template:skill} {{name="+sName+"}} {{skill="+getTranslationByKey(sSkill)+"}} {{attribute="+getTranslationByKey(sAttribute)+"}} {{skillValue="+iSkillValue+"}} {{attributeValue="+iAttributeValue+"}} {{target="+iSum+"}} {{roll1=[[1d20cs<2cf>19]]}}";
+					let sRollQuery = "&{template:skill} {{name="+sName+"}} {{skill="+getTranslationByKey(sSkill)+"}} {{attribute="+getTranslationByKey(sAttribute)+"}} {{skillValue="+iSkillValue+"}} {{attributeValue="+iAttributeValue+"}} {{target="+iSum+"}} {{roll1=[[1d20cs<"+iCriticalSuccess+"cf>"+iCriticalFailure+"]]}}";
 					
 					startRoll(sRollQuery, (results) => {
 						let iRoll = parseInt(results.results.roll1.result);
 						let sResult = "";
 						
-						if (iRoll < iSum) {
+						if (iRoll <= iCriticalSuccess) {
+							sResult = getTranslationByKey("critical-success");
+						} else if (iRoll < iSum) {
 							sResult = getTranslationByKey("success");
-						} else {
+						} else if (iRoll < iCriticalFailure) {
 							sResult = getTranslationByKey("failure");
-						}						
+						} else {
+							sResult = getTranslationByKey("critical-failure");
+						}
 						finishRoll(results.rollId,{roll1: sResult});
 					});
 				});
@@ -727,17 +735,23 @@
 				let sName = values["character_name"];
 				let iAttributeValue = parseInt(values[sAttribute]);
 				let iSum = iAttributeValue + 4;
+				let iCriticalSuccess = iBaseCriticalSuccess;
+				let iCriticalFailure = iBaseCriticalFailure;
 				
-				let sRollQuery = "&{template:attribute} {{name="+sName+"}} {{attribute="+getTranslationByKey(sAttribute)+"}} {{attributeValue="+iAttributeValue+"}} {{target="+iSum+"}} {{roll1=[[1d20cs<2cf>19]]}}";
+				let sRollQuery = "&{template:attribute} {{name="+sName+"}} {{attribute="+getTranslationByKey(sAttribute)+"}} {{attributeValue="+iAttributeValue+"}} {{target="+iSum+"}} {{roll1=[[1d20cs<"+iCriticalSuccess+"cf>"+iCriticalFailure+"]]}}";
 					
 				startRoll(sRollQuery, (results) => {
 					let iRoll = parseInt(results.results.roll1.result);
 					let sResult = "";
 					
-					if (iRoll < iSum) {
+					if (iRoll <= iCriticalSuccess) {
+						sResult = getTranslationByKey("critical-success");
+					} else if (iRoll < iSum) {
 						sResult = getTranslationByKey("success");
-					} else {
+					} else if (iRoll < iCriticalFailure) {
 						sResult = getTranslationByKey("failure");
+					} else {
+						sResult = getTranslationByKey("critical-failure");
 					}						
 					finishRoll(results.rollId,{roll1: sResult});
 				});			
