@@ -460,15 +460,10 @@ input[type=number].sheet-no-arrows {
   -moz-appearance: textfield;
 }
 
-/*             Buttons                             */
+/* 				Buttons					*/
 
-div.sheet-actor-skills button[type="action"] {
-	background-color	: Transparent;
-    background-repeat	: no-repeat;
-    border				: none;
-    cursor				: pointer;
-    overflow			: hidden;    
-	text-align			: left;
+button[type="action"] {
+	width				: 85%;
 }
 
 /*             Hintergrundbilder                   */
@@ -518,6 +513,7 @@ div.sheet-content {
 	grid-area			: key;
 	text-align			: left;	
 	font-weight			: bold;
+	font-size			: 0.95em;
 }
 
 .sheet-rolltemplate-skill .sheet-template-value, .sheet-rolltemplate-attribute .sheet-template-value {
