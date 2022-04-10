@@ -408,7 +408,7 @@ div.sheet-role-sheet textarea {
 	text-align	: center;
 }
 
-.sheet-actor-attributes-right .sheet-input-line .sheet-attr-name {
+.sheet-actor-attributes-right .sheet-input-line .sheet-attr-name, .sheet-role-stats .sheet-attr-name {
 	font-weight	: bold;
 	font-size	: 1.0em;
 }

@@ -604,14 +604,12 @@
 					</div>
 					<div class="sheet-role-hitpoints">
 						<span class="sheet-attr-name" data-i18n="hitpoints"></span><br/>
-						<span class="sheet-attr-desc" data-i18n="hitpoints-desc"></span><br/>								
-						<input type="number" name="attr_hitpoints_current" /> / <input type="number" name="attr_hitpoints_max" class="sheet-no-arrows" READONLY />
+						<input type="number" name="attr_role_hitpoints_current" /> / <input type="number" name="attr_role_hitpoints_max" class="sheet-no-arrows" READONLY />
 					</div>
 					<p>&nbsp;</p>
 					<div class="sheet-role-chipoints">
 						<span class="sheet-attr-name" data-i18n="chipoints"></span><br/>
-						<span class="sheet-attr-desc" data-i18n="chipoints-desc"></span><br/>							
-						<input type="number" name="attr_chipoints_current" /> / <input type="number" name="attr_chipoints_max" class="sheet-no-arrows" READONLY />
+						<input type="number" name="attr_role_chipoints_current" /> / <input type="number" name="attr_role_chipoints_max" class="sheet-no-arrows" READONLY />
 					</div>					
 				</div>
 				<div class="sheet-role-skills">
@@ -700,6 +698,11 @@
 	/* Event-Listener -- Start */
 	on("sheet:opened", function () {
 		recalcValues();
+	});
+	
+	on("change:role-type", function () {
+		recalcChipoints();
+		recalcHitpoints();
 	});
 	
 	/* Fertigkeitsproben */
@@ -868,14 +871,29 @@
 		});
 	}
 	
+	function recalcRolepoints(iPoints,sType) {
+		let iRolePoints = 0;
+		
+		if (sType == "main") {
+			iRolePoints = iPoints + 20;
+		} else {
+			iRolePoints = iPoints + 10;
+		}
+		
+		return iRolePoints;
+	}
+	
 	function recalcHitpoints() {
 		console.log("[recalcHitpoints]");
-		getAttrs(["stamina"], function (values){
+		getAttrs(["stamina","role-type"], function (values){
 			let iStamina = parseInt(values["stamina"]||0);
+			let sRoleType = values["role-type"]||"main";
 			let iHitpoints = (iStamina + 4) * 10;
+			let iRoleHitpoints = recalcRolepoints(iHitpoints,sRoleType);
 			let aAttributes = {};
-			
+						
 			aAttributes["hitpoints_max"] = iHitpoints;
+			aAttributes["role_hitpoints_max"] = iRoleHitpoints;
 			
 			setAttrs(aAttributes);		
 		});
@@ -883,12 +901,15 @@
 	
 	function recalcChipoints() {
 		console.log("[recalcChipoints]");
-		getAttrs(["chi"], function (values){
+		getAttrs(["chi","role-type"], function (values){
 			let iChi = parseInt(values["chi"]||0);
+			let sRoleType = values["role-type"]||"main";
 			let iChipoints = iChi * 10;
-			let aAttributes = {};
+			let iRoleChipoints = recalcRolepoints(iChipoints,sRoleType);
+			let aAttributes = {};	
 			
 			aAttributes["chipoints_max"] = iChipoints;
+			aAttributes["role_chipoints_max"] = iRoleChipoints;
 			
 			setAttrs(aAttributes);		
 		});
