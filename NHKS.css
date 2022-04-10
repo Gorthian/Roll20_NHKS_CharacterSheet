@@ -16,7 +16,7 @@ div.sheet-wrapper {
 	--sheet-text-color	: #000000;	
 }
 
-p .sheet-nowrap {
+p.sheet-nowrap {
 	white-space			: nowrap;
 }
 
