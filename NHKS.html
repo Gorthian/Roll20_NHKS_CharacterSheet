@@ -412,6 +412,9 @@
 						<tr>
 							<td>
 								<button type="action" name="act_combat-melee-small"><span data-i18n="melee-small"></span></button>
+							</td>
+							<td>
+								<button type="action" name="act_combat-melee-small-parry"><span data-i18n="parry"></span></button>
 							</td>							
 							<td>
 								<input type="number" name="attr_skill-melee-small" />
@@ -420,7 +423,10 @@
 						<tr>
 							<td>
 								<button type="action" name="act_combat-melee-medium"><span data-i18n="melee-medium"></span></button>
-							</td>							
+							</td>
+							<td>
+								<button type="action" name="act_combat-melee-medium-parry"><span data-i18n="parry"></span></button>
+							</td>
 							<td>
 								<input type="number" name="attr_skill-melee-medium" />
 							</td>
@@ -428,7 +434,10 @@
 						<tr>
 							<td>
 								<button type="action" name="act_combat-melee-big"><span data-i18n="melee-big"></span></button>
-							</td>							
+							</td>
+							<td>
+								<button type="action" name="act_combat-melee-big-parry"><span data-i18n="parry"></span></button>
+							</td>
 							<td>
 								<input type="number" name="attr_skill-melee-big" />
 							</td>
@@ -436,7 +445,8 @@
 						<tr>
 							<td>
 								<button type="action" name="act_combat-pistols"><span data-i18n="pistols"></span></button>
-							</td>							
+							</td>
+							<td></td>
 							<td>
 								<input type="number" name="attr_skill-pistols" />
 							</td>
@@ -444,7 +454,8 @@
 						<tr>
 							<td>
 								<button type="action" name="act_combat-rifles"><span data-i18n="rifles"></span></button>
-							</td>							
+							</td>
+							<td></td>
 							<td>
 								<input type="number" name="attr_skill-rifles" />
 							</td>
@@ -452,7 +463,8 @@
 						<tr>
 							<td>
 								<button type="action" name="act_combat-heavy-weapons"><span data-i18n="heavy-weapons"></span></button>
-							</td>							
+							</td>
+							<td></td>
 							<td>
 								<input type="number" name="attr_skill-heavy-weapons" />
 							</td>
@@ -460,7 +472,10 @@
 						<tr>
 							<td>
 								<button type="action" name="act_combat-melee-misc"><span data-i18n="melee-misc"></span></button>
-							</td>							
+							</td>
+							<td>
+								<button type="action" name="act_combat-melee-misc-parry"><span data-i18n="parry"></span></button>
+							</td>
 							<td>
 								<input type="number" name="attr_skill-melee-misc" />
 							</td>
@@ -468,7 +483,8 @@
 						<tr>
 							<td>
 								<button type="action" name="act_combat-ranged-misc"><span data-i18n="ranged-misc"></span></button>
-							</td>							
+							</td>
+							<td></td>
 							<td>
 								<input type="number" name="attr_skill-ranged-misc" />
 							</td>
@@ -476,6 +492,9 @@
 						<tr>
 							<td>
 								<button type="action" name="act_combat-unarmed"><span data-i18n="unarmed"></span></button>
+							</td>
+							<td>
+								<button type="action" name="act_combat-unarmed-parry"><span data-i18n="parry"></span></button>
 							</td>							
 							<td>
 								<input type="number" name="attr_skill-unarmed" />
@@ -811,6 +830,35 @@
 				let iSum = iSkillValue + iAttributeValue;				
 					
 				let sRollQuery = "&{template:skill} {{name="+sName+"}} {{skill="+getTranslationByKey(sSkill)+"}} {{attribute="+getTranslationByKey(sCombatAttribute)+"}} {{skillValue="+iSkillValue+"}} {{attributeValue="+iAttributeValue+"}} {{target="+iSum+"}} {{roll1=[[1d20cs<"+iCriticalSuccess+"cf>"+iCriticalFailure+"]]}}";
+					
+				startRoll(sRollQuery, (results) => {
+					let iRoll = parseInt(results.results.roll1.result);
+					let sResult = "";
+					
+					if (iRoll <= iCriticalSuccess) {
+						sResult = getTranslationByKey("critical-success");
+					} else if (iRoll < iSum) {
+						sResult = getTranslationByKey("success");
+					} else if (iRoll < iCriticalFailure) {
+						sResult = getTranslationByKey("failure");
+					} else {
+						sResult = getTranslationByKey("critical-failure");
+					}
+					finishRoll(results.rollId,{roll1: sResult});
+				});
+			});
+		});
+		
+		on(`clicked:combat-${sSkill}-parry`, function() {				
+			getAttrs(["character_name","skill-"+sSkill, "melee-defense"], function (values){
+				let sName = values["character_name"];
+				let iAttributeValue = parseInt(values["melee-defense"]||0);
+				let iSkillValue = parseInt(values["skill-"+sSkill]);
+				let iCriticalSuccess = iBaseCriticalSuccess;
+				let iCriticalFailure = iBaseCriticalFailure;
+				let iSum = iSkillValue + iAttributeValue;				
+					
+				let sRollQuery = "&{template:skill} {{name="+sName+"}} {{skill="+getTranslationByKey(sSkill)+"}} {{attribute="+getTranslationByKey("melee-defense")+"}} {{skillValue="+iSkillValue+"}} {{attributeValue="+iAttributeValue+"}} {{target="+iSum+"}} {{roll1=[[1d20cs<"+iCriticalSuccess+"cf>"+iCriticalFailure+"]]}}";
 					
 				startRoll(sRollQuery, (results) => {
 					let iRoll = parseInt(results.results.roll1.result);

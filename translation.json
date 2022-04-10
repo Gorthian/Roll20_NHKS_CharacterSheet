@@ -129,5 +129,6 @@
   "main-role" : "Hauptrolle",
   "supporting-role" : "Nebenrolle",
   "rolltemplate-intiative-desc" : "Der Token muss ausgewählt sein, damit er automatisch im Turn-Tracker erscheint.",
-  "combat" : "KAMPF"
+  "combat" : "KAMPF",
+  "parry" : "Parade"
 }
