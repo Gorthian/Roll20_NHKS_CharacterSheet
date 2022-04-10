@@ -491,37 +491,51 @@ div.sheet-content {
 
 /*             Roll Templates                       */
 
-.sheet-rolltemplate-skill .sheet-template-container, .sheet-rolltemplate-attribute .sheet-template-container {
+.sheet-rolltemplate-initiative .sheet-template-container,
+.sheet-rolltemplate-skill .sheet-template-container,
+.sheet-rolltemplate-attribute .sheet-template-container {
 	border				: 1px solid lightgrey;
 	background			: white; 	
 	background-image	: url("https://github.com/Gorthian/Roll20_NHKS_CharacterSheet/blob/main/images/standard/Schauspielerbogen_2_25_freigestellt.png?raw=true");
 }
 
-.sheet-rolltemplate-skill .sheet-template-header, .sheet-rolltemplate-attribute .sheet-template-header {
+.sheet-rolltemplate-initiative .sheet-template-header,
+.sheet-rolltemplate-skill .sheet-template-header,
+.sheet-rolltemplate-attribute .sheet-template-header {
 	width				: 100%;
 	background			: linear-gradient(to right, black, black 90%, white); 
 	color				: white;
 	font-weight			: bold;
 }
-.sheet-rolltemplate-skill .sheet-template-row, .sheet-rolltemplate-attribute .sheet-template-row {
+
+.sheet-rolltemplate-initiative .sheet-template-row,
+.sheet-rolltemplate-skill .sheet-template-row,
+.sheet-rolltemplate-attribute .sheet-template-row {
+	padding					: 3px;
 	display					: grid;
 	grid-template-columns	: 80% 20%;
 	grid-template-areas		: "key value";
 }
 
-.sheet-rolltemplate-skill .sheet-template-key, .sheet-rolltemplate-attribute .sheet-template-key {
+.sheet-rolltemplate-initiative .sheet-template-key,
+.sheet-rolltemplate-skill .sheet-template-key,
+.sheet-rolltemplate-attribute .sheet-template-key {
 	grid-area			: key;
 	text-align			: left;	
 	font-weight			: bold;
 	font-size			: 0.95em;
 }
 
-.sheet-rolltemplate-skill .sheet-template-value, .sheet-rolltemplate-attribute .sheet-template-value {
+.sheet-rolltemplate-initiative .sheet-template-value,
+.sheet-rolltemplate-skill .sheet-template-value,
+.sheet-rolltemplate-attribute .sheet-template-value {
 	grid-area			: value;
 	text-align			: left;	
 }
 
-.sheet-rolltemplate-skill .sheet-template-result, .sheet-rolltemplate-attribute .sheet-template-result {
+.sheet-rolltemplate-initiative .sheet-template-result,
+.sheet-rolltemplate-skill .sheet-template-result,
+.sheet-rolltemplate-attribute .sheet-template-result {	
 	padding				: 3px;
 	text-align			: center;
 	font-weight			: bold;
