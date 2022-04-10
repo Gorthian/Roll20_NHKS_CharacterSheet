@@ -448,6 +448,25 @@ div.sheet-actor-skills * {
 	font-size	: 0.95em;
 }
 
+.sheet-actor-skills table tr td {
+	vertical-align : middle;
+}
+
+.sheet-actor-skills table tr td:nth-child(1) {
+	width		: 50%;
+	text-align	: left;
+}
+
+.sheet-actor-skills table tr td:nth-child(2) {
+	width		: 40%;
+	text-align	: center;
+}
+
+.sheet-actor-skills table tr td:nth-child(3) {
+	width		: 10%;
+	text-align	: right;
+}
+
 /* Chrome, Safari, Edge, Opera */
 input.sheet-no-arrows::-webkit-outer-spin-button,
 input.sheet-no-arrows::-webkit-inner-spin-button {
