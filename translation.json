@@ -125,5 +125,7 @@
   "failure" : "Fehlschlag",
   "critical-failure" : "Kritischer Fehlschlag",
   "roll" : "Wurf",
-  "target-value" : "Zielwert"
+  "target-value" : "Zielwert",
+  "main-role" : "Hauptrolle",
+  "supporting-role" : "Nebenrolle"
 }
