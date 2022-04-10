@@ -75,7 +75,7 @@
   "rifles" : "Gewehre",
   "heavy-weapons" : "Schwere Waffen",
   "melee-misc" : "Diverse Nahkampfwaffen",
-  "ranged-misc" : "Diverse Fernkmapfwaffen",
+  "ranged-misc" : "Diverse Fernkampfwaffen",
   "unarmed" : "Waffenloser Kampf",
   "role-name" : "Filmrolle",
   "movieplot" : "Filmplot",
@@ -128,5 +128,6 @@
   "target-value" : "Zielwert",
   "main-role" : "Hauptrolle",
   "supporting-role" : "Nebenrolle",
-  "rolltemplate-intiative-desc" : "Der Token muss ausgewählt sein, damit er automatisch im Turn-Tracker erscheint."
+  "rolltemplate-intiative-desc" : "Der Token muss ausgewählt sein, damit er automatisch im Turn-Tracker erscheint.",
+  "combat" : "KAMPF"
 }
