@@ -1,7 +1,7 @@
 /*
 	EDITED by 			Gorthian
 	Version				0.1
-	Letzte Änderung		2022-04-10
+	Letzte Änderung		2022-04-14
 	
 	GitHub				https://github.com/Gorthian/Roll20_NHKS_CharacterSheet
 	Wiki				https://github.com/Gorthian/Roll20_NHKS_CharacterSheet/wiki
@@ -465,6 +465,20 @@ div.sheet-actor-skills * {
 .sheet-actor-skills table tr td:nth-child(3) {
 	width		: 10%;
 	text-align	: right;
+}
+
+div.sheet-skill-entry {
+	clear		: both;
+}
+
+div.sheet-skill-entry div {
+	float		: left;
+	width		: auto;
+	padding		: 2px;
+}
+
+div.sheet-skill-entry div.sheet-skill-attribute select {
+	width		: 60px;
 }
 
 /* Chrome, Safari, Edge, Opera */

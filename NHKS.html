@@ -634,17 +634,21 @@
 				<div class="sheet-role-skills">
 					<h1><span data-i18n="role-skills"></span></h1>					
 					<fieldset class="repeating_role-skills">
-						<button type="action" name="act_role-skill">Roll</button>
-						<input type="text" name="attr_role-skill-name">
-						<select name="attr_role-skill-attribute">
-							<option value="strength" data-i18n="strength-short" selected="selected"></option>
-							<option value="stamina" data-i18n="stamina-short"></option>
-							<option value="dexterity" data-i18n="dexterity-short"></option>
-							<option value="knowledge" data-i18n="knowledge-short"></option>
-							<option value="coolness" data-i18n="coolness-short"></option>
-							<option value="chi" data-i18n="chi-short"></option>
-						</select>
-						<input type="number" name="attr_role-skill-value" />								
+						<div class="sheet-skill-entry">
+							<div class="sheet-skill-button"><button type="action" name="act_role-skill">Roll</button></div>
+							<div class="sheet-skill-name"><input type="text" name="attr_role-skill-name"></div>
+							<div class="sheet-skill-attribute">
+								<select name="attr_role-skill-attribute">
+									<option value="strength" data-i18n="strength-short" selected="selected"></option>
+									<option value="stamina" data-i18n="stamina-short"></option>
+									<option value="dexterity" data-i18n="dexterity-short"></option>
+									<option value="knowledge" data-i18n="knowledge-short"></option>
+									<option value="coolness" data-i18n="coolness-short"></option>
+									<option value="chi" data-i18n="chi-short"></option>
+								</select>
+							</div>
+							<div class="sheet-skill-value"><input type="number" name="attr_role-skill-value" /></div>
+						</div>
 					</fieldset>
 				</div>
 				<div class="sheet-role-advantages">
