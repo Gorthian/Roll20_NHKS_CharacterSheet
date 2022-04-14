@@ -1,7 +1,7 @@
 <!--
 	EDITED by 			Gorthian
 	Version				0.1
-	Letzte Änderung		2022-04-10
+	Letzte Änderung		2022-04-14
 	
 	GitHub				https://github.com/Gorthian/Roll20_NHKS_CharacterSheet
 	Wiki				https://github.com/Gorthian/Roll20_NHKS_CharacterSheet/wiki
@@ -632,7 +632,20 @@
 					</div>					
 				</div>
 				<div class="sheet-role-skills">
-					<p><span data-i18n="role-skills"></span>Coming soon</p>
+					<h1><span data-i18n="role-skills"></span></h1>					
+					<fieldset class="repeating_role-skills">
+						<button type="action" name="act_role-skill">Roll</button>
+						<input type="text" name="attr_role-skill-name">
+						<select name="attr_role-skill-attribute">
+							<option value="strength" data-i18n="strength-short" selected="selected"></option>
+							<option value="stamina" data-i18n="stamina-short"></option>
+							<option value="dexterity" data-i18n="dexterity-short"></option>
+							<option value="knowledge" data-i18n="knowledge-short"></option>
+							<option value="coolness" data-i18n="coolness-short"></option>
+							<option value="chi" data-i18n="chi-short"></option>
+						</select>
+						<input type="number" name="attr_role-skill-value" />								
+					</fieldset>
 				</div>
 				<div class="sheet-role-advantages">
 					<p><span data-i18n="role-advantages"></span>Coming soon</p>
@@ -737,7 +750,7 @@
 		recalcHitpoints();
 	});
 	
-	/* Fertigkeitsproben */
+	/* Fertigkeitsproben (Schauspieler) */
 	aActorSkills.forEach(sSkill => {
 		on(`clicked:skill-${sSkill}`, function() {			
 			getAttrs(["character_name","skill-"+sSkill+"-attribute","skill-"+sSkill], function (values){
@@ -772,6 +785,44 @@
 			});
 		});
 	});
+	
+	/* Fertigkeitsproben (Rolle) */
+	on("clicked:repeating_role-skills:role-skill", function() {
+		console.log("Hurra");
+		getAttrs(["character_name","repeating_role-skills_role-skill-name","repeating_role-skills_role-skill-value","repeating_role-skills_role-skill-attribute","repeating_role-skills_role-skill-name"], function (values){
+			let sName = values["character_name"];
+			let sAttribute = values["repeating_role-skills_role-skill-attribute"];
+			let sSkill = values["repeating_role-skills_role-skill-name"];
+			let iSkillValue = parseInt(values["repeating_role-skills_role-skill-value"]);
+			let iCriticalSuccess = iBaseCriticalSuccess;
+			let iCriticalFailure = iBaseCriticalFailure;
+			
+			getAttrs([sAttribute], function(values2) {
+				let iAttributeValue = parseInt(values2[sAttribute]);
+				let iSum = iSkillValue + iAttributeValue;
+				
+				let sRollQuery = "&{template:skill} {{name="+sName+"}} {{skill="+sSkill+"}} {{attribute="+getTranslationByKey(sAttribute)+"}} {{skillValue="+iSkillValue+"}} {{attributeValue="+iAttributeValue+"}} {{target="+iSum+"}} {{roll1=[[1d20cs<"+iCriticalSuccess+"cf>"+iCriticalFailure+"]]}}";
+				
+				startRoll(sRollQuery, (results) => {
+					let iRoll = parseInt(results.results.roll1.result);
+					let sResult = "";
+					
+					if (iRoll <= iCriticalSuccess) {
+						sResult = getTranslationByKey("critical-success");
+					} else if (iRoll < iSum) {
+						sResult = getTranslationByKey("success");
+					} else if (iRoll < iCriticalFailure) {
+						sResult = getTranslationByKey("failure");
+					} else {
+						sResult = getTranslationByKey("critical-failure");
+					}
+					finishRoll(results.rollId,{roll1: sResult});
+				});
+			});
+		});
+	});
+	
+	
 	
 	/* Attributssproben */
 	aActorAttributes.forEach(sAttribute => {
