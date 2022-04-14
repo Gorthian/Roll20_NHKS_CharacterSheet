@@ -778,7 +778,7 @@
 					let iAttributeValue = parseInt(values2[sAttribute]);
 					let iSum = iSkillValue + iAttributeValue;				
 					
-					let sRollQuery = "&{template:skill} {{name="+sName+"}} {{skill="+getTranslationByKey(sSkill)+"}} {{attribute="+getTranslationByKey(sAttribute)+"}} {{skillValue="+iSkillValue+"}} {{attributeValue="+iAttributeValue+"}} {{target="+iSum+"}} {{roll1=[[1d20cs<"+iCriticalSuccess+"cf>"+iCriticalFailure+"]]}}";
+					let sRollQuery = "&{template:skill} {{name="+sName+"}} {{skill="+getTranslationByKey(sSkill)+"}} {{attribute="+getTranslationByKey(sAttribute)+"}} {{skillValue="+iSkillValue+"}} {{attributeValue="+iAttributeValue+"}} {{target="+iSum+"}} {{roll1=[[1d20+?{"+getTranslationByKey("modifier")+"|0}cs<"+iCriticalSuccess+"cf>"+iCriticalFailure+"]]}}";
 					
 					startRoll(sRollQuery, (results) => {
 						let iRoll = parseInt(results.results.roll1.result);
@@ -815,7 +815,7 @@
 				let iAttributeValue = parseInt(values2[sAttribute]);
 				let iSum = iSkillValue + iAttributeValue;
 				
-				let sRollQuery = "&{template:skill} {{name="+sName+"}} {{skill="+sSkill+"}} {{attribute="+getTranslationByKey(sAttribute)+"}} {{skillValue="+iSkillValue+"}} {{attributeValue="+iAttributeValue+"}} {{target="+iSum+"}} {{roll1=[[1d20cs<"+iCriticalSuccess+"cf>"+iCriticalFailure+"]]}}";
+				let sRollQuery = "&{template:skill} {{name="+sName+"}} {{skill="+sSkill+"}} {{attribute="+getTranslationByKey(sAttribute)+"}} {{skillValue="+iSkillValue+"}} {{attributeValue="+iAttributeValue+"}} {{target="+iSum+"}} {{roll1=[[1d20+?{"+getTranslationByKey("modifier")+"|0}cs<"+iCriticalSuccess+"cf>"+iCriticalFailure+"]]}}";
 				
 				startRoll(sRollQuery, (results) => {
 					let iRoll = parseInt(results.results.roll1.result);
@@ -848,7 +848,7 @@
 				let iCriticalSuccess = iBaseCriticalSuccess;
 				let iCriticalFailure = iBaseCriticalFailure;
 				
-				let sRollQuery = "&{template:attribute} {{name="+sName+"}} {{attribute="+getTranslationByKey(sAttribute)+"}} {{attributeValue="+iAttributeValue+"}} {{target="+iSum+"}} {{roll1=[[1d20cs<"+iCriticalSuccess+"cf>"+iCriticalFailure+"]]}}";
+				let sRollQuery = "&{template:attribute} {{name="+sName+"}} {{attribute="+getTranslationByKey(sAttribute)+"}} {{attributeValue="+iAttributeValue+"}} {{target="+iSum+"}} {{roll1=[[1d20+?{"+getTranslationByKey("modifier")+"|0}cs<"+iCriticalSuccess+"cf>"+iCriticalFailure+"]]}}";
 					
 				startRoll(sRollQuery, (results) => {
 					let iRoll = parseInt(results.results.roll1.result);
@@ -894,7 +894,7 @@
 				let iCriticalFailure = iBaseCriticalFailure;
 				let iSum = iSkillValue + iAttributeValue;				
 					
-				let sRollQuery = "&{template:skill} {{name="+sName+"}} {{skill="+getTranslationByKey(sSkill)+"}} {{attribute="+getTranslationByKey(sCombatAttribute)+"}} {{skillValue="+iSkillValue+"}} {{attributeValue="+iAttributeValue+"}} {{target="+iSum+"}} {{roll1=[[1d20cs<"+iCriticalSuccess+"cf>"+iCriticalFailure+"]]}}";
+				let sRollQuery = "&{template:skill} {{name="+sName+"}} {{skill="+getTranslationByKey(sSkill)+"}} {{attribute="+getTranslationByKey(sCombatAttribute)+"}} {{skillValue="+iSkillValue+"}} {{attributeValue="+iAttributeValue+"}} {{target="+iSum+"}} {{roll1=[[1d20+?{"+getTranslationByKey("modifier")+"|0}cs<"+iCriticalSuccess+"cf>"+iCriticalFailure+"]]}}";
 					
 				startRoll(sRollQuery, (results) => {
 					let iRoll = parseInt(results.results.roll1.result);
@@ -923,7 +923,7 @@
 				let iCriticalFailure = iBaseCriticalFailure;
 				let iSum = iSkillValue + iAttributeValue;				
 					
-				let sRollQuery = "&{template:skill} {{name="+sName+"}} {{skill="+getTranslationByKey(sSkill)+"}} {{attribute="+getTranslationByKey("melee-defense")+"}} {{skillValue="+iSkillValue+"}} {{attributeValue="+iAttributeValue+"}} {{target="+iSum+"}} {{roll1=[[1d20cs<"+iCriticalSuccess+"cf>"+iCriticalFailure+"]]}}";
+				let sRollQuery = "&{template:skill} {{name="+sName+"}} {{skill="+getTranslationByKey(sSkill)+"}} {{attribute="+getTranslationByKey("melee-defense")+"}} {{skillValue="+iSkillValue+"}} {{attributeValue="+iAttributeValue+"}} {{target="+iSum+"}} {{roll1=[[1d20+?{"+getTranslationByKey("modifier")+"|0}cs<"+iCriticalSuccess+"cf>"+iCriticalFailure+"]]}}";
 					
 				startRoll(sRollQuery, (results) => {
 					let iRoll = parseInt(results.results.roll1.result);

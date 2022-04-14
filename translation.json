@@ -130,5 +130,6 @@
   "supporting-role" : "Nebenrolle",
   "rolltemplate-intiative-desc" : "Der Token muss ausgewählt sein, damit er automatisch im Turn-Tracker erscheint.",
   "combat" : "KAMPF",
-  "parry" : "Parade"
+  "parry" : "Parade",
+  "modifier" : "Modifikator"
 }
