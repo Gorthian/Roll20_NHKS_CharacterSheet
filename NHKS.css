@@ -360,10 +360,6 @@ div.sheet-weapon-attribute *:nth-child(1):hover ~span {
 
 /*             DIVERSES                            */
 
-div.sheet-actor-sheet div {
-	margin				: 5px;
-}
-
 div.sheet-actor-sheet h1 {
 	--h1-height			: 1.5em;
 	width				: 100%;
@@ -448,37 +444,35 @@ div.sheet-actor-skills * {
 	font-size	: 0.95em;
 }
 
-.sheet-actor-skills table tr td {
-	vertical-align : middle;
+div.sheet-skill-entry, div.sheet-combat-entry {
+	display			: flex;
+	flex-direction	: row;
+	justify-content : space-between;
+	padding			: 0;
+	margin			: 0;
 }
 
-.sheet-actor-skills table tr td:nth-child(1) {
-	width		: 50%;
-	text-align	: left;
+div.sheet-skill-entry div, div.sheet-combat-entry div {
+	width			: auto;
+	vertical-align	: middle;
 }
 
-.sheet-actor-skills table tr td:nth-child(2) {
-	width		: 40%;
-	text-align	: center;
+div.sheet-skill-name, div.sheet-combat-attack {
+	width			: 100px;
+	text-align		: left;
 }
 
-.sheet-actor-skills table tr td:nth-child(3) {
+div.sheet-skill-entry div.sheet-skill-value, div.sheet-combat-entry div.sheet-combat-value {
 	width		: 10%;
 	text-align	: right;
 }
 
-div.sheet-skill-entry {
-	clear		: both;
-}
-
-div.sheet-skill-entry div {
-	float		: left;
-	width		: auto;
-	padding		: 2px;
-}
-
 div.sheet-skill-entry div.sheet-skill-attribute select {
 	width		: 60px;
+}
+
+div.sheet-skill-entry button[type="action"], div.sheet-combat-entry button[type="action"] {
+	width	: 100px;
 }
 
 /* Chrome, Safari, Edge, Opera */
@@ -493,7 +487,7 @@ input[type=number].sheet-no-arrows {
   -moz-appearance: textfield;
 }
 
-/* 				Buttons					*/
+/* 				Allgemeine Buttons					*/
 
 button[type="action"] {
 	width				: 85%;

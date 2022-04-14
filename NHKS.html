@@ -143,364 +143,368 @@
 				</div>
 				<div class="sheet-actor-skills">
 					<h1><span data-i18n="skills"></span></h1>
-					<table>
-						<tr>
-							<td>
-								<button type="action" name="act_skill-acrobatic"><span data-i18n="acrobatic"></span></button>
-							</td>
-							<td>							
-								<span data-i18n="dexterity-short"></span><input type="hidden" name="attr_skill-acrobatic-attribute" value="dexterity" />
-							</td>
-							<td>
-								<input type="number" name="attr_skill-acrobatic" />
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<button type="action" name="act_skill-athletic"><span data-i18n="athletic"></span></button>
-							</td>
-							<td>
-								<select name="attr_skill-athletic-attribute">
-									<option value="strength" data-i18n="strength-short" selected="selected"></option>
-									<option value="stamina" data-i18n="stamina-short"></option>
-								</select>
-							</td>	
-							<td>
-								<input type="number" name="attr_skill-athletic" />
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<button type="action" name="act_skill-dodge"><span data-i18n="dodge"></span></button>
-							</td>
-							<td>
-								<span data-i18n="dexterity-short"></span><input type="hidden" name="attr_skill-dodge-attribute" value="dexterity" />
-							</td>
-							<td>
-								<input type="number" name="attr_skill-dodge" />
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<button type="action" name="act_skill-boats"><span data-i18n="boats"></span></button>
-							</td>
-							<td>
-								<select name="attr_skill-boats-attribute">
-									<option value="knowledge" data-i18n="knowledge-short" selected="selected"></option>
-									<option value="dexterity" data-i18n="dexterity-short"></option>
-								</select>
-							</td>
-							<td>
-								<input type="number" name="attr_skill-boats"></span>
-							</td>						
-						</tr>
-						<tr>
-							<td>
-								<button type="action" name="act_skill-persuade"><span data-i18n="persuade"></span></button>
-							</td>
-							<td>
-								<select name="attr_skill-persuade-attribute">
-									<option value="coolness" data-i18n="coolness-short" selected="selected"></option>
-									<option value="strength" data-i18n="strength-short"></option>
-								</select>
-							</td>
-							<td>
-								<input type="number" name="attr_skill_persuade"></span>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<button type="action" name="act_skill-computers"><span data-i18n="computers"></span></button>
-							</td>
-							<td>
-								<span data-i18n="knowledge-short"></span><input type="hidden" name="attr_skill-computers-attribute" value="knowledge" />
-							</td>
-							<td>
-								<input type="number" name="attr_skill-computers"></span>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<button type="action" name="act_skill-firstaid"><span data-i18n="firstaid"></span></button>
-							</td>
-							<td>
-								<span data-i18n="knowledge-short"></span><input type="hidden" name="attr_skill-firstaid-attribute" value="knowledge" />			
-							</td>
-							<td>
-								<input type="number" name="attr_skill-firstaid"></span>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<button type="action" name="act_skill-extremesport"><span data-i18n="extremesport"></span></button>
-							</td>
-							<td>
-								<select name="attr_skill-extremesport-attribute">
-									<option value="strength" data-i18n="strength-short" selected="selected"></option>
-									<option value="stamina" data-i18n="stamina-short"></option>
-									<option value="dexterity" data-i18n="dexterity-short"></option>
-								</select>
-							</td>
-							<td>
-								<input type="number" name="attr_skill-extremesport"></span>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<button type="action" name="act_skill-slideofhand"><span data-i18n="slideofhand"></span></button>
-							</td>
-							<td>
-								<span data-i18n="dexterity-short"></span><input type="hidden" name="attr_skill-slideofhand-attribute" value="dexterity" />			
-							</td>
-							<td>
-								<input type="number" name="attr_skill-slideofhand"></span>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<button type="action" name="act_skill-aircrafts"><span data-i18n="aircrafts"></span></button>
-							</td>
-							<td>
-								<select name="attr_skill-aircrafts-attribute">
-									<option value="knowledge" data-i18n="knowledge-short" selected="selected"></option>
-									<option value="dexterity" data-i18n="dexterity-short"></option>
-								</select>
-							</td>
-							<td>
-								<input type="number" name="attr_skill-aircrafts"></span>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<button type="action" name="act_skill-vehicles"><span data-i18n="vehicles"></span></button>
-							</td>
-							<td>
-								<select name="attr_skill-vehicles-attribute">
-									<option value="knowledge" data-i18n="knowledge-short" selected="selected"></option>
-									<option value="dexterity" data-i18n="dexterity-short"></option>
-								</select>
-							</td>
-							<td>
-								<input type="number" name="attr_skill-vehicles"></span>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<button type="action" name="act_skill-improvisation"><span data-i18n="improvisation"></span></button>
-							</td>
-							<td>
-								<select name="attr_skill-improvisation-attribute">
-									<option value="knowledge" data-i18n="knowledge-short" selected="selected"></option>
-									<option value="strength" data-i18n="strength-short"></option>
-									<option value="coolness" data-i18n="coolness-short"></option>
-									<option value="stamina" data-i18n="stamina-short"></option>
-									<option value="chi" data-i18n="chi-short"></option>
-									<option value="dexterity" data-i18n="dexterity-short"></option>
-								</select>
-							</td>
-							<td>
-								<input type="number" name="attr_skill-improvisation"></span>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<button type="action" name="act_skill-climbing"><span data-i18n="climbing"></span></button>
-							</td>
-							<td>
-								<select name="attr_skill-climbing-attribute">								
-									<option value="strength" data-i18n="strength-short" selected="selected"></option>								
-									<option value="stamina" data-i18n="stamina-short"></option>								
-									<option value="dexterity" data-i18n="dexterity-short"></option>
-								</select>
-							</td>
-							<td>
-								<input type="number" name="attr_skill-climbing"></span>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<button type="action" name="act_skill-contacts"><span data-i18n="contacts"></span></button>
-							</td>
-							<td>
-								<select name="attr_skill-contacts-attribute">
-									<option value="knowledge" data-i18n="knowledge-short" selected="selected"></option>
-									<option value="coolness" data-i18n="coolness-short"></option>
-								</select>
-							</td>
-							<td>
-								<input type="number" name="attr_skill-contacts"></span>
-							</td>							
-						</tr>
-						<tr>
-							<td>
-								<button type="action" name="act_skill-mechanic"><span data-i18n="mechanic"></span></button>
-							</td>
-							<td>
-								<span data-i18n="knowledge-short"></span><input type="hidden" name="attr_skill-mechanic-attribute" value="dexterity" />			
-							</td>
-							<td>
-								<input type="number" name="attr_skill-mechanic"></span>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<button type="action" name="act_skill-stealth"><span data-i18n="stealth"></span></button>
-							</td>
-							<td>
-								<span data-i18n="dexterity-short"></span><input type="hidden" name="attr_skill-stealth-attribute" value="dexterity" />
-							</td>
-							<td>
-								<input type="number" name="attr_skill-stealth"></span>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<button type="action" name="act_skill-perception"><span data-i18n="perception"></span></button>
-							</td>
-							<td>
-								<span data-i18n="chi-short"></span><input type="hidden" name="attr_skill-perception-attribute" value="dexterity" />			
-							</td>
-							<td>
-								<input type="number" name="attr_skill-perception"></span>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<button type="action" name="act_skill-languages"><span data-i18n="languages"></span></button>
-							</td>
-							<td>
-								<select name="attr_skill-languages-attribute">
-									<option value="knowledge" data-i18n="knowledge-short" selected="selected"></option>
-									<option value="coolness" data-i18n="coolness-short"></option>
-								</select>
-							</td>
-							<td>
-								<input type="number" name="attr_skill-languages"></span>
-							</td>						
-						</tr>
-						<tr>
-							<td>
-								<button type="action" name="act_skill-searching"><span data-i18n="searching"></span></button>
-							</td>
-							<td>
-								<select name="attr_skill-searching-attribute">
-									<option value="knowledge" data-i18n="knowledge-short" selected="selected"></option>
-									<option value="chi" data-i18n="chi-short"></option>
-								</select>
-							</td>
-							<td>
-								<input type="number" name="attr_skill-searching"></span>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<button type="action" name="act_skill-hiding"><span data-i18n="hiding"></span></button>
-							</td>
-							<td>
-								<select name="attr_skill-hiding-attribute">
-									<option value="knowledge" data-i18n="knowledge-short" selected="selected"></option>								
-									<option value="dexterity" data-i18n="dexterity-short"></option>
-								</select>
-							</td>
-							<td>
-								<input type="number" name="attr_skill-hiding"></span>
-							</td>
-						</tr>
-					</table>
+					<div class="sheet-skill-entry">
+						<div class="sheet-skill-name">
+							<button type="action" name="act_skill-acrobatic"><span data-i18n="acrobatic"></span></button>
+						</div>
+						<div class="sheet-skill-attribute">
+							<span data-i18n="dexterity-short"></span><input type="hidden" name="attr_skill-acrobatic-attribute" value="dexterity" />
+						</div>
+						<div class="sheet-skill-value">
+							<input type="number" name="attr_skill-acrobatic" />
+						</div>
+					</div>
+					<div class="sheet-skill-entry">
+						<div class="sheet-skill-name">
+							<button type="action" name="act_skill-athletic"><span data-i18n="athletic"></span></button>
+						</div>
+						<div class="sheet-skill-attribute">
+							<select name="attr_skill-athletic-attribute">
+								<option value="strength" data-i18n="strength-short" selected="selected"></option>
+								<option value="stamina" data-i18n="stamina-short"></option>
+							</select>
+						</div>
+						<div class="sheet-skill-value">
+							<input type="number" name="attr_skill-athletic" />
+						</div>
+					</div>
+					<div class="sheet-skill-entry">
+						<div class="sheet-skill-name">
+							<button type="action" name="act_skill-dodge"><span data-i18n="dodge"></span></button>
+						</div>
+						<div class="sheet-skill-attribute">
+							<span data-i18n="dexterity-short"></span><input type="hidden" name="attr_skill-dodge-attribute" value="dexterity" />
+						</div>
+						<div class="sheet-skill-value">
+							<input type="number" name="attr_skill-dodge" />
+						</div>
+					</div>
+					<div class="sheet-skill-entry">
+						<div class="sheet-skill-name">
+							<button type="action" name="act_skill-boats"><span data-i18n="boats"></span></button>
+						</div>
+						<div class="sheet-skill-attribute">
+							<select name="attr_skill-boats-attribute">
+								<option value="knowledge" data-i18n="knowledge-short" selected="selected"></option>
+								<option value="dexterity" data-i18n="dexterity-short"></option>
+							</select>
+						</div>
+						<div class="sheet-skill-value">
+							<input type="number" name="attr_skill-boats" />
+						</div>
+					</div>
+					<div class="sheet-skill-entry">
+						<div class="sheet-skill-name">
+							<button type="action" name="act_skill-persuade"><span data-i18n="persuade"></span></button>
+						</div>
+						<div class="sheet-skill-attribute">
+							<select name="attr_skill-persuade-attribute">
+								<option value="coolness" data-i18n="coolness-short" selected="selected"></option>
+								<option value="strength" data-i18n="strength-short"></option>
+							</select>
+						</div>
+						<div class="sheet-skill-value">
+							<input type="number" name="attr_skill_persuade" />
+						</div>
+					</div>
+					<div class="sheet-skill-entry">
+						<div class="sheet-skill-name">
+							<button type="action" name="act_skill-computers"><span data-i18n="computers"></span></button>
+						</div>
+						<div class="sheet-skill-attribute">
+							<span data-i18n="knowledge-short"></span><input type="hidden" name="attr_skill-computers-attribute" value="knowledge" />
+						</div>
+						<div class="sheet-skill-value">
+							<input type="number" name="attr_skill-computers" />
+						</div>
+					</div>
+					<div class="sheet-skill-entry">
+						<div class="sheet-skill-name">
+							<button type="action" name="act_skill-firstaid"><span data-i18n="firstaid"></span></button>
+						</div>
+						<div class="sheet-skill-attribute">
+							<span data-i18n="knowledge-short"></span><input type="hidden" name="attr_skill-firstaid-attribute" value="knowledge" />			
+						</div>
+						<div class="sheet-skill-value">
+							<input type="number" name="attr_skill-firstaid" />
+						</div>
+					</div>
+					<div class="sheet-skill-entry">
+						<div class="sheet-skill-name">
+							<button type="action" name="act_skill-extremesport"><span data-i18n="extremesport"></span></button>
+						</div>
+						<div class="sheet-skill-attribute">
+							<select name="attr_skill-extremesport-attribute">
+								<option value="strength" data-i18n="strength-short" selected="selected"></option>
+								<option value="stamina" data-i18n="stamina-short"></option>
+								<option value="dexterity" data-i18n="dexterity-short"></option>
+							</select>
+						</div>
+						<div class="sheet-skill-value">
+							<input type="number" name="attr_skill-extremesport" />
+						</div>
+					</div>
+					<div class="sheet-skill-entry">
+						<div class="sheet-skill-name">
+							<button type="action" name="act_skill-slideofhand"><span data-i18n="slideofhand"></span></button>
+						</div>
+						<div class="sheet-skill-attribute">
+							<span data-i18n="dexterity-short"></span><input type="hidden" name="attr_skill-slideofhand-attribute" value="dexterity" />			
+						</div>
+						<div class="sheet-skill-value">
+							<input type="number" name="attr_skill-slideofhand" />
+						</div>
+					</div>
+					<div class="sheet-skill-entry">
+						<div class="sheet-skill-name">
+							<button type="action" name="act_skill-aircrafts"><span data-i18n="aircrafts"></span></button>
+						</div>
+						<div class="sheet-skill-attribute">
+							<select name="attr_skill-aircrafts-attribute">
+								<option value="knowledge" data-i18n="knowledge-short" selected="selected"></option>
+								<option value="dexterity" data-i18n="dexterity-short"></option>
+							</select>
+						</div>
+						<div class="sheet-skill-value">
+							<input type="number" name="attr_skill-aircrafts" />
+						</div>
+					</div>
+					<div class="sheet-skill-entry">
+						<div class="sheet-skill-name">
+							<button type="action" name="act_skill-vehicles"><span data-i18n="vehicles"></span></button>
+						</div>
+						<div class="sheet-skill-attribute">
+							<select name="attr_skill-vehicles-attribute">
+								<option value="knowledge" data-i18n="knowledge-short" selected="selected"></option>
+								<option value="dexterity" data-i18n="dexterity-short"></option>
+							</select>
+						</div>
+						<div class="sheet-skill-value">
+							<input type="number" name="attr_skill-vehicles" />
+						</div>
+					</div>
+					<div class="sheet-skill-entry">
+						<div class="sheet-skill-name">
+							<button type="action" name="act_skill-improvisation"><span data-i18n="improvisation"></span></button>
+						</div>
+						<div class="sheet-skill-attribute">
+							<select name="attr_skill-improvisation-attribute">
+								<option value="knowledge" data-i18n="knowledge-short" selected="selected"></option>
+								<option value="strength" data-i18n="strength-short"></option>
+								<option value="coolness" data-i18n="coolness-short"></option>
+								<option value="stamina" data-i18n="stamina-short"></option>
+								<option value="chi" data-i18n="chi-short"></option>
+								<option value="dexterity" data-i18n="dexterity-short"></option>
+							</select>
+						</div>
+						<div class="sheet-skill-value">
+							<input type="number" name="attr_skill-improvisation" />
+						</div>
+					</div>
+					<div class="sheet-skill-entry">
+						<div class="sheet-skill-name">
+							<button type="action" name="act_skill-climbing"><span data-i18n="climbing"></span></button>
+						</div>
+						<div class="sheet-skill-attribute">
+							<select name="attr_skill-climbing-attribute">								
+								<option value="strength" data-i18n="strength-short" selected="selected"></option>								
+								<option value="stamina" data-i18n="stamina-short"></option>								
+								<option value="dexterity" data-i18n="dexterity-short"></option>
+							</select>
+						</div>
+						<div class="sheet-skill-value">
+							<input type="number" name="attr_skill-climbing" />
+						</div>
+					</div>
+					<div class="sheet-skill-entry">
+						<div class="sheet-skill-name">
+							<button type="action" name="act_skill-contacts"><span data-i18n="contacts"></span></button>
+						</div>
+						<div class="sheet-skill-attribute">
+							<select name="attr_skill-contacts-attribute">
+								<option value="knowledge" data-i18n="knowledge-short" selected="selected"></option>
+								<option value="coolness" data-i18n="coolness-short"></option>
+							</select>
+						</div>
+						<div class="sheet-skill-value">
+							<input type="number" name="attr_skill-contacts" />
+						</div>
+					</div>
+					<div class="sheet-skill-entry">
+						<div class="sheet-skill-name">
+							<button type="action" name="act_skill-mechanic"><span data-i18n="mechanic"></span></button>
+						</div>
+						<div class="sheet-skill-attribute">
+							<span data-i18n="knowledge-short"></span><input type="hidden" name="attr_skill-mechanic-attribute" value="dexterity" />			
+						</div>
+						<div class="sheet-skill-value">
+							<input type="number" name="attr_skill-mechanic" />
+						</div>
+					</div>
+					<div class="sheet-skill-entry">
+						<div class="sheet-skill-name">
+							<button type="action" name="act_skill-stealth"><span data-i18n="stealth"></span></button>
+						</div>
+						<div class="sheet-skill-attribute">
+							<span data-i18n="dexterity-short"></span><input type="hidden" name="attr_skill-stealth-attribute" value="dexterity" />
+						</div>
+						<div class="sheet-skill-value">
+							<input type="number" name="attr_skill-stealth" />
+						</div>
+					</div>
+					<div class="sheet-skill-entry">
+						<div class="sheet-skill-name">
+							<button type="action" name="act_skill-perception"><span data-i18n="perception"></span></button>
+						</div>
+						<div class="sheet-skill-attribute">
+							<span data-i18n="chi-short"></span><input type="hidden" name="attr_skill-perception-attribute" value="dexterity" />			
+						</div>
+						<div class="sheet-skill-value">
+							<input type="number" name="attr_skill-perception" />
+						</div>
+					</div>
+					<div class="sheet-skill-entry">
+						<div class="sheet-skill-name">
+							<button type="action" name="act_skill-languages"><span data-i18n="languages"></span></button>
+						</div>
+						<div class="sheet-skill-attribute">
+							<select name="attr_skill-languages-attribute">
+								<option value="knowledge" data-i18n="knowledge-short" selected="selected"></option>
+								<option value="coolness" data-i18n="coolness-short"></option>
+							</select>
+						</div>
+						<div class="sheet-skill-value">
+							<input type="number" name="attr_skill-languages" />
+						</div>
+					</div>
+					<div class="sheet-skill-entry">
+						<div class="sheet-skill-name">
+							<button type="action" name="act_skill-searching"><span data-i18n="searching"></span></button>
+						</div>
+						<div class="sheet-skill-attribute">
+							<select name="attr_skill-searching-attribute">
+								<option value="knowledge" data-i18n="knowledge-short" selected="selected"></option>
+								<option value="chi" data-i18n="chi-short"></option>
+							</select>
+						</div>
+						<div class="sheet-skill-value">
+							<input type="number" name="attr_skill-searching" />
+						</div>
+					</div>
+					<div class="sheet-skill-entry">
+						<div class="sheet-skill-name">
+							<button type="action" name="act_skill-hiding"><span data-i18n="hiding"></span></button>
+						</div>
+						<div class="sheet-skill-attribute">
+							<select name="attr_skill-hiding-attribute">
+								<option value="knowledge" data-i18n="knowledge-short" selected="selected"></option>								
+								<option value="dexterity" data-i18n="dexterity-short"></option>
+							</select>
+						</div>
+						<div class="sheet-skill-value">
+							<input type="number" name="attr_skill-hiding" />
+						</div>
+					</div>					
 					<h1><span data-i18n="combat"></span></h1>
-					<table>
-						<tr>
-							<td>
-								<button type="action" name="act_combat-melee-small"><span data-i18n="melee-small"></span></button>
-							</td>
-							<td>
-								<button type="action" name="act_combat-melee-small-parry"><span data-i18n="parry"></span></button>
-							</td>							
-							<td>
-								<input type="number" name="attr_skill-melee-small" />
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<button type="action" name="act_combat-melee-medium"><span data-i18n="melee-medium"></span></button>
-							</td>
-							<td>
-								<button type="action" name="act_combat-melee-medium-parry"><span data-i18n="parry"></span></button>
-							</td>
-							<td>
-								<input type="number" name="attr_skill-melee-medium" />
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<button type="action" name="act_combat-melee-big"><span data-i18n="melee-big"></span></button>
-							</td>
-							<td>
-								<button type="action" name="act_combat-melee-big-parry"><span data-i18n="parry"></span></button>
-							</td>
-							<td>
-								<input type="number" name="attr_skill-melee-big" />
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<button type="action" name="act_combat-pistols"><span data-i18n="pistols"></span></button>
-							</td>
-							<td></td>
-							<td>
-								<input type="number" name="attr_skill-pistols" />
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<button type="action" name="act_combat-rifles"><span data-i18n="rifles"></span></button>
-							</td>
-							<td></td>
-							<td>
-								<input type="number" name="attr_skill-rifles" />
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<button type="action" name="act_combat-heavy-weapons"><span data-i18n="heavy-weapons"></span></button>
-							</td>
-							<td></td>
-							<td>
-								<input type="number" name="attr_skill-heavy-weapons" />
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<button type="action" name="act_combat-melee-misc"><span data-i18n="melee-misc"></span></button>
-							</td>
-							<td>
-								<button type="action" name="act_combat-melee-misc-parry"><span data-i18n="parry"></span></button>
-							</td>
-							<td>
-								<input type="number" name="attr_skill-melee-misc" />
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<button type="action" name="act_combat-ranged-misc"><span data-i18n="ranged-misc"></span></button>
-							</td>
-							<td></td>
-							<td>
-								<input type="number" name="attr_skill-ranged-misc" />
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<button type="action" name="act_combat-unarmed"><span data-i18n="unarmed"></span></button>
-							</td>
-							<td>
-								<button type="action" name="act_combat-unarmed-parry"><span data-i18n="parry"></span></button>
-							</td>							
-							<td>
-								<input type="number" name="attr_skill-unarmed" />
-							</td>
-						</tr>
-					</table>
+					<div class="sheet-combat-entry">
+						<div class="sheet-combat-attack">
+							<button type="action" name="act_combat-melee-small"><span data-i18n="melee-small"></span></button>
+						</div>
+						<div class="sheet-combat-parry">
+							<button type="action" name="act_combat-melee-small-parry"><span data-i18n="parry"></span></button>
+						</div>						
+						<div class="sheet-combat-value">
+							<input type="number" name="attr_skill-melee-small" />
+						</div>
+					</div>
+					<div class="sheet-combat-entry">
+						<div class="sheet-combat-attack">
+							<button type="action" name="act_combat-melee-medium"><span data-i18n="melee-medium"></span></button>
+						</div>
+						<div class="sheet-combat-parry">
+							<button type="action" name="act_combat-melee-medium-parry"><span data-i18n="parry"></span></button>
+						</div>						
+						<div class="sheet-combat-value">
+							<input type="number" name="attr_skill-melee-medium" />
+						</div>
+					</div>
+					<div class="sheet-combat-entry">
+						<div class="sheet-combat-attack">
+							<button type="action" name="act_combat-melee-big"><span data-i18n="melee-big"></span></button>
+						</div>
+						<div class="sheet-combat-parry">
+							<button type="action" name="act_combat-melee-big-parry"><span data-i18n="parry"></span></button>
+						</div>						
+						<div class="sheet-combat-value">
+							<input type="number" name="attr_skill-melee-big" />
+						</div>
+					</div>
+					<div class="sheet-combat-entry">
+						<div class="sheet-combat-attack">
+							<button type="action" name="act_combat-pistols"><span data-i18n="pistols"></span></button>
+						</div>
+						<div class="sheet-combat-parry">
+							&nbsp;
+						</div>						
+						<div class="sheet-combat-value">
+							<input type="number" name="attr_skill-pistols" />
+						</div>
+					</div>
+					<div class="sheet-combat-entry">
+						<div class="sheet-combat-attack">
+							<button type="action" name="act_combat-rifles"><span data-i18n="rifles"></span></button>
+						</div>
+						<div class="sheet-combat-parry">
+							&nbsp;
+						</div>						
+						<div class="sheet-combat-value">
+							<input type="number" name="attr_skill-rifles" />
+						</div>
+					</div>
+					<div class="sheet-combat-entry">
+						<div class="sheet-combat-attack">
+							<button type="action" name="act_combat-heavy-weapons"><span data-i18n="heavy-weapons"></span></button>
+						</div>
+						<div class="sheet-combat-parry">
+							&nbsp;
+						</div>						
+						<div class="sheet-combat-value">
+							<input type="number" name="attr_skill-heavy-weapons" />
+						</div>
+					</div>
+					<div class="sheet-combat-entry">
+						<div class="sheet-combat-attack">
+							<button type="action" name="act_combat-melee-misc"><span data-i18n="melee-misc"></span></button>
+						</div>
+						<div class="sheet-combat-parry">
+							<button type="action" name="act_combat-melee-misc-parry"><span data-i18n="parry"></span></button>
+						</div>						
+						<div class="sheet-combat-value">
+							<input type="number" name="attr_skill-melee-misc" />
+						</div>
+					</div>
+					<div class="sheet-combat-entry">
+						<div class="sheet-combat-attack">
+							<button type="action" name="act_combat-ranged-misc"><span data-i18n="ranged-misc"></span></button>
+						</div>
+						<div class="sheet-combat-parry">
+							&nbsp;
+						</div>						
+						<div class="sheet-combat-value">
+							<input type="number" name="attr_skill-ranged-misc" />
+						</div>
+					</div>
+					<div class="sheet-combat-entry">
+						<div class="sheet-combat-attack">
+							<button type="action" name="act_combat-unarmed"><span data-i18n="unarmed"></span></button>
+						</div>
+						<div class="sheet-combat-parry">
+							<button type="action" name="act_combat-unarmed-parry"><span data-i18n="parry"></span></button>
+						</div>						
+						<div class="sheet-combat-value">
+							<input type="number" name="attr_skill-unarmed" />
+						</div>
+					</div>
 				</div>
 				<div class="sheet-actor-advantages">
 					<h1><span data-i18n="advantages-and-disadvantages"></span></h1>
@@ -649,7 +653,7 @@
 							</div>
 							<div class="sheet-skill-value"><input type="number" name="attr_role-skill-value" /></div>
 						</div>
-					</fieldset>
+					</fieldset>					
 				</div>
 				<div class="sheet-role-advantages">
 					<p><span data-i18n="role-advantages"></span>Coming soon</p>
