@@ -742,6 +742,7 @@
 	const aActorWeaponSkills = ["melee-small","melee-medium","melee-big","pistols","rifles","heavy-weapons","melee-misc","ranged-misc","unarmed"];
 	const iBaseCriticalSuccess = 2;
 	const iBaseCriticalFailure = 19;
+	const sBaseRoll = "[[1d20+?{"+getTranslationByKey("modifier")+"|0}cs<?{"+getTranslationByKey("critical-success-to")+"|"+iBaseCriticalSuccess+"}cf>?{"+getTranslationByKey("critical-failure-from")+"|"+iBaseCriticalFailure+"}]]";
 	/* Globale Konstanten -- Ende */
 
 	/* Tab-Wechsel */
@@ -762,19 +763,19 @@
 	on("change:role-type", function () {
 		recalcChipoints();
 		recalcHitpoints();
-	});
-	
+	});	
+		
 	function getRollResult(results,iSum) {
 		let sExpression = results.results.roll1.expression;
 		let iRoll = parseInt(results.results.roll1.result);
 		let sResult = "";
 					
-		iCriticalSuccess = parseInt(sExpression.split("<")[1].split("cf")[0]);
-		iCriticalFailure = parseInt(sExpression.split(">")[1]);		
+		let iCriticalSuccess = parseInt(sExpression.split("<")[1].split("cf")[0]);
+		let iCriticalFailure = parseInt(sExpression.split(">")[1]);		
 					
 		if (iRoll <= iCriticalSuccess) {
 			sResult = getTranslationByKey("critical-success");
-		} else if (iRoll < iSum) {
+		} else if (iRoll <= iSum) {
 			sResult = getTranslationByKey("success");
 		} else if (iRoll < iCriticalFailure) {
 			sResult = getTranslationByKey("failure");
@@ -792,14 +793,12 @@
 				let sName = values["character_name"];
 				let sAttribute = values["skill-"+sSkill+"-attribute"];
 				let iSkillValue = parseInt(values["skill-"+sSkill]);
-				let iCriticalSuccess = iBaseCriticalSuccess;
-				let iCriticalFailure = iBaseCriticalFailure;
 				
 				getAttrs([sAttribute], function(values2) {
 					let iAttributeValue = parseInt(values2[sAttribute]);
 					let iSum = iSkillValue + iAttributeValue;			
 					
-					let sRollQuery = "&{template:skill} {{name="+sName+"}} {{skill="+getTranslationByKey(sSkill)+"}} {{attribute="+getTranslationByKey(sAttribute)+"}} {{skillValue="+iSkillValue+"}} {{attributeValue="+iAttributeValue+"}} {{target="+iSum+"}} {{roll1=[[1d20+?{"+getTranslationByKey("modifier")+"|0}cs<?{cs|"+iCriticalSuccess+"}cf>?{cf|"+iCriticalFailure+"}]]}}";
+					let sRollQuery = "&{template:skill} {{name="+sName+"}} {{skill="+getTranslationByKey(sSkill)+"}} {{attribute="+getTranslationByKey(sAttribute)+"}} {{skillValue="+iSkillValue+"}} {{attributeValue="+iAttributeValue+"}} {{target="+iSum+"}} {{roll1="+sBaseRoll+"}}";
 					
 					startRoll(sRollQuery, (results) => {						
 						finishRoll(results.rollId,{roll1: getRollResult(results, iSum)});
@@ -816,14 +815,12 @@
 			let sAttribute = values["repeating_role-skills_role-skill-attribute"];
 			let sSkill = values["repeating_role-skills_role-skill-name"];
 			let iSkillValue = parseInt(values["repeating_role-skills_role-skill-value"]);
-			let iCriticalSuccess = iBaseCriticalSuccess;
-			let iCriticalFailure = iBaseCriticalFailure;
 			
 			getAttrs([sAttribute], function(values2) {
 				let iAttributeValue = parseInt(values2[sAttribute]);
 				let iSum = iSkillValue + iAttributeValue;
 				
-				let sRollQuery = "&{template:skill} {{name="+sName+"}} {{skill="+sSkill+"}} {{attribute="+getTranslationByKey(sAttribute)+"}} {{skillValue="+iSkillValue+"}} {{attributeValue="+iAttributeValue+"}} {{target="+iSum+"}} {{roll1=[[1d20+?{"+getTranslationByKey("modifier")+"|0}cs<?{cs|"+iCriticalSuccess+"}cf>?{cf|"+iCriticalFailure+"}]]}}";
+				let sRollQuery = "&{template:skill} {{name="+sName+"}} {{skill="+sSkill+"}} {{attribute="+getTranslationByKey(sAttribute)+"}} {{skillValue="+iSkillValue+"}} {{attributeValue="+iAttributeValue+"}} {{target="+iSum+"}} {{roll1="+sBaseRoll+"}}";
 				
 				startRoll(sRollQuery, (results) => {					
 					finishRoll(results.rollId,{roll1: getRollResult(results, iSum)});
@@ -839,10 +836,8 @@
 				let sName = values["character_name"];
 				let iAttributeValue = parseInt(values[sAttribute]);
 				let iSum = iAttributeValue + 4;	
-				let iCriticalSuccess = iBaseCriticalSuccess;
-				let iCriticalFailure = iBaseCriticalFailure;				
 				
-				let sRollQuery = "&{template:attribute} {{name="+sName+"}} {{attribute="+getTranslationByKey(sAttribute)+"}} {{attributeValue="+iAttributeValue+"}} {{target="+iSum+"}} {{roll1=[[1d20+?{"+getTranslationByKey("modifier")+"|0}cs<?{cs|"+iCriticalSuccess+"}cf>?{cf|"+iCriticalFailure+"}]]}}";
+				let sRollQuery = "&{template:attribute} {{name="+sName+"}} {{attribute="+getTranslationByKey(sAttribute)+"}} {{attributeValue="+iAttributeValue+"}} {{target="+iSum+"}} {{roll1="+sBaseRoll+"}}";
 					
 				startRoll(sRollQuery, (results) => {					
 					finishRoll(results.rollId,{roll1: getRollResult(results, iSum)});
@@ -872,11 +867,9 @@
 				let sName = values["character_name"];
 				let iAttributeValue = parseInt(values[sCombatAttribute]||0);
 				let iSkillValue = parseInt(values["skill-"+sSkill]);
-				let iCriticalSuccess = iBaseCriticalSuccess;
-				let iCriticalFailure = iBaseCriticalFailure;
 				let iSum = iSkillValue + iAttributeValue;				
 					
-				let sRollQuery = "&{template:skill} {{name="+sName+"}} {{skill="+getTranslationByKey(sSkill)+"}} {{attribute="+getTranslationByKey(sCombatAttribute)+"}} {{skillValue="+iSkillValue+"}} {{attributeValue="+iAttributeValue+"}} {{target="+iSum+"}} {{roll1=[[1d20+?{"+getTranslationByKey("modifier")+"|0}cs<?{cs|"+iCriticalSuccess+"}cf>?{cf|"+iCriticalFailure+"}]]}}";
+				let sRollQuery = "&{template:skill} {{name="+sName+"}} {{skill="+getTranslationByKey(sSkill)+"}} {{attribute="+getTranslationByKey(sCombatAttribute)+"}} {{skillValue="+iSkillValue+"}} {{attributeValue="+iAttributeValue+"}} {{target="+iSum+"}} {{roll1="+sBaseRoll+"}}";
 					
 				startRoll(sRollQuery, (results) => {					
 					finishRoll(results.rollId,{roll1: getRollResult(results, iSum)});
@@ -889,11 +882,9 @@
 				let sName = values["character_name"];
 				let iAttributeValue = parseInt(values["melee-defense"]||0);
 				let iSkillValue = parseInt(values["skill-"+sSkill]);
-				let iCriticalSuccess = iBaseCriticalSuccess;
-				let iCriticalFailure = iBaseCriticalFailure;
 				let iSum = iSkillValue + iAttributeValue;				
 					
-				let sRollQuery = "&{template:skill} {{name="+sName+"}} {{skill="+getTranslationByKey(sSkill)+"}} {{attribute="+getTranslationByKey("melee-defense")+"}} {{skillValue="+iSkillValue+"}} {{attributeValue="+iAttributeValue+"}} {{target="+iSum+"}} {{roll1=[[1d20+?{"+getTranslationByKey("modifier")+"|0}cs<"+iCriticalSuccess+"cf>"+iCriticalFailure+"]]}}";
+				let sRollQuery = "&{template:skill} {{name="+sName+"}} {{skill="+getTranslationByKey(sSkill)+"}} {{attribute="+getTranslationByKey("melee-defense")+"}} {{skillValue="+iSkillValue+"}} {{attributeValue="+iAttributeValue+"}} {{target="+iSum+"}} {{roll1="+sBaseRoll+"}}";
 					
 				startRoll(sRollQuery, (results) => {					
 					finishRoll(results.rollId,{roll1: getRollResult(results, iSum)});
