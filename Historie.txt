@@ -1,3 +1,2 @@
-2022-03-04
-	Allgemein
-	* Basisdateien erstellt	
+2022-05-02	V1
+	Release V1
