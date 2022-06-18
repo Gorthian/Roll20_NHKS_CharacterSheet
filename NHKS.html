@@ -949,6 +949,7 @@
 			switch (sAttribute) {
 				case "strength":
 					recalcMeleeAttack();
+					recalcMeleeDamage();
 					recalcMeleeDefense();
 					break;
 				case "stamina":
@@ -957,6 +958,7 @@
 				case "dexterity":
 					recalcMeleeDefense();
 					recalcRangedAttack();
+					recalcRangedDamage();
 					break;
 				case "knowledge":
 					//nothing
@@ -1059,6 +1061,40 @@
 			let aAttributes = {};
 			
 			aAttributes["melee-attack"] = iMeleeAttack;
+			
+			setAttrs(aAttributes);		
+		});
+	}
+
+	function recalcMeleeDamage() {
+		console.log("[recalcMeleeDamage]");
+		getAttrs(["strength"], function (values){
+			let iStrength = parseInt(values["strength"]||5);
+			let iMeleeDamage = 0;
+			let aAttributes = {};
+			
+			if (iStrength > 5) {
+				iMeleeDamage = iStrength - 4;
+			}
+
+			aAttributes["melee-damage"] = iMeleeDamage;
+			
+			setAttrs(aAttributes);	
+		});
+	}
+
+	function recalcRangedDamage() {
+		console.log("[recalcRangedDamage]");
+		getAttrs(["dexterity"], function (values){
+			let iDexterity = parseInt(values["dexterity"]||5);
+			let iRangedDamage = 0;
+			let aAttributes = {};
+			
+			if (iDexterity > 5) {
+				iRangedDamage = iDexterity - 4;
+			}
+
+			aAttributes["ranged-damage"] = iRangedDamage;
 			
 			setAttrs(aAttributes);		
 		});
