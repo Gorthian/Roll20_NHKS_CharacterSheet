@@ -1014,7 +1014,7 @@
 					
 					if (iIsRoleSkill == 1) {
 						iSum = iSkillRole + iAttributeValue;
-						sRollQuery = sRollQuery + "  {{type=role}} {{role-name=: "+sRoleName+"}} {{skillValue="+iSkillRole+"}}";
+						sRollQuery = sRollQuery + " {{type=role}} {{role-name=: "+sRoleName+"}} {{skillValue="+iSkillRole+"}}";
 					} else {
 						iSum = iSkillValue + iAttributeValue;
 						sRollQuery = sRollQuery + " {{type=actor}} {{skillValue="+iSkillValue+"}}";
@@ -1024,27 +1024,6 @@
 					startRoll(sRollQuery, (results) => {						
 						finishRoll(results.rollId,{roll1: getRollResult(results, iSum)});
 					});
-				});
-			});
-		});
-	});
-	
-	/* Fertigkeitsproben (Rolle) */
-	on("clicked:repeating_role-skills:role-skill", function() {
-		getAttrs(["character_name","repeating_role-skills_role-skill-name","repeating_role-skills_role-skill-value","repeating_role-skills_role-skill-attribute","repeating_role-skills_role-skill-name"], function (values){
-			let sName = values["character_name"];
-			let sAttribute = values["repeating_role-skills_role-skill-attribute"];
-			let sSkill = values["repeating_role-skills_role-skill-name"];
-			let iSkillValue = parseInt(values["repeating_role-skills_role-skill-value"]);
-			
-			getAttrs([sAttribute], function(values2) {
-				let iAttributeValue = parseInt(values2[sAttribute]);
-				let iSum = iSkillValue + iAttributeValue;
-				
-				let sRollQuery = "&{template:skill} {{name="+sName+"}} {{skill="+sSkill+"}} {{attribute="+getTranslationByKey(sAttribute)+"}} {{skillValue="+iSkillValue+"}} {{attributeValue="+iAttributeValue+"}} {{target="+iSum+"}} {{roll1="+sBaseRoll+"}}";
-				
-				startRoll(sRollQuery, (results) => {					
-					finishRoll(results.rollId,{roll1: getRollResult(results, iSum)});
 				});
 			});
 		});
@@ -1084,13 +1063,24 @@
 					sCombatAttribute = "ranged-attack";
 			}
 			
-			getAttrs(["character_name","skill-"+sSkill, sCombatAttribute], function (values){
+			getAttrs(["character_name","role-name","skill-"+sSkill, sCombatAttribute, "skill-"+sSkill+"-is-role-skill", "skill-"+sSkill+"-role"], function (values){
 				let sName = values["character_name"];
+				let sRoleName = values["role-name"];
 				let iAttributeValue = parseInt(values[sCombatAttribute]||0);
 				let iSkillValue = parseInt(values["skill-"+sSkill]);
-				let iSum = iSkillValue + iAttributeValue;				
-					
-				let sRollQuery = "&{template:skill} {{name="+sName+"}} {{skill="+getTranslationByKey(sSkill)+"}} {{attribute="+getTranslationByKey(sCombatAttribute)+"}} {{skillValue="+iSkillValue+"}} {{attributeValue="+iAttributeValue+"}} {{target="+iSum+"}} {{roll1="+sBaseRoll+"}}";
+				let iSum = 0;
+				let iSkillRole = parseInt(values["skill-"+sSkill+"-role"]);
+				let iIsRoleSkill = parseInt(values["skill-" + sSkill + "-is-role-skill"]||0);
+				let sRollQuery = "&{template:skill} {{name="+sName+"}}";
+				
+				if (iIsRoleSkill == 1) {
+					iSum = iSkillRole + iAttributeValue;
+					sRollQuery = sRollQuery + " {{type=role}} {{role-name=: "+sRoleName+"}} {{skillValue="+iSkillRole+"}}";
+				} else {
+					iSum = iSkillValue + iAttributeValue;
+					sRollQuery = sRollQuery + " {{type=actor}} {{skillValue="+iSkillValue+"}}";
+				}					
+				sRollQuery = sRollQuery + " {{skill="+getTranslationByKey(sSkill)+"}} {{attribute="+getTranslationByKey(sCombatAttribute)+"}} {{attributeValue="+iAttributeValue+"}} {{target="+iSum+"}} {{roll1="+sBaseRoll+"}}";
 					
 				startRoll(sRollQuery, (results) => {					
 					finishRoll(results.rollId,{roll1: getRollResult(results, iSum)});
@@ -1099,13 +1089,25 @@
 		});
 		
 		on(`clicked:combat-${sSkill}-parry`, function() {				
-			getAttrs(["character_name","skill-"+sSkill, "melee-defense"], function (values){
+			getAttrs(["character_name","role-name","skill-"+sSkill, "melee-defense", "skill-"+sSkill+"-is-role-skill", "skill-"+sSkill+"-role"], function (values){
 				let sName = values["character_name"];
+				let sRoleName = values["role-name"];
 				let iAttributeValue = parseInt(values["melee-defense"]||0);
 				let iSkillValue = parseInt(values["skill-"+sSkill]);
-				let iSum = iSkillValue + iAttributeValue;				
+				let iSum = 0;					
+				let iSkillRole = parseInt(values["skill-"+sSkill+"-role"]);
+				let iIsRoleSkill = parseInt(values["skill-" + sSkill + "-is-role-skill"]||0);
+				let sRollQuery = "&{template:skill} {{name="+sName+"}}";
+				
+				if (iIsRoleSkill == 1) {
+					iSum = iSkillRole + iAttributeValue;
+					sRollQuery = sRollQuery + " {{type=role}} {{role-name=: "+sRoleName+"}} {{skillValue="+iSkillRole+"}}";
+				} else {
+					iSum = iSkillValue + iAttributeValue;
+					sRollQuery = sRollQuery + " {{type=actor}} {{skillValue="+iSkillValue+"}}";
+				}					
+				sRollQuery = sRollQuery + " {{skill="+getTranslationByKey(sSkill)+"}} {{attribute="+getTranslationByKey("melee-defense")+"}} {{attributeValue="+iAttributeValue+"}} {{target="+iSum+"}} {{roll1="+sBaseRoll+"}}";
 					
-				let sRollQuery = "&{template:skill} {{name="+sName+"}} {{skill="+getTranslationByKey(sSkill)+"}} {{attribute="+getTranslationByKey("melee-defense")+"}} {{skillValue="+iSkillValue+"}} {{attributeValue="+iAttributeValue+"}} {{target="+iSum+"}} {{roll1="+sBaseRoll+"}}";
 					
 				startRoll(sRollQuery, (results) => {					
 					finishRoll(results.rollId,{roll1: getRollResult(results, iSum)});
@@ -1138,6 +1140,19 @@
 	
 	/* Änderungen an Skills */
 	aActorSkills.forEach(sSkill => {
+        on(`change:skill-${sSkill}`, function() {
+			console.log("[CHANGE] " + sSkill);
+            changedSkill(sSkill);
+        });
+		
+		on(`change:skill-${sSkill}-is-role-skill`, function() {
+			console.log("[CHANGE] " + sSkill + "is-role-skill");
+            changedSkill(sSkill);
+        });
+    });
+	
+	/* Änderungen an Kampf-Skills */
+	aActorWeaponSkills.forEach(sSkill => {
         on(`change:skill-${sSkill}`, function() {
 			console.log("[CHANGE] " + sSkill);
             changedSkill(sSkill);
