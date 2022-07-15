@@ -1,7 +1,7 @@
 <!--
 	EDITED by 			Gorthian
 	Version				1.1
-	Letzte Änderung		2022-06-18
+	Letzte Änderung		2022-07-15
 	
 	GitHub				https://github.com/Gorthian/Roll20_NHKS_CharacterSheet
 	Wiki				https://github.com/Gorthian/Roll20_NHKS_CharacterSheet/wiki
@@ -18,7 +18,8 @@
 	<div class="sheet-content">
 		<div class="sheet-actor">
 			<div class="sheet-actor-sheet">
-				<div class="sheet-actor-attributes">
+				<div class="sheet-actor-sheet-left">
+					<div class="sheet-actor-attributes">
 					<h1><span data-i18n="attributes-and-descriptions"></span></h1>
 					<div class="sheet-actor-attributes-content">
 						<div class="sheet-actor-attributes-left">
@@ -141,7 +142,7 @@
 						</div>						
 					</div>
 				</div>
-				<div class="sheet-actor-skills">
+					<div class="sheet-actor-skills">
 					<h1><span data-i18n="skills"></span></h1>
 					<div class="sheet-skill-entry">
 						<div class="sheet-skill-name">
@@ -506,56 +507,60 @@
 						</div>
 					</div>
 				</div>
-				<div class="sheet-actor-advantages">
-					<h1><span data-i18n="advantages-and-disadvantages"></span></h1>
-					<fieldset class="repeating_actor-advantages-disadvantages">
-					<div class="sheet-actor-advantage">
-						<input type="text" name="attr_actor-advantage-name" value="">
-						<textarea name="attr_actor-advantage-description" value=""></textarea>
-					</div>
-					</fieldset>
-				</div>
-				<div class="sheet-actor-movies">
-					<h1><span data-i18n="movies"></span></h1>
-					<fieldset class="repeating_actor-movies">
-					<div class="sheet-actor-movies">
-						<input type="text" name="attr_actor-movie-name" value="">
-						<div class="sheet-radio-set">
-							<input checked="checked" class="sheet-radiobox sheet-reset" type="radio" name="attr_movie-award" value="0">
-							<input class="sheet-radiobox" type="radio" name="attr_movie-award" value="1">
-							<input class="sheet-radiobox" type="radio" name="attr_movie-award" value="2">
-							<input class="sheet-radiobox" type="radio" name="attr_movie-award" value="3">
-							<input class="sheet-radiobox" type="radio" name="attr_movie-award" value="4">
-							<input class="sheet-radiobox" type="radio" name="attr_movie-award" value="5">
-						</div>
-					</div>
-					</fieldset>
-				</div>
-				<div class="sheet-actor-martialarts">
-					<h1><span data-i18n="martialarts"></span></h1>
-					<fieldset class="repeating_actor-martialarts">
-					<div class="sheet-actor-martialarts">
-						<input type="text" name="attr_actor-martialarts-name" value="">
-						<div class="sheet-radio-set">
-							<input checked="checked" class="sheet-radiobox sheet-reset" type="radio" name="attr_actor-martialarts-level" value="0">
-							<input class="sheet-radiobox" type="radio" name="attr_actor-martialarts-level" value="1">
-							<input class="sheet-radiobox" type="radio" name="attr_actor-martialarts-level" value="2">
-							<input class="sheet-radiobox" type="radio" name="attr_actor-martialarts-level" value="3">
-							<input class="sheet-radiobox" type="radio" name="attr_actor-martialarts-level" value="4">
-							<input class="sheet-radiobox" type="radio" name="attr_actor-martialarts-level" value="5">
-						</div>	
-						<textarea name="attr_actor-martialarts-description" value=""></textarea>
-					</div>
-					</fieldset>
-				</div>
-				<div class="sheet-actor-awards">
-					<h1><span data-i18n="awards"></span></h1>
-					<textarea name="attr_actor-awards" value=""></textarea>
-				</div>
-				<div class="sheet-actor-misc">
+					<div class="sheet-actor-misc">
+
 					<h1><span data-i18n="misc"></span></h1>
 					<textarea name="attr_actor-misc" value=""></textarea>
 				</div>
+				</div>
+				<div class="sheet-actor-sheet-right">
+					<div class="sheet-actor-advantages">
+						<h1><span data-i18n="advantages-and-disadvantages"></span></h1>
+						<fieldset class="repeating_actor-advantages-disadvantages">
+						<div class="sheet-actor-advantage">
+							<input type="text" name="attr_actor-advantage-name" value="">
+							<textarea name="attr_actor-advantage-description" value=""></textarea>
+						</div>
+						</fieldset>
+					</div>
+					<div class="sheet-actor-martialarts">
+						<h1><span data-i18n="martialarts"></span></h1>
+						<fieldset class="repeating_actor-martialarts">
+						<div class="sheet-actor-martialarts">
+							<input type="text" name="attr_actor-martialarts-name" value="">
+							<div class="sheet-radio-set">
+								<input checked="checked" class="sheet-radiobox sheet-reset" type="radio" name="attr_actor-martialarts-level" value="0">
+								<input class="sheet-radiobox" type="radio" name="attr_actor-martialarts-level" value="1">
+								<input class="sheet-radiobox" type="radio" name="attr_actor-martialarts-level" value="2">
+								<input class="sheet-radiobox" type="radio" name="attr_actor-martialarts-level" value="3">
+								<input class="sheet-radiobox" type="radio" name="attr_actor-martialarts-level" value="4">
+								<input class="sheet-radiobox" type="radio" name="attr_actor-martialarts-level" value="5">
+							</div>	
+							<textarea name="attr_actor-martialarts-description" value=""></textarea>
+						</div>
+						</fieldset>
+					</div>
+					<div class="sheet-actor-movies">
+						<h1><span data-i18n="movies"></span></h1>
+						<fieldset class="repeating_actor-movies">
+						<div class="sheet-actor-movies">
+							<input type="text" name="attr_actor-movie-name" value="">
+							<div class="sheet-radio-set">
+								<input checked="checked" class="sheet-radiobox sheet-reset" type="radio" name="attr_movie-award" value="0">
+								<input class="sheet-radiobox" type="radio" name="attr_movie-award" value="1">
+								<input class="sheet-radiobox" type="radio" name="attr_movie-award" value="2">
+								<input class="sheet-radiobox" type="radio" name="attr_movie-award" value="3">
+								<input class="sheet-radiobox" type="radio" name="attr_movie-award" value="4">
+								<input class="sheet-radiobox" type="radio" name="attr_movie-award" value="5">
+							</div>
+						</div>
+						</fieldset>
+					</div>
+					<div class="sheet-actor-awards">
+						<h1><span data-i18n="awards"></span></h1>
+						<textarea name="attr_actor-awards" value=""></textarea>
+					</div>
+				</div>				
 			</div>			
 		</div>
 		<div class="sheet-role">
