@@ -348,7 +348,11 @@ div.sheet-role-sheet textarea {
 }
 
 .sheet-label {
-	font-weight	: bold;
+	font-weight	: bold;	
+}
+
+div.sheet-skill-entry .sheet-label {
+	text-align	: center;
 }
 
 .sheet-input-line .sheet-attr-short {
@@ -405,7 +409,14 @@ div.sheet-actor-skills * {
 	font-size	: 0.95em;
 }
 
-div.sheet-skill-entry, div.sheet-combat-entry {
+div.sheet-skill-entry {
+	display					: grid;
+	grid-template-columns	: 40% repeat(4, 15%);
+	grid-auto-flow			: columns;
+	
+}
+
+div.sheet-combat-entry {
 	display			: flex;
 	flex-direction	: row;
 	justify-content : space-between;
@@ -424,8 +435,7 @@ div.sheet-skill-name, div.sheet-combat-attack {
 }
 
 div.sheet-skill-entry div.sheet-skill-value, div.sheet-combat-entry div.sheet-combat-value {
-	width		: 10%;
-	text-align	: right;
+	text-align	: center;
 }
 
 div.sheet-skill-entry div.sheet-skill-attribute select {
@@ -433,7 +443,13 @@ div.sheet-skill-entry div.sheet-skill-attribute select {
 }
 
 div.sheet-skill-entry button[type="action"], div.sheet-combat-entry button[type="action"] {
-	width	: 100px;
+	width	: 200px;
+}
+
+div.sheet-skill-entry input {
+	display			: block;
+	margin-right	: auto;
+	margin-left		: auto;
 }
 
 /* Chrome, Safari, Edge, Opera */

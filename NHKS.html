@@ -145,14 +145,39 @@
 					<div class="sheet-actor-skills">
 					<h1><span data-i18n="skills"></span></h1>
 					<div class="sheet-skill-entry">
+						<div class="sheet-skill-name sheet-label">
+							<span data-i18n="skill"></span>
+						</div>
+						<div class="sheet-skill-attribute sheet-label">
+							<span data-i18n="attribute"></span>
+						</div>
+						<div class="sheet-skill-value sheet-label">
+							<span data-i18n="skill-value-actor"></span>
+						</div>
+						<div class="sheet-skill-value sheet-label">
+							<span data-i18n="is-role-skill"></span>
+						</div>
+						<div class="sheet-skill-value sheet-label">
+							<span data-i18n="skill-value-role"></span>
+						</div>
+					</div>
+					<div class="sheet-skill-entry">
 						<div class="sheet-skill-name">
 							<button type="action" name="act_skill-acrobatic"><span data-i18n="acrobatic"></span></button>
 						</div>
 						<div class="sheet-skill-attribute">
-							<span data-i18n="dexterity-short"></span><input type="hidden" name="attr_skill-acrobatic-attribute" value="dexterity" />
+							<select name="attr_skill-acrobatic-attribute" READONLY>
+								<option value="dexterity" data-i18n="dexterity-short" selected="selected"></option>
+							</select>
 						</div>
 						<div class="sheet-skill-value">
 							<input type="number" name="attr_skill-acrobatic" />
+						</div>
+						<div class="sheet-skill-value">
+							<input type="checkbox" name="attr_skill-acrobatic-is-role-skill" value="1">
+						</div>
+						<div class="sheet-skill-value">
+							<input type="number" name="attr_skill-acrobatic-role" READONLY/>
 						</div>
 					</div>
 					<div class="sheet-skill-entry">
@@ -168,16 +193,30 @@
 						<div class="sheet-skill-value">
 							<input type="number" name="attr_skill-athletic" />
 						</div>
+						<div class="sheet-skill-value">
+							<input type="checkbox" name="attr_skill-athletic-is-role-skill" value="1">
+						</div>
+						<div class="sheet-skill-value">
+							<input type="number" name="attr_skill-athletic-role" READONLY/>
+						</div>
 					</div>
 					<div class="sheet-skill-entry">
 						<div class="sheet-skill-name">
 							<button type="action" name="act_skill-dodge"><span data-i18n="dodge"></span></button>
 						</div>
 						<div class="sheet-skill-attribute">
-							<span data-i18n="dexterity-short"></span><input type="hidden" name="attr_skill-dodge-attribute" value="dexterity" />
+							<select name="attr_skill-dodge-attribute" READONLY>
+								<option value="dexterity" data-i18n="dexterity-short" selected="selected"></option>
+							</select>
 						</div>
 						<div class="sheet-skill-value">
 							<input type="number" name="attr_skill-dodge" />
+						</div>
+						<div class="sheet-skill-value">
+							<input type="checkbox" name="attr_skill-dodge-is-role-skill" value="1">
+						</div>
+						<div class="sheet-skill-value">
+							<input type="number" name="attr_skill-dodge-role" READONLY/>
 						</div>
 					</div>
 					<div class="sheet-skill-entry">
@@ -193,6 +232,12 @@
 						<div class="sheet-skill-value">
 							<input type="number" name="attr_skill-boats" />
 						</div>
+						<div class="sheet-skill-value">
+							<input type="checkbox" name="attr_skill-boats-is-role-skill" value="1">
+						</div>
+						<div class="sheet-skill-value">
+							<input type="number" name="attr_skill-boats-role" READONLY/>
+						</div>
 					</div>
 					<div class="sheet-skill-entry">
 						<div class="sheet-skill-name">
@@ -207,16 +252,30 @@
 						<div class="sheet-skill-value">
 							<input type="number" name="attr_skill_persuade" />
 						</div>
+						<div class="sheet-skill-value">
+							<input type="checkbox" name="attr_skill-persuade-is-role-skill" value="1">
+						</div>
+						<div class="sheet-skill-value">
+							<input type="number" name="attr_skill-persuade-role" READONLY/>
+						</div>
 					</div>
 					<div class="sheet-skill-entry">
 						<div class="sheet-skill-name">
 							<button type="action" name="act_skill-computers"><span data-i18n="computers"></span></button>
 						</div>
 						<div class="sheet-skill-attribute">
-							<span data-i18n="knowledge-short"></span><input type="hidden" name="attr_skill-computers-attribute" value="knowledge" />
+							<select name="attr_skill-computers-attribute" READONLY>
+								<option value="knowledge" data-i18n="knowledge-short" selected="selected"></option>
+							</select>
 						</div>
 						<div class="sheet-skill-value">
 							<input type="number" name="attr_skill-computers" />
+						</div>
+						<div class="sheet-skill-value">
+							<input type="checkbox" name="attr_skill-computers-is-role-skill" value="1">
+						</div>
+						<div class="sheet-skill-value">
+							<input type="number" name="attr_skill-computers-role" READONLY/>
 						</div>
 					</div>
 					<div class="sheet-skill-entry">
@@ -224,10 +283,18 @@
 							<button type="action" name="act_skill-firstaid"><span data-i18n="firstaid"></span></button>
 						</div>
 						<div class="sheet-skill-attribute">
-							<span data-i18n="knowledge-short"></span><input type="hidden" name="attr_skill-firstaid-attribute" value="knowledge" />			
+							<select name="attr_skill-firstaid-attribute" READONLY>
+								<option value="knowledge" data-i18n="knowledge-short" selected="selected"></option>
+							</select>
 						</div>
 						<div class="sheet-skill-value">
 							<input type="number" name="attr_skill-firstaid" />
+						</div>
+						<div class="sheet-skill-value">
+							<input type="checkbox" name="attr_skill-firstaid-is-role-skill" value="1">
+						</div>
+						<div class="sheet-skill-value">
+							<input type="number" name="attr_skill-firstaid-role" READONLY/>
 						</div>
 					</div>
 					<div class="sheet-skill-entry">
@@ -244,16 +311,30 @@
 						<div class="sheet-skill-value">
 							<input type="number" name="attr_skill-extremesport" />
 						</div>
+						<div class="sheet-skill-value">
+							<input type="checkbox" name="attr_skill-extremesport-is-role-skill" value="1">
+						</div>
+						<div class="sheet-skill-value">
+							<input type="number" name="attr_skill-extremesport-role" READONLY/>
+						</div>
 					</div>
 					<div class="sheet-skill-entry">
 						<div class="sheet-skill-name">
 							<button type="action" name="act_skill-slideofhand"><span data-i18n="slideofhand"></span></button>
 						</div>
 						<div class="sheet-skill-attribute">
-							<span data-i18n="dexterity-short"></span><input type="hidden" name="attr_skill-slideofhand-attribute" value="dexterity" />			
+							<select name="attr_skill-slideofhand-attribute" READONLY>
+								<option value="dexterity" data-i18n="dexterity-short" selected="selected"></option>
+							</select>
 						</div>
 						<div class="sheet-skill-value">
 							<input type="number" name="attr_skill-slideofhand" />
+						</div>
+						<div class="sheet-skill-value">
+							<input type="checkbox" name="attr_skill-slideofhand-is-role-skill" value="1">
+						</div>
+						<div class="sheet-skill-value">
+							<input type="number" name="attr_skill-slideofhand-role" READONLY/>
 						</div>
 					</div>
 					<div class="sheet-skill-entry">
@@ -269,6 +350,12 @@
 						<div class="sheet-skill-value">
 							<input type="number" name="attr_skill-aircrafts" />
 						</div>
+						<div class="sheet-skill-value">
+							<input type="checkbox" name="attr_skill-aircrafts-is-role-skill" value="1">
+						</div>
+						<div class="sheet-skill-value">
+							<input type="number" name="attr_skill-aircrafts-role" READONLY/>
+						</div>
 					</div>
 					<div class="sheet-skill-entry">
 						<div class="sheet-skill-name">
@@ -282,6 +369,12 @@
 						</div>
 						<div class="sheet-skill-value">
 							<input type="number" name="attr_skill-vehicles" />
+						</div>
+						<div class="sheet-skill-value">
+							<input type="checkbox" name="attr_skill-vehicles-is-role-skill" value="1">
+						</div>
+						<div class="sheet-skill-value">
+							<input type="number" name="attr_skill-vehicles-role" READONLY/>
 						</div>
 					</div>
 					<div class="sheet-skill-entry">
@@ -301,6 +394,12 @@
 						<div class="sheet-skill-value">
 							<input type="number" name="attr_skill-improvisation" />
 						</div>
+						<div class="sheet-skill-value">
+							<input type="checkbox" name="attr_skill-improvisation-is-role-skill" value="1">
+						</div>
+						<div class="sheet-skill-value">
+							<input type="number" name="attr_skill-improvisation-role" READONLY/>
+						</div>
 					</div>
 					<div class="sheet-skill-entry">
 						<div class="sheet-skill-name">
@@ -316,6 +415,12 @@
 						<div class="sheet-skill-value">
 							<input type="number" name="attr_skill-climbing" />
 						</div>
+						<div class="sheet-skill-value">
+							<input type="checkbox" name="attr_skill-climbing-is-role-skill" value="1">
+						</div>
+						<div class="sheet-skill-value">
+							<input type="number" name="attr_skill-climbing-role" READONLY/>
+						</div>
 					</div>
 					<div class="sheet-skill-entry">
 						<div class="sheet-skill-name">
@@ -330,16 +435,30 @@
 						<div class="sheet-skill-value">
 							<input type="number" name="attr_skill-contacts" />
 						</div>
+						<div class="sheet-skill-value">
+							<input type="checkbox" name="attr_skill-contacts-is-role-skill" value="1">
+						</div>
+						<div class="sheet-skill-value">
+							<input type="number" name="attr_skill-contacts-role" READONLY/>
+						</div>
 					</div>
 					<div class="sheet-skill-entry">
 						<div class="sheet-skill-name">
 							<button type="action" name="act_skill-mechanic"><span data-i18n="mechanic"></span></button>
 						</div>
 						<div class="sheet-skill-attribute">
-							<span data-i18n="knowledge-short"></span><input type="hidden" name="attr_skill-mechanic-attribute" value="dexterity" />			
+							<select name="attr_skill-mechanic-attribute" READONLY>
+								<option value="knowledge" data-i18n="knowledge-short" selected="selected"></option>
+							</select>
 						</div>
 						<div class="sheet-skill-value">
 							<input type="number" name="attr_skill-mechanic" />
+						</div>
+						<div class="sheet-skill-value">
+							<input type="checkbox" name="attr_skill-mechanic-is-role-skill" value="1">
+						</div>
+						<div class="sheet-skill-value">
+							<input type="number" name="attr_skill-mechanic-role" READONLY/>
 						</div>
 					</div>
 					<div class="sheet-skill-entry">
@@ -347,10 +466,18 @@
 							<button type="action" name="act_skill-stealth"><span data-i18n="stealth"></span></button>
 						</div>
 						<div class="sheet-skill-attribute">
-							<span data-i18n="dexterity-short"></span><input type="hidden" name="attr_skill-stealth-attribute" value="dexterity" />
+							<select name="attr_skill-stealth-attribute" READONLY>
+								<option value="dexterity" data-i18n="dexterity-short" selected="selected"></option>
+							</select>
 						</div>
 						<div class="sheet-skill-value">
 							<input type="number" name="attr_skill-stealth" />
+						</div>
+						<div class="sheet-skill-value">
+							<input type="checkbox" name="attr_skill-stealth-is-role-skill" value="1">
+						</div>
+						<div class="sheet-skill-value">
+							<input type="number" name="attr_skill-stealth-role" READONLY/>
 						</div>
 					</div>
 					<div class="sheet-skill-entry">
@@ -358,10 +485,18 @@
 							<button type="action" name="act_skill-perception"><span data-i18n="perception"></span></button>
 						</div>
 						<div class="sheet-skill-attribute">
-							<span data-i18n="chi-short"></span><input type="hidden" name="attr_skill-perception-attribute" value="dexterity" />			
+							<select name="attr_skill-perception-attribute" READONLY>
+								<option value="chi" data-i18n="chi-short" selected="selected"></option>
+							</select>
 						</div>
 						<div class="sheet-skill-value">
 							<input type="number" name="attr_skill-perception" />
+						</div>
+						<div class="sheet-skill-value">
+							<input type="checkbox" name="attr_skill-perception-is-role-skill" value="1">
+						</div>
+						<div class="sheet-skill-value">
+							<input type="number" name="attr_skill-perception-role" READONLY/>
 						</div>
 					</div>
 					<div class="sheet-skill-entry">
@@ -377,6 +512,12 @@
 						<div class="sheet-skill-value">
 							<input type="number" name="attr_skill-languages" />
 						</div>
+						<div class="sheet-skill-value">
+							<input type="checkbox" name="attr_skill-languages-is-role-skill" value="1">
+						</div>
+						<div class="sheet-skill-value">
+							<input type="number" name="attr_skill-languages-role" READONLY/>
+						</div>
 					</div>
 					<div class="sheet-skill-entry">
 						<div class="sheet-skill-name">
@@ -390,6 +531,12 @@
 						</div>
 						<div class="sheet-skill-value">
 							<input type="number" name="attr_skill-searching" />
+						</div>
+						<div class="sheet-skill-value">
+							<input type="checkbox" name="attr_skill-searching-is-role-skill" value="1">
+						</div>
+						<div class="sheet-skill-value">
+							<input type="number" name="attr_skill-searching-role" READONLY/>
 						</div>
 					</div>
 					<div class="sheet-skill-entry">
@@ -405,6 +552,12 @@
 						<div class="sheet-skill-value">
 							<input type="number" name="attr_skill-hiding" />
 						</div>
+						<div class="sheet-skill-value">
+							<input type="checkbox" name="attr_skill-hiding-is-role-skill" value="1">
+						</div>
+						<div class="sheet-skill-value">
+							<input type="number" name="attr_skill-hiding-role" READONLY/>
+						</div>
 					</div>					
 					<h1><span data-i18n="combat"></span></h1>
 					<div class="sheet-combat-entry">
@@ -416,7 +569,7 @@
 						</div>						
 						<div class="sheet-combat-value">
 							<input type="number" name="attr_skill-melee-small" />
-						</div>
+						</div>						
 					</div>
 					<div class="sheet-combat-entry">
 						<div class="sheet-combat-attack">
