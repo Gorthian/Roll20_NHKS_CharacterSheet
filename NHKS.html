@@ -561,6 +561,23 @@
 					</div>					
 					<h1><span data-i18n="combat"></span></h1>
 					<div class="sheet-combat-entry">
+						<div class="sheet-label">
+							<span data-i18n="attack"></span>
+						</div>
+						<div class="sheet-label">
+							<span data-i18n="parry"></span>
+						</div>
+						<div class="sheet-label">
+							<span data-i18n="skill-value-actor"></span>
+						</div>
+						<div class="sheet-label">
+							<span data-i18n="is-role-skill"></span>
+						</div>
+						<div class="sheet-label">
+							<span data-i18n="skill-value-role"></span>
+						</div>
+					</div>
+					<div class="sheet-combat-entry">
 						<div class="sheet-combat-attack">
 							<button type="action" name="act_combat-melee-small"><span data-i18n="melee-small"></span></button>
 						</div>
@@ -569,6 +586,12 @@
 						</div>						
 						<div class="sheet-combat-value">
 							<input type="number" name="attr_skill-melee-small" />
+						</div>
+						<div class="sheet-combat-value">
+							<input type="checkbox" name="attr_skill-melee-small-is-role-skill" value="1">
+						</div>
+						<div class="sheet-combat-value">
+							<input type="number" name="attr_skill-melee-small-role" READONLY/>
 						</div>						
 					</div>
 					<div class="sheet-combat-entry">
@@ -581,6 +604,12 @@
 						<div class="sheet-combat-value">
 							<input type="number" name="attr_skill-melee-medium" />
 						</div>
+						<div class="sheet-combat-value">
+							<input type="checkbox" name="attr_skill-melee-medium-is-role-skill" value="1">
+						</div>
+						<div class="sheet-combat-value">
+							<input type="number" name="attr_skill-melee-medium-role" READONLY/>
+						</div>
 					</div>
 					<div class="sheet-combat-entry">
 						<div class="sheet-combat-attack">
@@ -591,6 +620,12 @@
 						</div>						
 						<div class="sheet-combat-value">
 							<input type="number" name="attr_skill-melee-big" />
+						</div>
+						<div class="sheet-combat-value">
+							<input type="checkbox" name="attr_skill-melee-big-is-role-skill" value="1">
+						</div>
+						<div class="sheet-combat-value">
+							<input type="number" name="attr_skill-melee-big-role" READONLY/>
 						</div>
 					</div>
 					<div class="sheet-combat-entry">
@@ -603,6 +638,12 @@
 						<div class="sheet-combat-value">
 							<input type="number" name="attr_skill-pistols" />
 						</div>
+						<div class="sheet-combat-value">
+							<input type="checkbox" name="attr_skill-pistols-is-role-skill" value="1">
+						</div>
+						<div class="sheet-combat-value">
+							<input type="number" name="attr_skill-pistols-role" READONLY/>
+						</div>
 					</div>
 					<div class="sheet-combat-entry">
 						<div class="sheet-combat-attack">
@@ -613,6 +654,12 @@
 						</div>						
 						<div class="sheet-combat-value">
 							<input type="number" name="attr_skill-rifles" />
+						</div>
+						<div class="sheet-combat-value">
+							<input type="checkbox" name="attr_skill-rifles-is-role-skill" value="1">
+						</div>
+						<div class="sheet-combat-value">
+							<input type="number" name="attr_skill-rifles-role" READONLY/>
 						</div>
 					</div>
 					<div class="sheet-combat-entry">
@@ -625,6 +672,12 @@
 						<div class="sheet-combat-value">
 							<input type="number" name="attr_skill-heavy-weapons" />
 						</div>
+						<div class="sheet-combat-value">
+							<input type="checkbox" name="attr_skill-heavy-weapons-is-role-skill" value="1">
+						</div>
+						<div class="sheet-combat-value">
+							<input type="number" name="attr_skill-heavy-weapons-role" READONLY/>
+						</div>
 					</div>
 					<div class="sheet-combat-entry">
 						<div class="sheet-combat-attack">
@@ -635,6 +688,12 @@
 						</div>						
 						<div class="sheet-combat-value">
 							<input type="number" name="attr_skill-melee-misc" />
+						</div>
+						<div class="sheet-combat-value">
+							<input type="checkbox" name="attr_skill-melee-misc-is-role-skill" value="1">
+						</div>
+						<div class="sheet-combat-value">
+							<input type="number" name="attr_skill-melee-misc-role" READONLY/>
 						</div>
 					</div>
 					<div class="sheet-combat-entry">
@@ -647,6 +706,12 @@
 						<div class="sheet-combat-value">
 							<input type="number" name="attr_skill-ranged-misc" />
 						</div>
+						<div class="sheet-combat-value">
+							<input type="checkbox" name="attr_skill-ranged-misc-is-role-skill" value="1">
+						</div>
+						<div class="sheet-combat-value">
+							<input type="number" name="attr_skill-ranged-misc-role" READONLY/>
+						</div>
 					</div>
 					<div class="sheet-combat-entry">
 						<div class="sheet-combat-attack">
@@ -657,6 +722,12 @@
 						</div>						
 						<div class="sheet-combat-value">
 							<input type="number" name="attr_skill-unarmed" />
+						</div>
+						<div class="sheet-combat-value">
+							<input type="checkbox" name="attr_skill-unarmed-is-role-skill" value="1">
+						</div>
+						<div class="sheet-combat-value">
+							<input type="number" name="attr_skill-unarmed-role" READONLY/>
 						</div>
 					</div>
 				</div>
@@ -792,27 +863,7 @@
 						<span class="sheet-attr-name" data-i18n="chipoints"></span><br/>
 						<input type="number" name="attr_role_chipoints_current" /> / <input type="number" name="attr_role_chipoints_max" class="sheet-no-arrows" READONLY />
 					</div>					
-				</div>
-				<div class="sheet-role-skills">
-					<h1><span data-i18n="role-skills"></span></h1>					
-					<fieldset class="repeating_role-skills">
-						<div class="sheet-skill-entry">
-							<div class="sheet-skill-button"><button type="action" name="act_role-skill">Roll</button></div>
-							<div class="sheet-skill-name"><input type="text" name="attr_role-skill-name"></div>
-							<div class="sheet-skill-attribute">
-								<select name="attr_role-skill-attribute">
-									<option value="strength" data-i18n="strength-short" selected="selected"></option>
-									<option value="stamina" data-i18n="stamina-short"></option>
-									<option value="dexterity" data-i18n="dexterity-short"></option>
-									<option value="knowledge" data-i18n="knowledge-short"></option>
-									<option value="coolness" data-i18n="coolness-short"></option>
-									<option value="chi" data-i18n="chi-short"></option>
-								</select>
-							</div>
-							<div class="sheet-skill-value"><input type="number" name="attr_role-skill-value" /></div>
-						</div>
-					</fieldset>					
-				</div>
+				</div>				
 				<div class="sheet-role-advantages">
 					<h1><span data-i18n="role-advantages"></h1>
 					<fieldset class="repeating_role-advantages-disadvantages">

@@ -1,5 +1,6 @@
 {
   "actor" : "Schauspieler",
+  "attack" : "Angriff",
   "role" : "Rolle",
   "attribute" : "Attribut",
   "attributes-and-descriptions" : "ATTRIBUTE & BESCHREIBUNG",
@@ -10,6 +11,7 @@
   "skills" : "FERTIGKEITEN",
   "advantages-and-disadvantages" : "VORTEILE & NACHTEILE",
   "movies" : "FILME",
+  "martialarts" : "MARTIAL ARTS",
   "martialarts" : "MARTIAL ARTS",
   "awards" : "AWARDS",
   "misc" : "SONSTIGES",

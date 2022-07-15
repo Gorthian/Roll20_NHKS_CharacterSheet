@@ -160,7 +160,7 @@ div.sheet-role-sheet {
 	display					: grid;
 	grid-template-columns	: repeat(2, 50%);
 	grid-template-areas		: 	"role-misc 	role-stats"
-								"role-skills	role-advantages"
+								"role-advantages role-advantages"
 }
 
 div.sheet-role-stats {
@@ -169,10 +169,6 @@ div.sheet-role-stats {
 	grid-template-columns	: repeat(2, 50%);
 	grid-template-areas		: 	"role-image		role-image"
 								"role-hitpoints 	role-chipoints"
-}
-
-div.sheet-role-skills {
-	grid-area				: role-skills;
 }
 
 div.sheet-role-advantages {
@@ -417,11 +413,9 @@ div.sheet-skill-entry {
 }
 
 div.sheet-combat-entry {
-	display			: flex;
-	flex-direction	: row;
-	justify-content : space-between;
-	padding			: 0;
-	margin			: 0;
+	display					: grid;
+	grid-template-columns	: 30% 20% repeat(3, 15%);
+	grid-auto-flow			: columns;
 }
 
 div.sheet-skill-entry div, div.sheet-combat-entry div {
@@ -438,12 +432,16 @@ div.sheet-skill-entry div.sheet-skill-value, div.sheet-combat-entry div.sheet-co
 	text-align	: center;
 }
 
-div.sheet-skill-entry div.sheet-skill-attribute select {
-	width		: 60px;
+div.sheet-skill-entry button[type="action"]{
+	width	: 200px;
 }
 
-div.sheet-skill-entry button[type="action"], div.sheet-combat-entry button[type="action"] {
-	width	: 200px;
+div.sheet-combat-attack button[type="action"]{
+	width	: 150px;
+}
+
+div.sheet-combat-parry button[type="action"]{
+	width	: 100px;
 }
 
 div.sheet-skill-entry input {
