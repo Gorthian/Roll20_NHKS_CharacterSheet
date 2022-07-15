@@ -835,6 +835,7 @@
 <rolltemplate class="sheet-rolltemplate-skill">
     <div class="sheet-template-container">
         <div class="sheet-template-header">{{name}}</div>
+		<div class="sheet-template-header"><span data-i18n="{{type}}"></span>{{role-name}}</div>
         <div class="sheet-template-row">
 			<div class="sheet-template-key">{{skill}}</div>
 			<div class="sheet-template-value">{{skillValue}}</div>
@@ -947,16 +948,27 @@
 	/* Fertigkeitsproben (Schauspieler) */
 	aActorSkills.forEach(sSkill => {
 		on(`clicked:skill-${sSkill}`, function() {			
-			getAttrs(["character_name","skill-"+sSkill+"-attribute","skill-"+sSkill], function (values){
+			getAttrs(["character_name","role-name","skill-"+sSkill+"-attribute","skill-"+sSkill,"skill-"+sSkill+"-is-role-skill","skill-"+sSkill+"-role"], function (values){
 				let sName = values["character_name"];
+				let sRoleName = values["role-name"];
 				let sAttribute = values["skill-"+sSkill+"-attribute"];
 				let iSkillValue = parseInt(values["skill-"+sSkill]);
+				let iSkillRole = parseInt(values["skill-"+sSkill+"-role"]);
+				let iIsRoleSkill = parseInt(values["skill-" + sSkill + "-is-role-skill"]||0);
 				
 				getAttrs([sAttribute], function(values2) {
 					let iAttributeValue = parseInt(values2[sAttribute]);
-					let iSum = iSkillValue + iAttributeValue;			
+					let iSum = 0;
+					let sRollQuery = "&{template:skill} {{name="+sName+"}}";
 					
-					let sRollQuery = "&{template:skill} {{name="+sName+"}} {{skill="+getTranslationByKey(sSkill)+"}} {{attribute="+getTranslationByKey(sAttribute)+"}} {{skillValue="+iSkillValue+"}} {{attributeValue="+iAttributeValue+"}} {{target="+iSum+"}} {{roll1="+sBaseRoll+"}}";
+					if (iIsRoleSkill == 1) {
+						iSum = iSkillRole + iAttributeValue;
+						sRollQuery = sRollQuery + "  {{type=role}} {{role-name=: "+sRoleName+"}} {{skillValue="+iSkillRole+"}}";
+					} else {
+						iSum = iSkillValue + iAttributeValue;
+						sRollQuery = sRollQuery + " {{type=actor}} {{skillValue="+iSkillValue+"}}";
+					}
+					sRollQuery = sRollQuery + " {{skill="+getTranslationByKey(sSkill)+"}} {{attribute="+getTranslationByKey(sAttribute)+"}} {{attributeValue="+iAttributeValue+"}} {{target="+iSum+"}} {{roll1="+sBaseRoll+"}}";
 					
 					startRoll(sRollQuery, (results) => {						
 						finishRoll(results.rollId,{roll1: getRollResult(results, iSum)});
@@ -1071,7 +1083,21 @@
 			console.log("[CHANGE] " + sAttribute);
             changedAttribute(sAttribute);
         });
-    });	
+    });
+	
+	/* Änderungen an Skills */
+	aActorSkills.forEach(sSkill => {
+        on(`change:skill-${sSkill}`, function() {
+			console.log("[CHANGE] " + sSkill);
+            changedSkill(sSkill);
+        });
+		
+		on(`change:skill-${sSkill}-is-role-skill`, function() {
+			console.log("[CHANGE] " + sSkill + "is-role-skill");
+            changedSkill(sSkill);
+        });
+    });
+	
 	/* Event-Listener -- Ende */	
 		
 	/* Funktionen -- Start */
@@ -1138,9 +1164,12 @@
 	function changedSkill(sSkill) {
 		console.log("[changedSkill] " + sSkill);
 		
-		getAttrs(["skill-" + sSkill], function (values){
+		getAttrs(["skill-" + sSkill,"skill-" + sSkill + "-is-role-skill"], function (values){
 			let iSkill = parseInt(values["skill-" + sSkill]||iMinSkillValue);
+			let iSkillRole = 0;
+			let iIsRoleSkill = parseInt(values["skill-" + sSkill + "-is-role-skill"]||0);
 			let aAttributes = {};
+			console.log("[changedSkill] isRoleSkill" + iIsRoleSkill);
 			
 			// Auf Min/Max prüfen
 			if (iSkill < iMinSkillValue ) {
@@ -1148,7 +1177,31 @@
 			} else if (iSkill > iMaxSkillValue ) {
 				iSkill = iMaxSkillValue;
 			}
+			
+			//Rollenskill berechnen
+			if (iIsRoleSkill == 1) {
+				switch (iSkill) {
+					case 0: case 1: case 2:
+						iSkillRole = 4;
+						break;
+					case 3: case 4:
+						iSkillRole = 5;
+						break;
+					case 5: case 6: case 7: case 8: case 9:
+						iSkillRole = iSkill+1;
+						break;		
+					case 10:
+						iSkillRole = 10;
+						break;					
+					default:
+						iSkillRole = 0;
+				}			
+			} else {
+				iSkillRole = 0;
+			}
+			
 			aAttributes["skill-" + sSkill] = iSkill;
+			aAttributes["skill-" + sSkill + "-role"] = iSkillRole;
 			setAttrs(aAttributes);			
 		});
 	}
