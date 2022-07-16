@@ -388,7 +388,7 @@ div.sheet-actor-general {
 	background-repeat	: no-repeat;
 }
 
-div.sheet-actor {
+div.sheet-general {
 	background-image	: url("https://github.com/Gorthian/Roll20_NHKS_CharacterSheet/blob/main/images/standard/Schauspielerbogen_2_25_freigestellt.png?raw=true");
 	background-position	: top right;
 	background-size		: 70%;
