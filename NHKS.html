@@ -10,11 +10,7 @@
 
 <!-- Sheet //-->
 <input type="hidden" class="sheet-tabstoggle" name="attr_sheetTab"  value="actor"  />
-<div class="sheet-wrapper sheet-NHKS">
-	<div class="sheet-menu">
-		<button type="action" name="act_general"><span data-i18n="general"></span></button>
-    	<button type="action" name="act_weapons"><span data-i18n="weapons"></span></button>
-	</div>
+<div class="sheet-wrapper sheet-NHKS">	
 	<div class="sheet-content">
 		<div class="sheet-general">
 			<div class="sheet-actor-attributes">
@@ -156,19 +152,7 @@
 		
 		<div class="sheet-actor">
 			<div class="sheet-actor-sheet">
-				<div class="sheet-actor-sheet-left">
-					<div class="sheet-actor-attributes">
-					<h1><span data-i18n="attributes-and-descriptions"></span></h1>
-					<div class="sheet-actor-attributes-content">
-						<div class="sheet-actor-attributes-left">			
-							
-							<div class="sheet-actor-attributes-values">
-								
-							</div>
-						</div>
-												
-					</div>
-				</div>
+				<div class="sheet-actor-sheet-left">					
 					<div class="sheet-actor-skills">
 					<h1><span data-i18n="skills"></span></h1>
 					<div class="sheet-skill-entry">
@@ -765,12 +749,13 @@
 				</div>
 				</div>
 				<div class="sheet-actor-sheet-right">
-					<div class="sheet-actor-advantages">
+					<div>
 						<h1><span data-i18n="advantages-and-disadvantages"></span></h1>
 						<fieldset class="repeating_actor-advantages-disadvantages">
 						<div class="sheet-actor-advantage">
-							<input type="text" name="attr_actor-advantage-name" value="">
+							<input type="text" name="attr_actor-advantage-name" value="">							
 							<textarea name="attr_actor-advantage-description" value=""></textarea>
+							<span class="sheet-label" data-i18n="is-role-advantage"></span>&nbsp;<input type="checkbox" name="attr_actor-advantage-is-role-advantage" value="1">
 						</div>
 						</fieldset>
 					</div>
@@ -872,15 +857,6 @@
 						<img src="https://github.com/Gorthian/Roll20_NHKS_CharacterSheet/blob/main/images/standard/Schauspielerbogen_1_100_freigestellt.png?raw=true" />
 					</div>
 									
-				</div>				
-				<div class="sheet-role-advantages">
-					<h1><span data-i18n="role-advantages"></h1>
-					<fieldset class="repeating_role-advantages-disadvantages">
-						<div class="sheet-role-advantage">
-							<input type="text" name="attr_role-advantage-name" value="">
-							<textarea name="attr_role-advantage-description" value=""></textarea>
-						</div>
-					</fieldset>
 				</div>
 			</div>
 		</div>			
@@ -962,17 +938,7 @@
 	const iBaseCriticalSuccess = 2;
 	const iBaseCriticalFailure = 19;
 	const sBaseRoll = "[[1d20+?{"+getTranslationByKey("modifier")+"|0}cs<?{"+getTranslationByKey("critical-success-to")+"|"+iBaseCriticalSuccess+"}cf>?{"+getTranslationByKey("critical-failure-from")+"|"+iBaseCriticalFailure+"}]]";
-	/* Globale Konstanten -- Ende */
-
-	/* Tab-Wechsel */
-	const aButtonlist = ["general","weapons"];
-    aButtonlist.forEach(sButton => {
-        on(`clicked:${sButton}`, function() {
-            setAttrs({
-                sheetTab: sButton
-            });
-        });
-    });
+	/* Globale Konstanten -- Ende */	
 	
 	/* Event-Listener -- Start */
 	on("sheet:opened", function () {
