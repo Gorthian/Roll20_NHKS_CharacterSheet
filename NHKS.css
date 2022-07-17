@@ -65,13 +65,13 @@ div.sheet-skills {
 	grid-auto-flow			: colums dense;
 }
 
-div.sheet-role-sheet {
+div.sheet-misc {
 	display					: grid;
 	grid-template-columns	: repeat(2, 50%);
 	grid-template-areas		: 	"role-misc 	role-image"
 }
 
-div.sheet-role-image {
+div.sheet-nhks-image {
 	grid-area				: role-image;
 	text-align				: center;
 }
@@ -189,7 +189,7 @@ div.sheet-NHKS h1 {
 	font-weight			: bold;
 }
 
-div.sheet-general input, div.sheet-skills input, div.sheet-role-sheet input {
+div.sheet-general input, div.sheet-skills input, div.sheet-misc input {
 	background			: transparent;
 	border-style		: none none solid none;
 	color				: #000000;
