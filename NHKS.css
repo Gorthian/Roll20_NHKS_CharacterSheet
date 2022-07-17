@@ -264,6 +264,10 @@ div.sheet-skill-entry .sheet-label {
 	font-size	: 0.5em;
 }
 
+.sheet-height-45 {
+	height		: 45%;
+}
+
 .sheet-attributes-calc .sheet-input-line {
 	display		: inline;
 	text-align	: center;
