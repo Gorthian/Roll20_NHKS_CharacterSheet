@@ -17,10 +17,6 @@ div.sheet-wrapper {
 	--sheet-border		: 1px solid black;
 }
 
-p.sheet-nowrap {
-	white-space			: nowrap;
-}
-
 /*             GRIDS                               */
 
 div.sheet-NHKS {		
@@ -82,34 +78,11 @@ div.sheet-actor-sheet {
 div.sheet-role-sheet {
 	display					: grid;
 	grid-template-columns	: repeat(2, 50%);
-	grid-template-areas		: 	"role-misc 	role-stats"
-								"role-advantages role-advantages"
-}
-
-div.sheet-role-stats {
-	display					: grid;
-	grid-area				: role-stats;
-	grid-template-columns	: repeat(2, 50%);
-	grid-template-areas		: 	"role-image		role-image"
-								"role-hitpoints 	role-chipoints"
-}
-
-div.sheet-role-advantages {
-	grid-area				: role-advantages;
+	grid-template-areas		: 	"role-misc 	role-image"
 }
 
 div.sheet-role-image {
 	grid-area				: role-image;
-	text-align				: center;
-}
-
-div.sheet-role-hitpoints {
-	grid-area				: role-hitpoints;
-	text-align				: center;
-}
-
-div.sheet-role-chipoints {
-	grid-area				: role-chipoints;
 	text-align				: center;
 }
 
