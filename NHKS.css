@@ -1,7 +1,7 @@
 /*
 	EDITED by 			Gorthian
 	Version				1.1
-	Letzte Änderung		2022-07-16
+	Letzte Änderung		2022-07-17
 	
 	GitHub				https://github.com/Gorthian/Roll20_NHKS_CharacterSheet
 	Wiki				https://github.com/Gorthian/Roll20_NHKS_CharacterSheet/wiki
@@ -241,8 +241,8 @@ div.sheet-general textarea, div.sheet-actor-sheet textarea {
 	width				: 90%;
 }
 
-div.sheet-role-sheet textarea {
-	height				: 60px;
+div.sheet-general textarea.sheet-textarea-big {
+	height				: 90%;
 	width				: 90%;
 }
 
