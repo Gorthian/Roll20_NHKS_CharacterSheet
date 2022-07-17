@@ -59,7 +59,7 @@ div.sheet-footer {
 	display					: grid;
 }
 
-div.sheet-actor-sheet {
+div.sheet-skills {
 	display					: grid;
 	grid-template-columns	: 70% 30%;
 	grid-auto-flow			: colums dense;
@@ -189,7 +189,7 @@ div.sheet-NHKS h1 {
 	font-weight			: bold;
 }
 
-div.sheet-general input, div.sheet-actor-sheet input, div.sheet-role-sheet input {
+div.sheet-general input, div.sheet-skills input, div.sheet-role-sheet input {
 	background			: transparent;
 	border-style		: none none solid none;
 	color				: #000000;
@@ -199,7 +199,7 @@ div.sheet-general .sheet-label {
 	width				: 100px;
 }
 
-div.sheet-general textarea, div.sheet-actor-sheet textarea {
+div.sheet-general textarea, div.sheet-skills textarea {
 	height				: 30px;
 	width				: 90%;
 }
