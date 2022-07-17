@@ -22,15 +22,6 @@ div.sheet-wrapper {
 div.sheet-NHKS {		
 	background-color		: var(--sheet-bg);
 	color					: var(--sheet-text-color);
-	display 				: grid;
-	grid-template-areas		: 	"menu"
-								"content"
-								"footer"
-}
-
-div.sheet-content {
-	display					: grid;
-	grid-area				: content;
 }
 
 div.sheet-general {
@@ -66,7 +57,6 @@ div.sheet-attributes-calc {
 
 div.sheet-footer {
 	display					: grid;
-	grid-area				: footer;
 }
 
 div.sheet-actor-sheet {
