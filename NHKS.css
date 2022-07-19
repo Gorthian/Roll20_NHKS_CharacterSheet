@@ -1,7 +1,7 @@
 /*
 	EDITED by 			Gorthian
 	Version				1.1
-	Letzte Änderung		2022-07-17
+	Letzte Änderung		2022-07-19
 	
 	GitHub				https://github.com/Gorthian/Roll20_NHKS_CharacterSheet
 	Wiki				https://github.com/Gorthian/Roll20_NHKS_CharacterSheet/wiki
@@ -92,7 +92,6 @@ div.sheet-weapon-entry {
 	display					: grid;
 	grid-template-columns	: 70% 30%;
 	grid-auto-flow			: colums dense;
-	gap						: 10px;
 }
 
 div.sheet-weapon-entry .sheet-input-line .sheet-label {
