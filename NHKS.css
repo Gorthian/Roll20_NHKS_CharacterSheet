@@ -87,6 +87,22 @@ div.sheet-radio-set {
 	gap						: 5px;
 }
 
+div.sheet-weapon-entry {
+	border					: var(--sheet-border);
+	display					: grid;
+	grid-template-columns	: 70% 30%;
+	grid-auto-flow			: colums dense;
+	gap						: 10px;
+}
+
+div.sheet-weapon-entry .sheet-input-line .sheet-label {
+	width					: 120px;
+}
+
+div.sheet-weapon-entry textarea {
+	width					: 80%;
+}
+
 /*             Movie Awards                        */
 
 div.sheet-movies div.sheet-radio-set input.sheet-radiobox {

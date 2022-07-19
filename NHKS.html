@@ -805,52 +805,51 @@
 	</div>
 	<div class="sheet-weapon-tab">
 		<h1><span data-i18n="role-weapons"></span></h1>
-		<div class="sheet-role-weapon-table">
-			<div class="sheet-weapon-box">
-				<div class="sheet-weapon-description" style="width:80%;"><span data-i18n="role-weapon-name"></span></div>
-				<div class="sheet-weapon-description"><span data-i18n="role-weapon-damage"></span></div>
-				<div class="sheet-weapon-attribute sheet-clear-float"><span data-i18n="role-weapon-attention-short"></span><span data-i18n="role-weapon-attention"></span></div>
-				<div class="sheet-weapon-attribute"><span data-i18n="role-weapon-burst-short"></span><span data-i18n="role-weapon-burst"></span></div>
-				<div class="sheet-weapon-attribute"><span data-i18n="role-weapon-flexible-short"></span><span data-i18n="role-weapon-flexible"></span></div>
-				<div class="sheet-weapon-attribute"><span data-i18n="role-weapon-grib-short"></span><span data-i18n="role-weapon-grib"></span></div>
-				<div class="sheet-weapon-attribute"><span data-i18n="role-weapon-reload-short"></span><span data-i18n="role-weapon-reload"></span></div>
-				<div class="sheet-weapon-attribute"><span data-i18n="role-weapon-martial-short"></span><span data-i18n="role-weapon-martial"></span></div>
-				<div class="sheet-weapon-attribute"><span data-i18n="role-weapon-strength-short"></span><span data-i18n="role-weapon-strength"></span></div>
-				<div class="sheet-weapon-attribute"><span data-i18n="role-weapon-recoil-short"></span><span data-i18n="role-weapon-recoil"></span></div>
-				<div class="sheet-weapon-attribute"><span data-i18n="role-weapon-painful-short"></span><span data-i18n="role-weapon-painful"></span></div>
-				<div class="sheet-weapon-attribute"><span data-i18n="role-weapon-painful+-short"></span><span data-i18n="role-weapon-painful+"></span></div>
-				<div class="sheet-weapon-attribute"><span data-i18n="role-weapon-whip-short"></span><span data-i18n="role-weapon-whip"></span></div>
-				<div class="sheet-weapon-attribute"><span data-i18n="role-weapon-defense-short"></span><span data-i18n="role-weapon-defense"></span></div>
-				<div class="sheet-weapon-attribute"><span data-i18n="role-weapon-throw-short"></span><span data-i18n="role-weapon-throw"></span></div>
-				<div class="sheet-weapon-attribute"><span data-i18n="role-weapon-2handbonus-short"></span><span data-i18n="role-weapon-2handbonus"></span></div>
-				<div class="sheet-weapon-attribute"><span data-i18n="role-weapon-2hand-short"></span><span data-i18n="role-weapon-2hand"></span></div>
-				<div class="sheet-weapon-attribute"><span data-i18n="role-weapon-twin-short"></span><span data-i18n="role-weapon-twin"></span></div>
-				<div class="sheet-clear-float">&nbsp;</div>
-			</div>
+		<div class="sheet-role-weapon-table">			
 			<fieldset class="repeating_role-weapons">
-				<div class="sheet-weapon-box">
-					<div class="sheet-weapon-description" style="width:80%;"><input type="text" name="attr_weapon-name" /></div>
-					<div class="sheet-weapon-description" style="width:20%;"><input type="text" name="attr_weapon-damage" style="width:40%;" /></div>
-					<div class="sheet-weapon-attribute sheet-clear-float"><input type="checkbox" name="attr_weapon-attention" /><span data-i18n="role-weapon-attention"></span></div>
-					<div class="sheet-weapon-attribute"><input type="checkbox" name="attr_weapon-burst" /><span data-i18n="role-weapon-burst"></span></div>
-					<div class="sheet-weapon-attribute"><input type="checkbox" name="attr_weapon-flexible" /><span data-i18n="role-weapon-flexible"></span></div>
-					<div class="sheet-weapon-attribute"><input type="checkbox" name="attr_weapon-grib" /><span data-i18n="role-weapon-grib"></span></div>
-					<div class="sheet-weapon-attribute"><input type="checkbox" name="attr_weapon-reload" /><span data-i18n="role-weapon-reload"></span></div>
-					<div class="sheet-weapon-attribute"><input type="checkbox" name="attr_weapon-martial" /><span data-i18n="role-weapon-martial"></span></div>
-					<div class="sheet-weapon-attribute"><input type="checkbox" name="attr_weapon-strength" /><span data-i18n="role-weapon-strength"></span></div>
-					<div class="sheet-weapon-attribute"><input type="checkbox" name="attr_weapon-recoil" /><span data-i18n="role-weapon-recoil"></span></div>
-					<div class="sheet-weapon-attribute"><input type="checkbox" name="attr_weapon-painful" /><span data-i18n="role-weapon-painful"></span></div>
-					<div class="sheet-weapon-attribute"><input type="checkbox" name="attr_weapon-painful+" /><span data-i18n="role-weapon-painful+"></span></div>
-					<div class="sheet-weapon-attribute"><input type="checkbox" name="attr_weapon-whip" /><span data-i18n="role-weapon-whip"></span></div>
-					<div class="sheet-weapon-attribute"><input type="checkbox" name="attr_weapon-defense" /><span data-i18n="role-weapon-defense"></span></div>
-					<div class="sheet-weapon-attribute"><input type="checkbox" name="attr_weapon-throw" /><span data-i18n="role-weapon-throw"></span></div>
-					<div class="sheet-weapon-attribute"><input type="checkbox" name="attr_weapon-2handbonus" /><span data-i18n="role-weapon-2handbonus"></span></div>
-					<div class="sheet-weapon-attribute"><input type="checkbox" name="attr_weapon-2hand" /><span data-i18n="role-weapon-2hand"></span></div>
-					<div class="sheet-weapon-attribute"><input type="checkbox" name="attr_weapon-twin" /><span data-i18n="role-weapon-twin"></span></div>
-					<div class="sheet-clear-float"><textarea name="attr_weapon-description"></textarea></div>
+				<div class="sheet-weapon-entry">
+					<div>
+						<div class="sheet-input-line"><span class="sheet-label" data-i18n="role-weapon-name"></span><input type="text" name="attr_weapon-name" /></div>
+						<div class="sheet-input-line"><span class="sheet-label" data-i18n="role-weapon-damage"></span><input type="number" name="attr_weapon-damage" /></div>
+						<div class="sheet-input-line"><span class="sheet-label" data-i18n="role-weapon-strength"></span><input type="number" name="attr_weapon-strength" /></div>						
+						<div class="sheet-input-line">
+							<span class="sheet-label" data-i18n="skill"></span>
+							<select name="attr_weapon-skill">
+								<option value="melee-small" data-i18n="melee-small" selected="selected"></option>
+								<option value="melee-medium" data-i18n="melee-medium" selected="selected"></option>
+								<option value="melee-big" data-i18n="melee-big" selected="selected"></option>
+								<option value="pistols" data-i18n="pistols" selected="selected"></option>
+								<option value="rifles" data-i18n="rifles" selected="selected"></option>
+								<option value="heavy-weapons" data-i18n="heavy-weapons" selected="selected"></option>
+								<option value="melee-misc" data-i18n="melee-misc" selected="selected"></option>
+								<option value="ranged-misc" data-i18n="ranged-misc" selected="selected"></option>
+								<option value="unarmed" data-i18n="unarmed" selected="selected"></option>
+							</select>
+						</div>
+						<div class="sheet-input-line"><span class="sheet-label" data-i18n="description"></span><textarea name="attr_weapon-description"></textarea></div>
+					</div>
+					<div>
+						<div class="sheet-input-line"><span class="sheet-label" data-i18n="role-weapon-attention"></span><input type="checkbox" name="attr_weapon-attention" /></div>
+						<div class="sheet-input-line"><span class="sheet-label" data-i18n="role-weapon-burst"></span><input type="checkbox" name="attr_weapon-burst" /></div>
+						<div class="sheet-input-line"><span class="sheet-label" data-i18n="role-weapon-flexible"></span><input type="checkbox" name="attr_weapon-flexible" /></div>
+						<div class="sheet-input-line"><span class="sheet-label" data-i18n="role-weapon-grib"></span><input type="checkbox" name="attr_weapon-grib" /></div>
+						<div class="sheet-input-line"><span class="sheet-label" data-i18n="role-weapon-delicate"></span><input type="checkbox" name="attr_weapon-delicate" /></div>
+						<div class="sheet-input-line"><span class="sheet-label" data-i18n="role-weapon-reload"></span><input type="checkbox" name="attr_weapon-reload" /></div>
+						<div class="sheet-input-line"><span class="sheet-label" data-i18n="role-weapon-martial"></span><input type="checkbox" name="attr_weapon-martial" /></div>
+						<div class="sheet-input-line"><span class="sheet-label" data-i18n="role-weapon-recoil"></span><input type="checkbox" name="attr_weapon-recoil" /></div>
+						<div class="sheet-input-line"><span class="sheet-label" data-i18n="role-weapon-painful"></span><input type="checkbox" name="attr_weapon-painful" /></div>
+						<div class="sheet-input-line"><span class="sheet-label" data-i18n="role-weapon-painful+"></span><input type="checkbox" name="attr_weapon-painful+" /></div>
+						<div class="sheet-input-line"><span class="sheet-label" data-i18n="role-weapon-whip"></span><input type="checkbox" name="attr_weapon-whip" /></div>
+						<div class="sheet-input-line"><span class="sheet-label" data-i18n="role-weapon-defense"></span><input type="checkbox" name="attr_weapon-defense" /></div>
+						<div class="sheet-input-line"><span class="sheet-label" data-i18n="role-weapon-throw"></span><input type="checkbox" name="attr_weapon-throw" /></div>
+						<div class="sheet-input-line"><span class="sheet-label" data-i18n="role-weapon-2handbonus"></span><input type="checkbox" name="attr_weapon-2handbonus" /></div>
+						<div class="sheet-input-line"><span class="sheet-label" data-i18n="role-weapon-2hand"></span><input type="checkbox" name="attr_weapon-2hand" /></div>
+						<div class="sheet-input-line"><span class="sheet-label" data-i18n="role-weapon-twin"></span><input type="checkbox" name="attr_weapon-twin" /></div>
+					</div>
 				</div>
+				<br/>
 			</fieldset>
-		</div>	
+		</div>
 	</div>
 	<div class="sheet-footer">
 		Created by Gorthian | Supported by Hitdice | Copyright by Black Mask Verlag
