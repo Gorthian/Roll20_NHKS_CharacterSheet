@@ -560,15 +560,13 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NHKS_CharacterSheet/issues
           <div class="sheet-skill-entry">
             <div class="sheet-skill-name sheet-label"><span data-i18n="skill"></span></div>
             <div class="sheet-skill-attribute sheet-label"><span data-i18n="attribute"></span></div>
-            <div class="sheet-skill-value sheet-label"><span data-i18n="skill-value-role"></span></div>
-            <div class="sheet-label"><span data-i18n="description"></span></div>
+            <div class="sheet-skill-value sheet-label"><span data-i18n="skill-value-role">   </span></div>
+            <div class="sheet-label">&nbsp;</div>
           </div>
           <fieldset class="repeating_roleskills">
             <div class="sheet-skill-entry">
               <div class="sheet-skill-name">
-                <button type="action" name="act_roleskill">
-                  <input type="text" name="attr_roleskills-name"/>
-                </button>
+                <input type="text" name="attr_roleskills-name"/>
               </div>
               <div class="sheet-skill-attribute">
                 <select name="attr_roleskills-attribute" readonly="">
@@ -583,8 +581,8 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NHKS_CharacterSheet/issues
               <div class="sheet-skill-value">
                 <input type="number" name="attr_roleskills-role" value="4" readonly="readonly"/>
               </div>
-              <div class="sheet-skill-label">
-                <input type="text" name="attr_roleskills-description"/>
+              <div>
+                <button type="action" name="act_roleskill" style="width:90%;">Roll</button>
               </div>
             </div>
           </fieldset>
@@ -1066,6 +1064,38 @@ aActorSkills.forEach(sSkill => {
         });
     });
 });	
+
+/* Proben auf Rollenfertigkeiten */
+on("clicked:repeating_roleskills:roleskill", function() {			
+    getAttrs(["character_name","role-name","repeating_roleskills_roleskills-name","repeating_roleskills_roleskills-attribute"], function (values){
+        let sName = values["character_name"];
+        let sRoleName = values["role-name"];
+        let sSkill = values["repeating_roleskills_roleskills-name"];
+        let sAttribute = values["repeating_roleskills_roleskills-attribute"];
+        let iSkillValue = 0;
+        let iSkillRole = 4;
+        let iIsRoleSkill = 1;
+        
+        getAttrs([sAttribute], function(values2) {
+            let iAttributeValue = parseInt(values2[sAttribute]);
+            let iSum = 0;
+            let sRollQuery = "&{template:skill} {{name="+sName+"}}";
+            
+            if (iIsRoleSkill == 1) {
+                iSum = iSkillRole + iAttributeValue;
+                sRollQuery = sRollQuery + " {{type=role}} {{role-name=: "+sRoleName+"}} {{skillValue="+iSkillRole+"}}";
+            } else {
+                iSum = iSkillValue + iAttributeValue;
+                sRollQuery = sRollQuery + " {{type=actor}} {{skillValue="+iSkillValue+"}}";
+            }
+            sRollQuery = sRollQuery + " {{skill="+sSkill+"}} {{attribute="+getTranslationByKey(sAttribute)+"}} {{attributeValue="+iAttributeValue+"}} {{target="+iSum+"}} {{roll1="+sBaseRoll+"}}";
+            
+            startRoll(sRollQuery, (results) => {						
+                finishRoll(results.rollId,{roll1: getRollResult(results, iSum)});
+            });
+        });
+    });
+});
 
 /* Attributssproben */
 aActorAttributes.forEach(sAttribute => {

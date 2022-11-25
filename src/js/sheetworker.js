@@ -75,6 +75,38 @@ aActorSkills.forEach(sSkill => {
     });
 });	
 
+/* Proben auf Rollenfertigkeiten */
+on("clicked:repeating_roleskills:roleskill", function() {			
+    getAttrs(["character_name","role-name","repeating_roleskills_roleskills-name","repeating_roleskills_roleskills-attribute"], function (values){
+        let sName = values["character_name"];
+        let sRoleName = values["role-name"];
+        let sSkill = values["repeating_roleskills_roleskills-name"];
+        let sAttribute = values["repeating_roleskills_roleskills-attribute"];
+        let iSkillValue = 0;
+        let iSkillRole = 4;
+        let iIsRoleSkill = 1;
+        
+        getAttrs([sAttribute], function(values2) {
+            let iAttributeValue = parseInt(values2[sAttribute]);
+            let iSum = 0;
+            let sRollQuery = "&{template:skill} {{name="+sName+"}}";
+            
+            if (iIsRoleSkill == 1) {
+                iSum = iSkillRole + iAttributeValue;
+                sRollQuery = sRollQuery + " {{type=role}} {{role-name=: "+sRoleName+"}} {{skillValue="+iSkillRole+"}}";
+            } else {
+                iSum = iSkillValue + iAttributeValue;
+                sRollQuery = sRollQuery + " {{type=actor}} {{skillValue="+iSkillValue+"}}";
+            }
+            sRollQuery = sRollQuery + " {{skill="+sSkill+"}} {{attribute="+getTranslationByKey(sAttribute)+"}} {{attributeValue="+iAttributeValue+"}} {{target="+iSum+"}} {{roll1="+sBaseRoll+"}}";
+            
+            startRoll(sRollQuery, (results) => {						
+                finishRoll(results.rollId,{roll1: getRollResult(results, iSum)});
+            });
+        });
+    });
+});
+
 /* Attributssproben */
 aActorAttributes.forEach(sAttribute => {
     on(`clicked:attribute-${sAttribute}`, function() {			

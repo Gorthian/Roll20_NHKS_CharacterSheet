@@ -77,14 +77,13 @@ div(class="sheet-skill-list")
     div(class="sheet-skill-attribute sheet-label")
       span(data-i18n='attribute')
     div(class="sheet-skill-value sheet-label")
-      span(data-i18n='skill-value-role')
+      span(data-i18n='skill-value-role')    
     div(class="sheet-label")
-      span(data-i18n='description')
+      | &nbsp;
   fieldset(class="repeating_roleskills")
     div(class="sheet-skill-entry")
       div(class="sheet-skill-name")
-        button(type='action' name='act_roleskill')
-          input(type="text" name="attr_roleskills-name")
+        input(type="text" name="attr_roleskills-name")      
       div(class="sheet-skill-attribute")
         select(name='attr_roleskills-attribute' readonly='')
           option(value='knowledge' data-i18n='knowledge-short')
@@ -95,8 +94,9 @@ div(class="sheet-skill-list")
           option(value='dexterity' data-i18n='dexterity-short')
       div(class="sheet-skill-value")
         input(type='number' name='attr_roleskills-role' value="4" readonly='readonly')
-      div(class="sheet-skill-label")
-        input(type="text" name="attr_roleskills-description")
+      div
+        button(type='action' name='act_roleskill' style="width:90%;")
+          | Roll
   
   //- Kampffertigkeiten
   h1
