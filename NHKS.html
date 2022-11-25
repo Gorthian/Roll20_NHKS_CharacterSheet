@@ -28,11 +28,11 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NHKS_CharacterSheet/issues
   </div>
   <!--
   CREATED by      Gorthian
-  Version			v2.0
+  Version			    v2.0
   Letzte Änderung 2022-11-25
-  GitHub			https://github.com/Gorthian/Roll20_NHKS_CharacterSheet
-  Wiki			https://github.com/Gorthian/Roll20_NHKS_CharacterSheet/wiki
-  Bugs & Issues	https://github.com/Gorthian/Roll20_NHKS_CharacterSheet/issues
+  GitHub			    https://github.com/Gorthian/Roll20_NHKS_CharacterSheet
+  Wiki			      https://github.com/Gorthian/Roll20_NHKS_CharacterSheet/wiki
+  Bugs & Issues	  https://github.com/Gorthian/Roll20_NHKS_CharacterSheet/issues
   
   -->
   <!-- Variablen-->
@@ -133,6 +133,22 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NHKS_CharacterSheet/issues
     </div>
     <div class="sheet-skills">
       <div class="sheet-skills-left">
+        <!--
+        CREATED by      Gorthian
+        Version			    v2.0
+        Letzte Änderung	2022-11-25
+        GitHub			    https://github.com/Gorthian/Roll20_NHKS_CharacterSheet
+        Wiki			      https://github.com/Gorthian/Roll20_NHKS_CharacterSheet/wiki
+        Bugs & Issues	  https://github.com/Gorthian/Roll20_NHKS_CharacterSheet/issues
+        
+        -->
+        <!-- Variablen-->
+        <!--
+        ********************************
+        * START SRC/HTML/SKILL-LIST.pug
+        ********************************
+        
+        -->
         <div class="sheet-skill-list">
           <h1><span data-i18n="skills"></span></h1>
           <div class="sheet-skill-entry">
@@ -148,14 +164,14 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NHKS_CharacterSheet/issues
             </div>
             <div class="sheet-skill-attribute">
               <select name="attr_skill-acrobatic-attribute" readonly="">
-                <option value="dexterity" data-i18n="dexterity-short" selected="selected"></option>
+                <option value="dexterity" data-i18n="dexterity-short"></option>
               </select>
             </div>
             <div class="sheet-skill-value">
               <input type="number" name="attr_skill-acrobatic"/>
             </div>
             <div class="sheet-skill-value">
-              <input type="checkbox" name="attr_skill-acrobatic-is-role-skill" value="1"/>
+              <input type="checkbox" name="attr_skill-acrobatic-is-role-skill" value="0"/>
             </div>
             <div class="sheet-skill-value">
               <input type="number" name="attr_skill-acrobatic-role" readonly=""/>
@@ -166,8 +182,8 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NHKS_CharacterSheet/issues
               <button type="action" name="act_skill-athletic"><span data-i18n="athletic"></span></button>
             </div>
             <div class="sheet-skill-attribute">
-              <select name="attr_skill-athletic-attribute">
-                <option value="strength" data-i18n="strength-short" selected="selected"></option>
+              <select name="attr_skill-athletic-attribute" readonly="">
+                <option value="strength" data-i18n="strength-short"></option>
                 <option value="stamina" data-i18n="stamina-short"></option>
               </select>
             </div>
@@ -175,7 +191,7 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NHKS_CharacterSheet/issues
               <input type="number" name="attr_skill-athletic"/>
             </div>
             <div class="sheet-skill-value">
-              <input type="checkbox" name="attr_skill-athletic-is-role-skill" value="1"/>
+              <input type="checkbox" name="attr_skill-athletic-is-role-skill" value="0"/>
             </div>
             <div class="sheet-skill-value">
               <input type="number" name="attr_skill-athletic-role" readonly=""/>
@@ -187,14 +203,14 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NHKS_CharacterSheet/issues
             </div>
             <div class="sheet-skill-attribute">
               <select name="attr_skill-dodge-attribute" readonly="">
-                <option value="dexterity" data-i18n="dexterity-short" selected="selected"></option>
+                <option value="dexterity" data-i18n="dexterity-short"></option>
               </select>
             </div>
             <div class="sheet-skill-value">
               <input type="number" name="attr_skill-dodge"/>
             </div>
             <div class="sheet-skill-value">
-              <input type="checkbox" name="attr_skill-dodge-is-role-skill" value="1"/>
+              <input type="checkbox" name="attr_skill-dodge-is-role-skill" value="0"/>
             </div>
             <div class="sheet-skill-value">
               <input type="number" name="attr_skill-dodge-role" readonly=""/>
@@ -205,8 +221,8 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NHKS_CharacterSheet/issues
               <button type="action" name="act_skill-boats"><span data-i18n="boats"></span></button>
             </div>
             <div class="sheet-skill-attribute">
-              <select name="attr_skill-boats-attribute">
-                <option value="knowledge" data-i18n="knowledge-short" selected="selected"></option>
+              <select name="attr_skill-boats-attribute" readonly="">
+                <option value="knowledge" data-i18n="knowledge-short"></option>
                 <option value="dexterity" data-i18n="dexterity-short"></option>
               </select>
             </div>
@@ -214,7 +230,7 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NHKS_CharacterSheet/issues
               <input type="number" name="attr_skill-boats"/>
             </div>
             <div class="sheet-skill-value">
-              <input type="checkbox" name="attr_skill-boats-is-role-skill" value="1"/>
+              <input type="checkbox" name="attr_skill-boats-is-role-skill" value="0"/>
             </div>
             <div class="sheet-skill-value">
               <input type="number" name="attr_skill-boats-role" readonly=""/>
@@ -225,16 +241,16 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NHKS_CharacterSheet/issues
               <button type="action" name="act_skill-persuade"><span data-i18n="persuade"></span></button>
             </div>
             <div class="sheet-skill-attribute">
-              <select name="attr_skill-persuade-attribute">
-                <option value="coolness" data-i18n="coolness-short" selected="selected"></option>
+              <select name="attr_skill-persuade-attribute" readonly="">
+                <option value="coolness" data-i18n="coolness-short"></option>
                 <option value="strength" data-i18n="strength-short"></option>
               </select>
             </div>
             <div class="sheet-skill-value">
-              <input type="number" name="attr_skill_persuade"/>
+              <input type="number" name="attr_skill-persuade"/>
             </div>
             <div class="sheet-skill-value">
-              <input type="checkbox" name="attr_skill-persuade-is-role-skill" value="1"/>
+              <input type="checkbox" name="attr_skill-persuade-is-role-skill" value="0"/>
             </div>
             <div class="sheet-skill-value">
               <input type="number" name="attr_skill-persuade-role" readonly=""/>
@@ -246,14 +262,14 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NHKS_CharacterSheet/issues
             </div>
             <div class="sheet-skill-attribute">
               <select name="attr_skill-computers-attribute" readonly="">
-                <option value="knowledge" data-i18n="knowledge-short" selected="selected"></option>
+                <option value="knowledge" data-i18n="knowledge-short"></option>
               </select>
             </div>
             <div class="sheet-skill-value">
               <input type="number" name="attr_skill-computers"/>
             </div>
             <div class="sheet-skill-value">
-              <input type="checkbox" name="attr_skill-computers-is-role-skill" value="1"/>
+              <input type="checkbox" name="attr_skill-computers-is-role-skill" value="0"/>
             </div>
             <div class="sheet-skill-value">
               <input type="number" name="attr_skill-computers-role" readonly=""/>
@@ -265,14 +281,14 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NHKS_CharacterSheet/issues
             </div>
             <div class="sheet-skill-attribute">
               <select name="attr_skill-firstaid-attribute" readonly="">
-                <option value="knowledge" data-i18n="knowledge-short" selected="selected"></option>
+                <option value="knowledge" data-i18n="knowledge-short"></option>
               </select>
             </div>
             <div class="sheet-skill-value">
               <input type="number" name="attr_skill-firstaid"/>
             </div>
             <div class="sheet-skill-value">
-              <input type="checkbox" name="attr_skill-firstaid-is-role-skill" value="1"/>
+              <input type="checkbox" name="attr_skill-firstaid-is-role-skill" value="0"/>
             </div>
             <div class="sheet-skill-value">
               <input type="number" name="attr_skill-firstaid-role" readonly=""/>
@@ -283,8 +299,8 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NHKS_CharacterSheet/issues
               <button type="action" name="act_skill-extremesport"><span data-i18n="extremesport"></span></button>
             </div>
             <div class="sheet-skill-attribute">
-              <select name="attr_skill-extremesport-attribute">
-                <option value="strength" data-i18n="strength-short" selected="selected"></option>
+              <select name="attr_skill-extremesport-attribute" readonly="">
+                <option value="strength" data-i18n="strength-short"></option>
                 <option value="stamina" data-i18n="stamina-short"></option>
                 <option value="dexterity" data-i18n="dexterity-short"></option>
               </select>
@@ -293,7 +309,7 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NHKS_CharacterSheet/issues
               <input type="number" name="attr_skill-extremesport"/>
             </div>
             <div class="sheet-skill-value">
-              <input type="checkbox" name="attr_skill-extremesport-is-role-skill" value="1"/>
+              <input type="checkbox" name="attr_skill-extremesport-is-role-skill" value="0"/>
             </div>
             <div class="sheet-skill-value">
               <input type="number" name="attr_skill-extremesport-role" readonly=""/>
@@ -305,14 +321,14 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NHKS_CharacterSheet/issues
             </div>
             <div class="sheet-skill-attribute">
               <select name="attr_skill-slideofhand-attribute" readonly="">
-                <option value="dexterity" data-i18n="dexterity-short" selected="selected"></option>
+                <option value="dexterity" data-i18n="dexterity-short"></option>
               </select>
             </div>
             <div class="sheet-skill-value">
               <input type="number" name="attr_skill-slideofhand"/>
             </div>
             <div class="sheet-skill-value">
-              <input type="checkbox" name="attr_skill-slideofhand-is-role-skill" value="1"/>
+              <input type="checkbox" name="attr_skill-slideofhand-is-role-skill" value="0"/>
             </div>
             <div class="sheet-skill-value">
               <input type="number" name="attr_skill-slideofhand-role" readonly=""/>
@@ -323,8 +339,8 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NHKS_CharacterSheet/issues
               <button type="action" name="act_skill-aircrafts"><span data-i18n="aircrafts"></span></button>
             </div>
             <div class="sheet-skill-attribute">
-              <select name="attr_skill-aircrafts-attribute">
-                <option value="knowledge" data-i18n="knowledge-short" selected="selected"></option>
+              <select name="attr_skill-aircrafts-attribute" readonly="">
+                <option value="knowledge" data-i18n="knowledge-short"></option>
                 <option value="dexterity" data-i18n="dexterity-short"></option>
               </select>
             </div>
@@ -332,7 +348,7 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NHKS_CharacterSheet/issues
               <input type="number" name="attr_skill-aircrafts"/>
             </div>
             <div class="sheet-skill-value">
-              <input type="checkbox" name="attr_skill-aircrafts-is-role-skill" value="1"/>
+              <input type="checkbox" name="attr_skill-aircrafts-is-role-skill" value="0"/>
             </div>
             <div class="sheet-skill-value">
               <input type="number" name="attr_skill-aircrafts-role" readonly=""/>
@@ -343,8 +359,8 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NHKS_CharacterSheet/issues
               <button type="action" name="act_skill-vehicles"><span data-i18n="vehicles"></span></button>
             </div>
             <div class="sheet-skill-attribute">
-              <select name="attr_skill-vehicles-attribute">
-                <option value="knowledge" data-i18n="knowledge-short" selected="selected"></option>
+              <select name="attr_skill-vehicles-attribute" readonly="">
+                <option value="knowledge" data-i18n="knowledge-short"></option>
                 <option value="dexterity" data-i18n="dexterity-short"></option>
               </select>
             </div>
@@ -352,7 +368,7 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NHKS_CharacterSheet/issues
               <input type="number" name="attr_skill-vehicles"/>
             </div>
             <div class="sheet-skill-value">
-              <input type="checkbox" name="attr_skill-vehicles-is-role-skill" value="1"/>
+              <input type="checkbox" name="attr_skill-vehicles-is-role-skill" value="0"/>
             </div>
             <div class="sheet-skill-value">
               <input type="number" name="attr_skill-vehicles-role" readonly=""/>
@@ -363,8 +379,8 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NHKS_CharacterSheet/issues
               <button type="action" name="act_skill-improvisation"><span data-i18n="improvisation"></span></button>
             </div>
             <div class="sheet-skill-attribute">
-              <select name="attr_skill-improvisation-attribute">
-                <option value="knowledge" data-i18n="knowledge-short" selected="selected"></option>
+              <select name="attr_skill-improvisation-attribute" readonly="">
+                <option value="knowledge" data-i18n="knowledge-short"></option>
                 <option value="strength" data-i18n="strength-short"></option>
                 <option value="coolness" data-i18n="coolness-short"></option>
                 <option value="stamina" data-i18n="stamina-short"></option>
@@ -376,7 +392,7 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NHKS_CharacterSheet/issues
               <input type="number" name="attr_skill-improvisation"/>
             </div>
             <div class="sheet-skill-value">
-              <input type="checkbox" name="attr_skill-improvisation-is-role-skill" value="1"/>
+              <input type="checkbox" name="attr_skill-improvisation-is-role-skill" value="0"/>
             </div>
             <div class="sheet-skill-value">
               <input type="number" name="attr_skill-improvisation-role" readonly=""/>
@@ -387,8 +403,8 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NHKS_CharacterSheet/issues
               <button type="action" name="act_skill-climbing"><span data-i18n="climbing"></span></button>
             </div>
             <div class="sheet-skill-attribute">
-              <select name="attr_skill-climbing-attribute">
-                <option value="strength" data-i18n="strength-short" selected="selected"></option>
+              <select name="attr_skill-climbing-attribute" readonly="">
+                <option value="strength" data-i18n="strength-short"></option>
                 <option value="stamina" data-i18n="stamina-short"></option>
                 <option value="dexterity" data-i18n="dexterity-short"></option>
               </select>
@@ -397,7 +413,7 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NHKS_CharacterSheet/issues
               <input type="number" name="attr_skill-climbing"/>
             </div>
             <div class="sheet-skill-value">
-              <input type="checkbox" name="attr_skill-climbing-is-role-skill" value="1"/>
+              <input type="checkbox" name="attr_skill-climbing-is-role-skill" value="0"/>
             </div>
             <div class="sheet-skill-value">
               <input type="number" name="attr_skill-climbing-role" readonly=""/>
@@ -408,8 +424,8 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NHKS_CharacterSheet/issues
               <button type="action" name="act_skill-contacts"><span data-i18n="contacts"></span></button>
             </div>
             <div class="sheet-skill-attribute">
-              <select name="attr_skill-contacts-attribute">
-                <option value="knowledge" data-i18n="knowledge-short" selected="selected"></option>
+              <select name="attr_skill-contacts-attribute" readonly="">
+                <option value="knowledge" data-i18n="knowledge-short"></option>
                 <option value="coolness" data-i18n="coolness-short"></option>
               </select>
             </div>
@@ -417,7 +433,7 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NHKS_CharacterSheet/issues
               <input type="number" name="attr_skill-contacts"/>
             </div>
             <div class="sheet-skill-value">
-              <input type="checkbox" name="attr_skill-contacts-is-role-skill" value="1"/>
+              <input type="checkbox" name="attr_skill-contacts-is-role-skill" value="0"/>
             </div>
             <div class="sheet-skill-value">
               <input type="number" name="attr_skill-contacts-role" readonly=""/>
@@ -429,14 +445,14 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NHKS_CharacterSheet/issues
             </div>
             <div class="sheet-skill-attribute">
               <select name="attr_skill-mechanic-attribute" readonly="">
-                <option value="knowledge" data-i18n="knowledge-short" selected="selected"></option>
+                <option value="knowledge" data-i18n="knowledge-short"></option>
               </select>
             </div>
             <div class="sheet-skill-value">
               <input type="number" name="attr_skill-mechanic"/>
             </div>
             <div class="sheet-skill-value">
-              <input type="checkbox" name="attr_skill-mechanic-is-role-skill" value="1"/>
+              <input type="checkbox" name="attr_skill-mechanic-is-role-skill" value="0"/>
             </div>
             <div class="sheet-skill-value">
               <input type="number" name="attr_skill-mechanic-role" readonly=""/>
@@ -448,14 +464,14 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NHKS_CharacterSheet/issues
             </div>
             <div class="sheet-skill-attribute">
               <select name="attr_skill-stealth-attribute" readonly="">
-                <option value="dexterity" data-i18n="dexterity-short" selected="selected"></option>
+                <option value="dexterity" data-i18n="dexterity-short"></option>
               </select>
             </div>
             <div class="sheet-skill-value">
               <input type="number" name="attr_skill-stealth"/>
             </div>
             <div class="sheet-skill-value">
-              <input type="checkbox" name="attr_skill-stealth-is-role-skill" value="1"/>
+              <input type="checkbox" name="attr_skill-stealth-is-role-skill" value="0"/>
             </div>
             <div class="sheet-skill-value">
               <input type="number" name="attr_skill-stealth-role" readonly=""/>
@@ -467,14 +483,14 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NHKS_CharacterSheet/issues
             </div>
             <div class="sheet-skill-attribute">
               <select name="attr_skill-perception-attribute" readonly="">
-                <option value="chi" data-i18n="chi-short" selected="selected"></option>
+                <option value="chi" data-i18n="chi-short"></option>
               </select>
             </div>
             <div class="sheet-skill-value">
               <input type="number" name="attr_skill-perception"/>
             </div>
             <div class="sheet-skill-value">
-              <input type="checkbox" name="attr_skill-perception-is-role-skill" value="1"/>
+              <input type="checkbox" name="attr_skill-perception-is-role-skill" value="0"/>
             </div>
             <div class="sheet-skill-value">
               <input type="number" name="attr_skill-perception-role" readonly=""/>
@@ -485,8 +501,8 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NHKS_CharacterSheet/issues
               <button type="action" name="act_skill-languages"><span data-i18n="languages"></span></button>
             </div>
             <div class="sheet-skill-attribute">
-              <select name="attr_skill-languages-attribute">
-                <option value="knowledge" data-i18n="knowledge-short" selected="selected"></option>
+              <select name="attr_skill-languages-attribute" readonly="">
+                <option value="knowledge" data-i18n="knowledge-short"></option>
                 <option value="coolness" data-i18n="coolness-short"></option>
               </select>
             </div>
@@ -494,7 +510,7 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NHKS_CharacterSheet/issues
               <input type="number" name="attr_skill-languages"/>
             </div>
             <div class="sheet-skill-value">
-              <input type="checkbox" name="attr_skill-languages-is-role-skill" value="1"/>
+              <input type="checkbox" name="attr_skill-languages-is-role-skill" value="0"/>
             </div>
             <div class="sheet-skill-value">
               <input type="number" name="attr_skill-languages-role" readonly=""/>
@@ -505,8 +521,8 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NHKS_CharacterSheet/issues
               <button type="action" name="act_skill-searching"><span data-i18n="searching"></span></button>
             </div>
             <div class="sheet-skill-attribute">
-              <select name="attr_skill-searching-attribute">
-                <option value="knowledge" data-i18n="knowledge-short" selected="selected"></option>
+              <select name="attr_skill-searching-attribute" readonly="">
+                <option value="knowledge" data-i18n="knowledge-short"></option>
                 <option value="chi" data-i18n="chi-short"></option>
               </select>
             </div>
@@ -514,7 +530,7 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NHKS_CharacterSheet/issues
               <input type="number" name="attr_skill-searching"/>
             </div>
             <div class="sheet-skill-value">
-              <input type="checkbox" name="attr_skill-searching-is-role-skill" value="1"/>
+              <input type="checkbox" name="attr_skill-searching-is-role-skill" value="0"/>
             </div>
             <div class="sheet-skill-value">
               <input type="number" name="attr_skill-searching-role" readonly=""/>
@@ -525,8 +541,8 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NHKS_CharacterSheet/issues
               <button type="action" name="act_skill-hiding"><span data-i18n="hiding"></span></button>
             </div>
             <div class="sheet-skill-attribute">
-              <select name="attr_skill-hiding-attribute">
-                <option value="knowledge" data-i18n="knowledge-short" selected="selected"></option>
+              <select name="attr_skill-hiding-attribute" readonly="">
+                <option value="knowledge" data-i18n="knowledge-short"></option>
                 <option value="dexterity" data-i18n="dexterity-short"></option>
               </select>
             </div>
@@ -534,12 +550,44 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NHKS_CharacterSheet/issues
               <input type="number" name="attr_skill-hiding"/>
             </div>
             <div class="sheet-skill-value">
-              <input type="checkbox" name="attr_skill-hiding-is-role-skill" value="1"/>
+              <input type="checkbox" name="attr_skill-hiding-is-role-skill" value="0"/>
             </div>
             <div class="sheet-skill-value">
               <input type="number" name="attr_skill-hiding-role" readonly=""/>
             </div>
           </div>
+          <h1><span data-i18n="role-skills"></span></h1>
+          <div class="sheet-skill-entry">
+            <div class="sheet-skill-name sheet-label"><span data-i18n="skill"></span></div>
+            <div class="sheet-skill-attribute sheet-label"><span data-i18n="attribute"></span></div>
+            <div class="sheet-skill-value sheet-label"><span data-i18n="skill-value-role"></span></div>
+            <div class="sheet-label"><span data-i18n="description"></span></div>
+          </div>
+          <fieldset class="repeating_roleskills">
+            <div class="sheet-skill-entry">
+              <div class="sheet-skill-name">
+                <button type="action" name="act_roleskill">
+                  <input type="text" name="attr_roleskills-name"/>
+                </button>
+              </div>
+              <div class="sheet-skill-attribute">
+                <select name="attr_roleskills-attribute" readonly="">
+                  <option value="knowledge" data-i18n="knowledge-short"></option>
+                  <option value="strength" data-i18n="strength-short"></option>
+                  <option value="coolness" data-i18n="coolness-short"></option>
+                  <option value="stamina" data-i18n="stamina-short"></option>
+                  <option value="chi" data-i18n="chi-short"></option>
+                  <option value="dexterity" data-i18n="dexterity-short"></option>
+                </select>
+              </div>
+              <div class="sheet-skill-value">
+                <input type="number" name="attr_roleskills-role" value="4" readonly="readonly"/>
+              </div>
+              <div class="sheet-skill-label">
+                <input type="text" name="attr_roleskills-description"/>
+              </div>
+            </div>
+          </fieldset>
           <h1><span data-i18n="combat"></span></h1>
           <div class="sheet-combat-entry">
             <div class="sheet-label"><span data-i18n="attack"></span></div>
@@ -694,6 +742,11 @@ Bugs & Issues		https://github.com/Gorthian/Roll20_NHKS_CharacterSheet/issues
             </div>
           </div>
         </div>
+        <!--
+        ********************************
+        * ENDE SRC/HTML/SKILL-LIST.pug
+        ********************************
+        -->
         <div>
           <h1><span data-i18n="misc"></span></h1>
           <textarea name="attr_actor-misc" value=""></textarea>
