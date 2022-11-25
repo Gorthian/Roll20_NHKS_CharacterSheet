@@ -34,9 +34,14 @@ rolltemplate(class="sheet-rolltemplate-skill")
                 | {{attributeValue}}
         div(class="sheet-template-row")
             div(class="sheet-template-key")
+                | {{modifier}}
+            div(class="sheet-template-value")
+                | {{modifierValue}}
+        div(class="sheet-template-row")
+            div(class="sheet-template-key")
                 span(data-i18n="target-value")
             div(class="sheet-template-value")
-                | {{target}}
+                | {{computed::target}}
         div(class="sheet-template-row")
             div(class="sheet-template-key")
                 span(data-i18n="roll")
@@ -56,9 +61,14 @@ rolltemplate(class="sheet-rolltemplate-attribute")
                 | {{attributeValue}}
         div(class="sheet-template-row")
             div(class="sheet-template-key")
+                | {{modifier}}
+            div(class="sheet-template-value")
+                | {{modifierValue}}
+        div(class="sheet-template-row")
+            div(class="sheet-template-key")
                 span(data-i18n="target-value")
             div(class="sheet-template-value")
-                | {{target}}
+                | {{computed::target}}
         div(class="sheet-template-row")
             div(class="sheet-template-key")
                 span(data-i18n="roll")

@@ -8,7 +8,7 @@ const aActorSkills = ["acrobatic","athletic","dodge","boats","persuade","compute
 const aActorWeaponSkills = ["melee-small","melee-medium","melee-big","pistols","rifles","heavy-weapons","melee-misc","ranged-misc","unarmed"];
 const iBaseCriticalSuccess = 2;
 const iBaseCriticalFailure = 19;
-const sBaseRoll = "[[1d20+?{"+getTranslationByKey("modifier")+"|0}cs<?{"+getTranslationByKey("critical-success-to")+"|"+iBaseCriticalSuccess+"}cf>?{"+getTranslationByKey("critical-failure-from")+"|"+iBaseCriticalFailure+"}]]";
+const sBaseRoll = "[[1d20cs<?{"+getTranslationByKey("critical-success-to")+"|"+iBaseCriticalSuccess+"}cf>?{"+getTranslationByKey("critical-failure-from")+"|"+iBaseCriticalFailure+"}]]";
 /* Globale Konstanten -- Ende */	
 
 /* Event-Listener -- Start */
@@ -20,10 +20,18 @@ on("change:role-type", function () {
     recalcChipoints();
     recalcHitpoints();
 });	
-    
+
+function getModifiedTarget(results,iSum) {
+    let iModifier = parseInt(results.results.modifierValue.result);
+    let modifiedTarget = iSum +  iModifier;
+
+    return modifiedTarget;
+}
+
 function getRollResult(results,iSum) {
     let sExpression = results.results.roll1.expression;
     let iRoll = parseInt(results.results.roll1.result);
+    let iModifier = parseInt(results.results.modifierValue.result);
     let sResult = "";
                 
     let iCriticalSuccess = parseInt(sExpression.split("<")[1].split("cf")[0]);
@@ -31,7 +39,7 @@ function getRollResult(results,iSum) {
                 
     if (iRoll <= iCriticalSuccess) {
         sResult = getTranslationByKey("critical-success");
-    } else if (iRoll <= iSum) {
+    } else if (iRoll <= iSum + iModifier) {
         sResult = getTranslationByKey("success");
     } else if (iRoll < iCriticalFailure) {
         sResult = getTranslationByKey("failure");
@@ -65,10 +73,13 @@ aActorSkills.forEach(sSkill => {
                     iSum = iSkillValue + iAttributeValue;
                     sRollQuery = sRollQuery + " {{type=actor}} {{skillValue="+iSkillValue+"}}";
                 }
-                sRollQuery = sRollQuery + " {{skill="+getTranslationByKey(sSkill)+"}} {{attribute="+getTranslationByKey(sAttribute)+"}} {{attributeValue="+iAttributeValue+"}} {{target="+iSum+"}} {{roll1="+sBaseRoll+"}}";
+                sRollQuery = sRollQuery + " {{skill="+getTranslationByKey(sSkill)+"}} {{attribute="+getTranslationByKey(sAttribute)+"}} {{attributeValue="+iAttributeValue+"}} {{target=[["+iSum+"]]}} {{modifier="+getTranslationByKey("modifier")+"}} {{modifierValue=[[?{"+getTranslationByKey("modifier")+"|0}]]}} {{roll1="+sBaseRoll+"}}";
                 
-                startRoll(sRollQuery, (results) => {						
-                    finishRoll(results.rollId,{roll1: getRollResult(results, iSum)});
+                startRoll(sRollQuery, (results) => {
+                    finishRoll(results.rollId,{
+                        target: getModifiedTarget(results, iSum),
+                        roll1: getRollResult(results, iSum),
+                    });
                 });
             });
         });
@@ -98,10 +109,13 @@ on("clicked:repeating_roleskills:roleskill", function() {
                 iSum = iSkillValue + iAttributeValue;
                 sRollQuery = sRollQuery + " {{type=actor}} {{skillValue="+iSkillValue+"}}";
             }
-            sRollQuery = sRollQuery + " {{skill="+sSkill+"}} {{attribute="+getTranslationByKey(sAttribute)+"}} {{attributeValue="+iAttributeValue+"}} {{target="+iSum+"}} {{roll1="+sBaseRoll+"}}";
+            sRollQuery = sRollQuery + " {{skill="+sSkill+"}} {{attribute="+getTranslationByKey(sAttribute)+"}} {{attributeValue="+iAttributeValue+"}} {{target=[["+iSum+"]]}} {{modifier="+getTranslationByKey("modifier")+"}} {{modifierValue=[[?{"+getTranslationByKey("modifier")+"|0}]]}} {{roll1="+sBaseRoll+"}}";
             
             startRoll(sRollQuery, (results) => {						
-                finishRoll(results.rollId,{roll1: getRollResult(results, iSum)});
+                finishRoll(results.rollId,{
+                    target: getModifiedTarget(results, iSum),
+                    roll1: getRollResult(results, iSum),
+                });
             });
         });
     });
@@ -115,10 +129,13 @@ aActorAttributes.forEach(sAttribute => {
             let iAttributeValue = parseInt(values[sAttribute]);
             let iSum = iAttributeValue + 4;	
             
-            let sRollQuery = "&{template:attribute} {{name="+sName+"}} {{attribute="+getTranslationByKey(sAttribute)+"}} {{attributeValue="+iAttributeValue+"}} {{target="+iSum+"}} {{roll1="+sBaseRoll+"}}";
+            let sRollQuery = "&{template:attribute} {{name="+sName+"}} {{attribute="+getTranslationByKey(sAttribute)+"}} {{attributeValue="+iAttributeValue+"}} {{target=[["+iSum+"]]}} {{modifier="+getTranslationByKey("modifier")+"}} {{modifierValue=[[?{"+getTranslationByKey("modifier")+"|0}]]}} {{roll1="+sBaseRoll+"}}";
                 
             startRoll(sRollQuery, (results) => {					
-                finishRoll(results.rollId,{roll1: getRollResult(results, iSum)});
+                finishRoll(results.rollId,{
+                    target: getModifiedTarget(results, iSum),
+                    roll1: getRollResult(results, iSum),
+                });
             });			
         });
     });
@@ -158,10 +175,13 @@ aActorWeaponSkills.forEach(sSkill => {
                 iSum = iSkillValue + iAttributeValue;
                 sRollQuery = sRollQuery + " {{type=actor}} {{skillValue="+iSkillValue+"}}";
             }					
-            sRollQuery = sRollQuery + " {{skill="+getTranslationByKey(sSkill)+"}} {{attribute="+getTranslationByKey(sCombatAttribute)+"}} {{attributeValue="+iAttributeValue+"}} {{target="+iSum+"}} {{roll1="+sBaseRoll+"}}";
+            sRollQuery = sRollQuery + " {{skill="+getTranslationByKey(sSkill)+"}} {{attribute="+getTranslationByKey(sCombatAttribute)+"}} {{attributeValue="+iAttributeValue+"}} {{target=[["+iSum+"]]}} {{modifier="+getTranslationByKey("modifier")+"}} {{modifierValue=[[?{"+getTranslationByKey("modifier")+"|0}]]}} {{roll1="+sBaseRoll+"}}";
                 
             startRoll(sRollQuery, (results) => {					
-                finishRoll(results.rollId,{roll1: getRollResult(results, iSum)});
+                finishRoll(results.rollId,{
+                    target: getModifiedTarget(results, iSum),
+                    roll1: getRollResult(results, iSum),
+                });
             });
         });
     });
@@ -184,11 +204,14 @@ aActorWeaponSkills.forEach(sSkill => {
                 iSum = iSkillValue + iAttributeValue;
                 sRollQuery = sRollQuery + " {{type=actor}} {{skillValue="+iSkillValue+"}}";
             }					
-            sRollQuery = sRollQuery + " {{skill="+getTranslationByKey(sSkill)+"}} {{attribute="+getTranslationByKey("melee-defense")+"}} {{attributeValue="+iAttributeValue+"}} {{target="+iSum+"}} {{roll1="+sBaseRoll+"}}";
+            sRollQuery = sRollQuery + " {{skill="+getTranslationByKey(sSkill)+"}} {{attribute="+getTranslationByKey("melee-defense")+"}} {{attributeValue="+iAttributeValue+"}} {{target=[["+iSum+"]]}} {{modifier="+getTranslationByKey("modifier")+"}} {{modifierValue=[[?{"+getTranslationByKey("modifier")+"|0}]]}} {{roll1="+sBaseRoll+"}}";
                 
                 
             startRoll(sRollQuery, (results) => {					
-                finishRoll(results.rollId,{roll1: getRollResult(results, iSum)});
+                finishRoll(results.rollId,{
+                    target: getModifiedTarget(results, iSum),
+                    roll1: getRollResult(results, iSum),
+                });
             });
         });
     });
