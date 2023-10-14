@@ -1,3 +1,12 @@
+/*
+    CREATED by      Gorthian
+    Version		    v2.0 HF1
+    Letzte Änderung	2023-10-14
+    GitHub		    https://github.com/Gorthian/Roll20_NHKS_CharacterSheet
+    Wiki            https://github.com/Gorthian/Roll20_NHKS_CharacterSheet/wiki
+    Bugs & Issues   https://github.com/Gorthian/Roll20_NHKS_CharacterSheet/issues
+*/ 
+
 /* Globale Konstanten -- Start */
 const iMinAttributeValue = 5;
 const iMaxAttributeValue = 10;
